@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+   <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Funcnodes via react"
+    />
+    <title>FuncNodes</title>
+    <script  type="module"  src="index.js"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="height: 400px; width: 600px;"></div>
+    <div id="root2" style="height: 400px; width: 600px;"></div>
+
+    <script >
+      // wait till window is loaded
+      window.onload = async function() {
+
+        worker = new Worker("pyodideDedicatedWorker.js", {
+          type: "module",
+        });
+     
+        NodeBuilder("root",{
+          python_code: `
+import funcnodes as fn
+
+class MyNode(fn.Node):
+    node_name = "My Node"
+    node_id = "my_node"
+
+    async def func(self):
+        """The function to be executed when the node is triggered."""
+x          `,
+          show_python_editor:true,
+          webworker:  worker
+
+        },
+
+      );
+      
+
+      NodeBuilder("root2",{
+          python_code: `
+import funcnodes as fn
+
+class MyNode(fn.Node):
+    node_name = "My Node2"
+    node_id = "my_node2"
+
+    async def func(self):
+        """The function to be executed when the node is triggered."""
+          `,
+          show_python_editor:true,
+          webworker:  worker,
+
+        },
+
+      );
+      }
+
+
+    </script>
+  </body>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.37.0/ace.min.js"></script> -->
+</html>
