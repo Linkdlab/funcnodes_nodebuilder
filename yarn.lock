@@ -542,15 +542,20 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@linkdlab/funcnodes_pyodide_react_flow@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@linkdlab/funcnodes_pyodide_react_flow/-/funcnodes_pyodide_react_flow-0.1.10.tgz#6cdcf4913783bbdf95033161198a6a5239709359"
-  integrity sha512-KEjrq71aHs5NAi46JcXk8Xx4jqPZUKhph5ALh0onIWoSqCohgjrFQkN/iLiW3z4pm3RmLMvFN8z7i7CWUxjPcw==
+"@juggle/resize-observer@^3.3.1":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
+  integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@linkdlab/funcnodes_react_flow@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@linkdlab/funcnodes_react_flow/-/funcnodes_react_flow-0.4.6.tgz#de6dada3d761479bbe6d2650a53afafe44517da8"
-  integrity sha512-whEY5vtcp0VU312i3FdUbJF/SCKUfQd3prmIOI4gRlui2x4ox0BNypu/qG+1UwiFfVVnd6BVvaZcOfoMUvhU+A==
+"@linkdlab/funcnodes_pyodide_react_flow@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@linkdlab/funcnodes_pyodide_react_flow/-/funcnodes_pyodide_react_flow-0.1.11.tgz#e26e0e946e7ffccfcea6d9d3de8dd1b232123659"
+  integrity sha512-cTFSCsg+E2hDEosh22GqUO2E6tHEYBWWxcjTY3MXyLeW9TLEMZ3CBMv7Cz+NreINtv0pqYHZ0yCCF+FYdOCerQ==
+
+"@linkdlab/funcnodes_react_flow@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@linkdlab/funcnodes_react_flow/-/funcnodes_react_flow-0.4.7.tgz#a11ba216fa5bfd807aa974aba9598daeb7151b82"
+  integrity sha512-ey4crvX8ByyzPguJLaOCkZaMQ8djEKGSaMBT1yQSCB10HRxjUR53qaJs1EfekjCgVtoDHiyG7aA4xkqY4Y0iXQ==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@emotion/styled" "^11.14.0"
@@ -1555,6 +1560,18 @@ alien-signals@^0.4.9:
   resolved "https://registry.yarnpkg.com/alien-signals/-/alien-signals-0.4.14.tgz#9ff8f72a272300a51692f54bd9bbbada78fbf539"
   integrity sha512-itUAVzhczTmP2U5yX67xVpsbbOiquusbWVyA9N+sy6+r6YVbFkahXvNCeEPWEOMhwDYwbVbGHFkVL03N9I5g+Q==
 
+allotment@^1.20.3:
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/allotment/-/allotment-1.20.3.tgz#5e3589e06adb8b726d613a97a37cdffbfc21e3ab"
+  integrity sha512-JCnklt7j0OsyDjD7A9AdT6wqJ3FSoo1ASV6w02Am02lo6NwO25yhG1DcWW8ueBV38ppXQmvrXBXuzX7iVkq6Tw==
+  dependencies:
+    classnames "^2.3.0"
+    eventemitter3 "^5.0.0"
+    lodash.clamp "^4.0.0"
+    lodash.debounce "^4.0.0"
+    lodash.isequal "^4.5.0"
+    use-resize-observer "^9.0.0"
+
 argparse@~1.0.9:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -1688,6 +1705,11 @@ classcat@^5.0.3:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/classcat/-/classcat-5.0.5.tgz#8c209f359a93ac302404a10161b501eba9c09c77"
   integrity sha512-JhZUT7JFcQy/EzW605k/ktHtncoo9vnyW/2GspNYwFlN1C/WmjuV/xtS04e9SOkL2sTdw0VAZ2UGCcQ9lR6p6w==
+
+classnames@^2.3.0:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
 
 clsx@^2.1.1:
   version "2.1.1"
@@ -1993,6 +2015,11 @@ estree-walker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
+
+eventemitter3@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
 
 exsolve@^1.0.1:
   version "1.0.4"
@@ -2315,6 +2342,21 @@ local-pkg@^1.0.0:
     mlly "^1.7.4"
     pkg-types "^2.0.1"
     quansync "^0.2.8"
+
+lodash.clamp@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.clamp/-/lodash.clamp-4.0.3.tgz#5c24bedeeeef0753560dc2b4cb4671f90a6ddfaa"
+  integrity sha512-HvzRFWjtcguTW7yd8NJBshuNaCa8aqNFtnswdT7f/cMd/1YKy5Zzoq4W/Oxvnx9l7aeY258uSdDfM793+eLsVg==
+
+lodash.debounce@^4.0.0:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
 
 lodash@~4.17.15:
   version "4.17.21"
@@ -2993,7 +3035,7 @@ postcss@^8.5.3:
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
-prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -3051,11 +3093,6 @@ react-json-view-lite@^2.4.1:
   resolved "https://registry.yarnpkg.com/react-json-view-lite/-/react-json-view-lite-2.4.1.tgz#0d06696a06aaf4a74e890302b76cf8cddcc45d60"
   integrity sha512-fwFYknRIBxjbFm0kBDrzgBy1xa5tDg2LyXXBepC5f1b+MY3BUClMCsvanMPn089JbV1Eg3nZcrp0VCuH43aXnA==
 
-react-lifecycles-compat@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
-
 react-markdown@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-10.1.0.tgz#e22bc20faddbc07605c15284255653c0f3bad5ca"
@@ -3111,22 +3148,6 @@ react-select@^5.10.1:
     prop-types "^15.6.0"
     react-transition-group "^4.3.0"
     use-isomorphic-layout-effect "^1.2.0"
-
-react-split-pane@^0.1.92:
-  version "0.1.92"
-  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.92.tgz#68242f72138aed95dd5910eeb9d99822c4fc3a41"
-  integrity sha512-GfXP1xSzLMcLJI5BM36Vh7GgZBpy+U/X0no+VM3fxayv+p1Jly5HpMofZJraeaMl73b3hvlr+N9zJKvLB/uz9w==
-  dependencies:
-    prop-types "^15.7.2"
-    react-lifecycles-compat "^3.0.4"
-    react-style-proptype "^3.2.2"
-
-react-style-proptype@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.2.2.tgz#d8e998e62ce79ec35b087252b90f19f1c33968a0"
-  integrity sha512-ywYLSjNkxKHiZOqNlso9PZByNEY+FTyh3C+7uuziK0xFXu9xzdyfHwg4S9iyiRRoPCR4k2LqaBBsWVmSBwCWYQ==
-  dependencies:
-    prop-types "^15.5.4"
 
 react-style-singleton@^2.2.2, react-style-singleton@^2.2.3:
   version "2.2.3"
@@ -3480,6 +3501,13 @@ use-isomorphic-layout-effect@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.2.0.tgz#afb292eb284c39219e8cb8d3d62d71999361a21d"
   integrity sha512-q6ayo8DWoPZT0VdG4u3D3uxcgONP3Mevx2i2b0434cwWBoL+aelL1DzkXI6w3PhTZzUeR2kaVlZn70iCiseP6w==
+
+use-resize-observer@^9.0.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/use-resize-observer/-/use-resize-observer-9.1.0.tgz#14735235cf3268569c1ea468f8a90c5789fc5c6c"
+  integrity sha512-R25VqO9Wb3asSD4eqtcxk8sJalvIOYBqS8MNZlpDSQ4l4xMQxC/J7Id9HoTqPq8FwULIn0PVW+OAqF2dyYbjow==
+  dependencies:
+    "@juggle/resize-observer" "^3.3.1"
 
 use-sidecar@^1.1.3:
   version "1.1.3"

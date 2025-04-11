@@ -12,7 +12,9 @@ import FuncnodesPyodideWorker from "@linkdlab/funcnodes_pyodide_react_flow";
 import pyodideDedicatedWorker from "./pyodideDedicatedWorker.mts?worker&inline";
 import pyodideSharedWorker from "./pyodideSharedWorker.mts?sharedworker&inline";
 import { Editor } from "@monaco-editor/react";
-import SplitPane from "react-split-pane";
+import { Allotment } from "allotment";
+import "allotment/dist/style.css";
+
 import {
   faCirclePlay,
   faCirclePause,
@@ -280,17 +282,16 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       }}
     >
       {fullprops.show_python_editor ? (
-        <SplitPane
-          split="vertical"
-          defaultSize={"50%"}
-          primary="second"
-          onDragFinished={() => {
+        <Allotment
+          vertical={false}
+          defaultSizes={[50, 50]}
+          onDragEnd={() => {
             fullprops.worker?._zustand?.center_all();
           }}
         >
           {funcnodes}
           <PyEditor state={state}></PyEditor>
-        </SplitPane>
+        </Allotment>
       ) : (
         funcnodes
       )}
