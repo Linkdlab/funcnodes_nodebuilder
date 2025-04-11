@@ -6,15 +6,20 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { latest_types, deep_update } from "@linkdlab/funcnodes_react_flow";
-import FuncNodes from "@linkdlab/funcnodes_react_flow";
+import { FuncNodes } from "@linkdlab/funcnodes_react_flow";
 import { create, UseBoundStore, StoreApi } from "zustand";
 import FuncnodesPyodideWorker from "@linkdlab/funcnodes_pyodide_react_flow";
-
-if (typeof global === "undefined" && typeof window !== "undefined") {
-  (window as any).global = window;
-}
-
-import Editor from "@monaco-editor/react";
+import pyodideDedicatedWorker from "./pyodideDedicatedWorker.mts?worker&inline";
+import pyodideSharedWorker from "./pyodideSharedWorker.mts?sharedworker&inline";
+import { Editor } from "@monaco-editor/react";
+import SplitPane from "react-split-pane";
+import {
+  faCirclePlay,
+  faCirclePause,
+  faGears,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./style.css";
 
 interface NodeBuilderOptions {
   id: string;
@@ -25,6 +30,7 @@ interface NodeBuilderOptions {
   worker?: FuncnodesPyodideWorker;
   webworker?: Worker | SharedWorker;
   index_url: string;
+  store_code: boolean;
   onload?: () => Promise<void>;
 }
 
@@ -34,18 +40,25 @@ const PyEditor = ({
   state: UseBoundStore<StoreApi<NodeBuilderOptions>>;
 }) => {
   // Destructure necessary values from the store.
-  const python_code = state.getState().python_code;
-  const python_code_error = state((s) => s.python_code_error);
+  const [code, setCode] = React.useState<string>(
+    state.getState().python_code || ""
+  );
 
+  const [continuous, setContinuous] = React.useState<boolean>(false);
+
+  const python_code_error = state((s) => s.python_code_error);
   const handleChange = (value?: string) => {
-    state.setState({ python_code: value || "" });
+    setCode(value || "");
+    if (continuous) {
+      state.setState({ python_code: value || "" });
+    }
   };
 
   return (
     <div
       style={{
-        minWidth: "300px",
-        maxWidth: "50%",
+        // minWidth: "300px",
+        // maxWidth: "50%",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -57,12 +70,45 @@ const PyEditor = ({
           theme="vs-dark"
           //   name={`python_editor_${id}`} // A unique name for the editor instance.
           onChange={handleChange}
-          value={python_code || ""}
+          value={code}
           //   editorProps={{ $blockScrolling: true }}
           //   setOptions={{ useWorker: false }} // Disables Ace's built-in worker if not needed.
           //   width="100%"
           //   height="400px"
         />
+        <div className="controll_icons">
+          {!continuous ? (
+            <>
+              <FontAwesomeIcon
+                className="controll_icon"
+                icon={faGears}
+                onClick={async () => {
+                  state.setState({ python_code: code });
+                }}
+                title="Run"
+              />
+              <FontAwesomeIcon
+                className="controll_icon"
+                icon={faCirclePlay}
+                onClick={async () => {
+                  setContinuous(true);
+                  state.setState({ python_code: code });
+                }}
+                title="Continuous run"
+              />
+            </>
+          ) : (
+            <FontAwesomeIcon
+              className="controll_icon"
+              icon={faCirclePause}
+              style={{ color: "orange" }}
+              onClick={async () => {
+                setContinuous(false);
+              }}
+              title="Pause continuous run"
+            />
+          )}
+        </div>
       </div>
 
       <code style={{ maxHeight: "50%", overflowY: "auto" }}>
@@ -77,6 +123,7 @@ const DEFAULTPROPS: NodeBuilderOptions = {
   id: undefined,
   show_python_editor: true,
   index_url: "",
+  store_code: true,
 };
 const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
   const { new_obj: fullprops } = deep_update(props, DEFAULTPROPS);
@@ -95,11 +142,20 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
 
   if (!fullprops.worker) {
     fullprops.worker = new FuncnodesPyodideWorker({
-      worker_url: fullprops.index_url + "pyodideDedicatedWorker.js",
       shared_worker: false,
       uuid: fullprops.id + "_worker",
-      worker: fullprops.webworker,
+      worker_classes: {
+        Dedicated: pyodideDedicatedWorker,
+        Shared: pyodideSharedWorker,
+      },
     });
+  }
+  // load python code from localstorage
+  if (fullprops.store_code) {
+    const code = localStorage.getItem(fullprops.id + "_python_code");
+    if (code) {
+      fullprops.python_code = code;
+    }
   }
 
   const state = create<NodeBuilderOptions>(() => ({
@@ -107,12 +163,23 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
   }));
 
   const evalnode = async () => {
+    // sore the python code in localstorage
+    const code = state.getState().python_code;
+    if (!code) {
+      return;
+    }
+    if (fullprops.store_code) {
+      localStorage.setItem(fullprops.id + "_python_code", code);
+    }
+    // if the python code is empty, return
+
     fullprops.worker?.postMessage({
       cmd: "worker:evalnode",
-      msg: state.getState().python_code,
+      msg: code,
       worker_id: fullprops.worker?.uuid,
       id: "evalnode",
     });
+    fullprops.worker?.stepwise_fullsync();
   };
 
   useEffect(() => {
@@ -121,10 +188,17 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       await fullprops.onload?.();
     });
 
+    const timeout1 = setInterval(async () => {
+      if (fullprops.worker?.ready) {
+        await evalnode();
+        await fullprops.onload?.();
+        clearInterval(timeout1);
+      }
+    }, 500);
+
     const remover2 = fullprops.worker?.add_hook(
       "node_mounted",
       async ({ worker, data }) => {
-        console.log("node_mounted", data);
         worker._zustand?.center_node(data);
         await new Promise((resolve) => setTimeout(resolve, 0));
         worker._zustand?.center_node(data);
@@ -168,6 +242,7 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       remover2?.();
       remover3?.();
       remover4?.();
+      clearInterval(timeout1);
     };
   });
 
@@ -178,6 +253,23 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
     }
   });
 
+  const funcnodes = (
+    <FuncNodes
+      worker={fullprops.worker}
+      id={fullprops.id}
+      useWorkerManager={false}
+      show_library={false}
+      header={{ show: false, showmenu: false }}
+      library={{ show: false }}
+      flow={{
+        minimap: false,
+        allowFullScreen: false,
+        allowExpand: false,
+        showNodeSettings: false,
+      }}
+    />
+  );
+
   return (
     <div
       style={{
@@ -187,21 +279,21 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
         width: "100%",
       }}
     >
-      <FuncNodes
-        worker={fullprops.worker}
-        id={fullprops.id}
-        useWorkerManager={false}
-        show_library={false}
-        header={{ show: false, showmenu: false }}
-        library={{ show: false }}
-        flow={{
-          minimap: false,
-          allowFullScreen: false,
-          allowExpand: false,
-          showNodeSettings: false,
-        }}
-      />
-      {fullprops.show_python_editor && <PyEditor state={state}></PyEditor>}
+      {fullprops.show_python_editor ? (
+        <SplitPane
+          split="vertical"
+          defaultSize={"50%"}
+          primary="second"
+          onDragFinished={() => {
+            fullprops.worker?._zustand?.center_all();
+          }}
+        >
+          {funcnodes}
+          <PyEditor state={state}></PyEditor>
+        </SplitPane>
+      ) : (
+        funcnodes
+      )}
     </div>
   );
 };

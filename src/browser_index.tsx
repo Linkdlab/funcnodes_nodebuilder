@@ -7,7 +7,7 @@ declare global {
 
 import * as React from "react";
 import { createRoot } from "react-dom/client";
-import "@linkdlab/funcnodes_react_flow/dist/style.css";
+import "@linkdlab/funcnodes_react_flow/dist/funcnodes_react_flow.css";
 import FuncnodesPyodideWorker from "@linkdlab/funcnodes_pyodide_react_flow";
 import NodeBuilder, { NodeBuilderOptions } from ".";
 

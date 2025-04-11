@@ -1,27 +1,28 @@
-import gself, {
+import {
+  gself,
   ExtendetSharedWorkerGlobalScope,
-  ExtendetWorkerGlobalScope,
-} from "@linkdlab/funcnodes_pyodide_react_flow/dist/worker/pyodideWorkerLayout";
-import { WorkerMessage } from "@linkdlab/funcnodes_pyodide_react_flow/dist/worker/pyodideWorkerLogic";
+  ExtendetDedicatedWorkerGlobalScope,
+  WorkerMessage,
+} from "@linkdlab/funcnodes_pyodide_react_flow/pyodideWebWorker";
+export * from "@linkdlab/funcnodes_pyodide_react_flow/pyodideWebWorker";
+// import { WorkerMessage } from "@linkdlab/funcnodes_pyodide_react_flow/dist/worker/pyodideWorkerLogic";
+import __PYCODE__ from "./nodebuilder.py?raw";
 
-declare const __PYCODE__: string;
-
-interface NodeBuilderSharedWorker {
+interface NodeBuilderCommonWorker {
   nodebuilder_post_pyodide_ready: (workerState: any) => Promise<void>;
 }
 
 interface DedicatedNodeBuilderdWorker
-  extends ExtendetWorkerGlobalScope,
-    NodeBuilderSharedWorker {}
+  extends ExtendetDedicatedWorkerGlobalScope,
+    NodeBuilderCommonWorker {}
 
 interface SharedNodeBuilderWorker
   extends ExtendetSharedWorkerGlobalScope,
-    NodeBuilderSharedWorker {}
+    NodeBuilderCommonWorker {}
 
-const nodebuilderself = gself as unknown as
+const nodebuilderself = gself as
   | DedicatedNodeBuilderdWorker
   | SharedNodeBuilderWorker;
-
 nodebuilderself.nodebuilder_post_pyodide_ready = async (workerState: any) => {
   workerState.pyodide.runPythonAsync(__PYCODE__);
 };
@@ -34,8 +35,21 @@ interface EvalNodeMessage extends WorkerMessage {
 nodebuilderself.register_cmd_message(
   "worker:evalnode",
   async (msg: EvalNodeMessage) => {
+    const code = msg.msg;
+    // find all "# requires" lines and extract the module names
+    const requires = code.match(/#\s*requires\s*(.*)/);
+    if (requires) {
+      const modules = requires[1]
+        .split(" ")
+        .map((mod) => mod.trim())
+        .filter((mod) => mod.length > 0);
+      for (const mod of modules) {
+        // load the module
+        await nodebuilderself.workerState.micropip.install(mod);
+      }
+    }
     const node = await nodebuilderself.workerState.pyodide?.runPythonAsync(
-      `eval_node_code(${JSON.stringify(msg.msg)})`
+      `eval_node_code(${JSON.stringify(code)})`
     );
     if (!node) {
       return;
@@ -49,11 +63,12 @@ nodebuilderself.register_cmd_message(
   }
 );
 
-export default nodebuilderself;
+export { nodebuilderself };
+
 export type {
-  NodeBuilderSharedWorker,
+  NodeBuilderCommonWorker as NodeBuilderSharedWorker,
   ExtendetSharedWorkerGlobalScope,
-  ExtendetWorkerGlobalScope,
+  ExtendetDedicatedWorkerGlobalScope,
   DedicatedNodeBuilderdWorker,
   SharedNodeBuilderWorker,
 };
