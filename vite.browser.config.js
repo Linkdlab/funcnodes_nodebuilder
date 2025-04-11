@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
       target: "es2020",
       cssCodeSplit: false, // disable CSS code splitting, css will be in a separate file
       assetsInlineLimit: 0, // disable inlining assets; output them as separate files
-      outDir: production ? `build` : `build/${production ? "prod" : "dev"}`, // output directory for the build
+      outDir: production ? `public` : `build/${production ? "prod" : "dev"}`, // output directory for the build
       lib: {
         entry: path.resolve(__dirname, "index.html"), // your library's entry point
         formats: ["iife", "es"], // output format
