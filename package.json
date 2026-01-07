@@ -11,14 +11,15 @@
     "dist"
   ],
   "scripts": {
-    "typecheck": "tsc --noEmit --watch",
+    "typecheck": "tsc --noEmit",
     "build": "vite build --config vite.browser.config.js && vite build && vite build --config vite.worker.config.js",
     "watch": "vite --config vite.browser.config.js",
-    "preview": "vite build --config vite.browser.config.js && vite preview --config vite.browser.config.js"
+    "preview": "vite build --config vite.browser.config.js && vite preview --config vite.browser.config.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "@linkdlab/funcnodes_pyodide_react_flow": "^2.0.0",
-    "@linkdlab/funcnodes_react_flow": "^2.1.2",
+    "@linkdlab/funcnodes_react_flow": "^2.2.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/uuid": "^11.0.0",
@@ -33,7 +34,7 @@
   },
   "peerDependencies": {
     "@linkdlab/funcnodes_pyodide_react_flow": "^2.0.0",
-    "@linkdlab/funcnodes_react_flow": "^2.1.2",
+    "@linkdlab/funcnodes_react_flow": "^2.2.1",
     "pyodide": "^0.29.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
