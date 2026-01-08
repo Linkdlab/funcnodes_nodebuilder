@@ -2,6 +2,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => {
   const production = mode === "production";
@@ -16,6 +21,9 @@ export default defineConfig(({ mode }) => {
       react(),
       // You can integrate rollup plugins (like replace) directly in Vite's Rollup options:
     ],
+    // Provide `/assets/...` files for bundled dependencies that reference them (e.g. pyodide workers).
+    // Synced by `scripts/sync_pyodide_workers.mjs` into `static/assets`.
+    publicDir: "static",
     base: "", // Set the base URL for the app (e.g., for deployment)
     define: {
       "process.env.NODE_ENV": JSON.stringify(mode),

@@ -12,8 +12,7 @@ import {
 } from "@linkdlab/funcnodes_react_flow";
 import { create, UseBoundStore, StoreApi } from "zustand";
 import FuncnodesPyodideWorker from "@linkdlab/funcnodes_pyodide_react_flow";
-import pyodideDedicatedWorker from "./pyodideDedicatedWorker.mts?worker&inline";
-import pyodideSharedWorker from "./pyodideSharedWorker.mts?sharedworker&inline";
+import { createWorkerFromData } from "./workerFactory.browser.ts";
 import { Editor } from "@monaco-editor/react";
 import { Allotment } from "allotment";
 import "allotment/dist/style.css";
@@ -41,6 +40,7 @@ interface NodeBuilderOptions {
   index_url: string;
   store_code: boolean;
   onload?: () => Promise<void>;
+  storage_object?: Record<string, any>;
 }
 
 const PyEditor = ({
@@ -143,6 +143,10 @@ const default_nodebuilder_options_factory: (
 
 const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
   const fullprops: NodeBuilderDefaultOptions = default_nodebuilder_options_factory(props);
+  const storage_object = props.storage_object;
+  if (storage_object !== undefined) {
+    storage_object["fullprops"] = fullprops;
+  }
 
   const has_node = fullprops.ser_node || fullprops.python_code;
 
@@ -157,82 +161,98 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
   }
   const id = fullprops.id;
 
-  if (!fullprops.worker) {
-    fullprops.worker = new FuncnodesPyodideWorker({
+  const workerRef = React.useRef<FuncnodesPyodideWorker | undefined>(
+    fullprops.worker
+  );
+  const ownsWorkerRef = React.useRef<boolean>(fullprops.worker === undefined);
+
+  if (!workerRef.current) {
+    const webworker = createWorkerFromData({
+      uuid: id + "_worker",
+      shared_worker: false,
+    });
+    workerRef.current = new FuncnodesPyodideWorker({
       shared_worker: false,
       uuid: id + "_worker",
-      worker_classes: {
-        Dedicated: pyodideDedicatedWorker,
-        Shared: pyodideSharedWorker,
-      },
+      worker: webworker,
     });
-  }
-  // load python code from localstorage
-  if (fullprops.store_code) {
-    const code = localStorage.getItem(id + "_python_code");
-    if (code) {
-      fullprops.python_code = code;
-    }
+    ownsWorkerRef.current = true;
   }
 
-  const state = create<NodeBuilderOptions>(() => ({
-    ...(fullprops as NodeBuilderOptions),
-    id,
-  }));
+  const worker = workerRef.current;
 
-  const evalnode = async () => {
-    // sore the python code in localstorage
-    const code = state.getState().python_code;
-    if (!code) {
-      return;
-    }
+  const initialPythonCodeRef = React.useRef<string | undefined>(undefined);
+  if (initialPythonCodeRef.current === undefined) {
+    // load python code from localstorage (one-time init)
+    let pythonCode = fullprops.python_code || "";
     if (fullprops.store_code) {
-      localStorage.setItem(id + "_python_code", code);
+      const code = localStorage.getItem(id + "_python_code");
+      if (code) {
+        pythonCode = code;
+      }
     }
-    // if the python code is empty, return
+    initialPythonCodeRef.current = pythonCode;
+  }
 
-    fullprops.worker?.postMessage({
-      cmd: "worker:evalnode",
-      msg: code,
-      worker_id: fullprops.worker?.uuid,
-      id: "evalnode",
-    });
-    fullprops.worker?.getSyncManager().stepwise_fullsync();
-  };
+  const stateRef = React.useRef<UseBoundStore<StoreApi<NodeBuilderOptions>> | null>(
+    null
+  );
+  if (!stateRef.current) {
+    stateRef.current = create<NodeBuilderOptions>(() => ({
+      ...(fullprops as NodeBuilderOptions),
+      id,
+      worker,
+      python_code: initialPythonCodeRef.current || "",
+    }));
+  }
+  const state = stateRef.current;
 
   useEffect(() => {
-    const remover1 = fullprops.worker
-      ?.getHookManager()
-      .add_hook("starting", async () => {
-        await evalnode();
-        await fullprops.onload?.();
+    const evalnode = async () => {
+      const code = state.getState().python_code;
+      if (!code) return;
+
+      if (state.getState().store_code) {
+        localStorage.setItem(id + "_python_code", code);
+      }
+
+      worker.postMessage({
+        cmd: "worker:evalnode",
+        msg: code,
+        worker_id: worker.uuid,
+        id: "evalnode",
       });
+      worker.getSyncManager().stepwise_fullsync();
+    };
+
+    const remover1 = worker.getHookManager().add_hook("starting", async () => {
+      await evalnode();
+      await state.getState().onload?.();
+    });
 
     const timeout1 = setInterval(async () => {
-      if (fullprops.worker?.ready) {
+      if (worker.ready) {
         await evalnode();
-        await fullprops.onload?.();
+        await state.getState().onload?.();
         clearInterval(timeout1);
       }
     }, 500);
 
-    const remover2 = fullprops.worker
-      ?.getHookManager()
-      .add_hook(
-        "node_mounted",
-        async ({ worker, data }: { worker: any; data: any }) => {
-          worker._zustand?.center_node(data);
-          await new Promise((resolve) => setTimeout(resolve, 0));
-          worker._zustand?.center_node(data);
-          await new Promise((resolve) => setTimeout(resolve, 10));
-          worker._zustand?.center_node(data);
-          await new Promise((resolve) => setTimeout(resolve, 100));
-          worker._zustand?.center_node(data);
-        }
-      );
+    const remover2 = worker.getHookManager().add_hook(
+      "node_mounted",
+      async ({ worker: w, data }: { worker: any; data: any }) => {
+        w._zustand?.center_node(data);
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        w._zustand?.center_node(data);
+        await new Promise((resolve) => setTimeout(resolve, 10));
+        w._zustand?.center_node(data);
+        await new Promise((resolve) => setTimeout(resolve, 100));
+        w._zustand?.center_node(data);
+      }
+    );
 
-    const remover3 = fullprops.worker
-      ?.getEventManager()
+    const remover3 = worker
+      .getEventManager()
       .add_ns_event_intercept("node_added", async (event: any) => {
         const node = event.data.node as any;
         if (!node) return event;
@@ -244,12 +264,8 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
         return event;
       });
 
-    const remover4 = fullprops.worker?.registerMessageHook(async (data) => {
-      if (!fullprops.worker) return;
-      if (
-        data.id === "evalnode" &&
-        data.original.worker_id === fullprops.worker.uuid
-      ) {
+    const remover4 = worker.registerMessageHook(async (data) => {
+      if (data.id === "evalnode" && data.original.worker_id === worker.uuid) {
         if (data.error) {
           state.setState({ python_code_error: data.error });
         } else {
@@ -258,25 +274,28 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       }
     });
 
+    const unsubscribe = state.subscribe((newstate, oldstate) => {
+      if (newstate.python_code !== oldstate.python_code) {
+        evalnode();
+      }
+    });
+
     return () => {
+      unsubscribe();
       remover1?.();
       remover2?.();
       remover3?.();
       remover4?.();
       clearInterval(timeout1);
+      if (ownsWorkerRef.current) {
+        (worker as any).dispose?.();
+      }
     };
-  });
-
-  // subscripbe to the python code changes
-  state.subscribe((newstate, oldstate) => {
-    if (newstate.python_code !== oldstate.python_code) {
-      evalnode();
-    }
-  });
+  }, [id, state, worker]);
 
   const funcnodes = (
     <FuncNodes
-      worker={fullprops.worker}
+      worker={worker}
       id={id}
       useWorkerManager={false}
       worker_url="dummy" // dummy url as the current implementation requires one (will be removed in the next release of funcnodes_react_flow)
@@ -306,7 +325,7 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
           vertical={false}
           defaultSizes={[50, 50]}
           onDragEnd={() => {
-            fullprops.worker?._zustand?.center_all();
+            worker?._zustand?.center_all();
           }}
         >
           {funcnodes}

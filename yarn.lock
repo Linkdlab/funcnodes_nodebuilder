@@ -843,7 +843,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@linkdlab/funcnodes_nodebuilder@workspace:."
   dependencies:
-    "@linkdlab/funcnodes_pyodide_react_flow": "npm:^2.0.0"
+    "@linkdlab/funcnodes_pyodide_react_flow": "npm:^2.0.1-a0"
     "@linkdlab/funcnodes_react_flow": "npm:^2.2.1"
     "@monaco-editor/react": "npm:^4.7.0"
     "@types/react": "npm:^19.2.7"
@@ -860,7 +860,7 @@ __metadata:
     vite: "npm:^7.3.0"
     vite-plugin-dts: "npm:^4.5.4"
   peerDependencies:
-    "@linkdlab/funcnodes_pyodide_react_flow": ^2.0.0
+    "@linkdlab/funcnodes_pyodide_react_flow": ^2.0.1-a0
     "@linkdlab/funcnodes_react_flow": ^2.2.1
     pyodide: ^0.29.0
     react: ^19.2.3
@@ -868,15 +868,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@linkdlab/funcnodes_pyodide_react_flow@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@linkdlab/funcnodes_pyodide_react_flow@npm:2.0.0"
+"@linkdlab/funcnodes_pyodide_react_flow@npm:^2.0.1-a0":
+  version: 2.0.1-a0
+  resolution: "@linkdlab/funcnodes_pyodide_react_flow@npm:2.0.1-a0"
   peerDependencies:
     "@linkdlab/funcnodes_react_flow": ^2.2.1
     pyodide: ^0.29.0
     react: ^19.2.3
     react-dom: ^19.2.3
-  checksum: 10c0/0a7313c060db2adf256da52b32feb112c91aecd55e697b2a344ead532b92680126ca021f7d11e74cbd948e7b0aca8e2d3be090c5f8b9747d4596130888702408
+  checksum: 10c0/b85227a03cec34853c6e87f373ce7e1f1be2453747a7ac67ce219ae35b422214a46b0df9b45da89e85a664b55d056cbf145c9d3eb2992d5868807ba58a4baf0a
   languageName: node
   linkType: hard
 

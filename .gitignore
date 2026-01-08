@@ -9,3 +9,7 @@ wheels/
 # Virtual environments
 .venv
 node_modules
+
+# Demo build + generated worker assets
+static/assets/
+tests/.tmp/

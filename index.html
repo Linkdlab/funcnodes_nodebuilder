@@ -24,7 +24,7 @@
       // wait till window is loaded
       window.onload = async function() {
 
-        NodeBuilder("root",{
+        window.builder = NodeBuilder("root",{
           python_code: `
 # requires numpy
 import funcnodes as fn
