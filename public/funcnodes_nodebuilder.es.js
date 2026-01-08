@@ -29225,7 +29225,7 @@ gB.displayName = hB;
 function h4(e) {
   return e ? "open" : "closed";
 }
-var vB = "DialogTitleWarning", [UGe, yB] = Loe(vB, {
+var vB = "DialogTitleWarning", [WGe, yB] = Loe(vB, {
   contentName: Pm,
   titleName: m4,
   docsSlug: "dialog"
@@ -43275,22 +43275,22 @@ Ar.getAdapter = LH.getAdapter;
 Ar.HttpStatusCode = y3;
 Ar.default = Ar;
 const {
-  Axios: VGe,
-  AxiosError: HGe,
-  CanceledError: WGe,
-  isCancel: qGe,
-  CancelToken: GGe,
-  VERSION: KGe,
-  all: YGe,
-  Cancel: XGe,
-  isAxiosError: JGe,
-  spread: QGe,
-  toFormData: ZGe,
-  AxiosHeaders: eKe,
-  HttpStatusCode: tKe,
-  formToJSON: nKe,
-  getAdapter: rKe,
-  mergeConfig: oKe
+  Axios: qGe,
+  AxiosError: GGe,
+  CanceledError: KGe,
+  isCancel: YGe,
+  CancelToken: XGe,
+  VERSION: JGe,
+  all: QGe,
+  Cancel: ZGe,
+  isAxiosError: eKe,
+  spread: tKe,
+  toFormData: nKe,
+  AxiosHeaders: rKe,
+  HttpStatusCode: oKe,
+  formToJSON: aKe,
+  getAdapter: iKe,
+  mergeConfig: sKe
 } = Ar;
 class VH extends Q4 {
   constructor(t) {
@@ -73538,7 +73538,7 @@ var F6e = "MenuAnchor", IP = M.forwardRef(
   }
 );
 IP.displayName = F6e;
-var B6e = "MenuPortal", [aKe, tX] = lh(B6e, {
+var B6e = "MenuPortal", [lKe, tX] = lh(B6e, {
   forceMount: void 0
 }), Wi = "MenuContent", [U6e, $P] = lh(Wi), nX = M.forwardRef(
   (e, t) => {
@@ -85431,7 +85431,7 @@ const LF = (e) => {
   } catch {
     return !1;
   }
-}, UJ = '(function(){"use strict";const p="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.mjs",e=self;e.workerState={pyodide:null,pyodide_url:p,packages:[],state:{msg:"loading",loaded:!1,progress:0},micropip:null,worker:{},pyodideReady:!1,pyodideReadyPromise:null,debug:!1,interruptBuffer:null,receivepy:(r,t)=>{},receivepy_bytes:(r,t)=>{},handel_register:{},post_pyodide_ready:void 0},e.reset=async()=>{for(const r in e.list_workers())try{const t=await e.get_worker(r);t.worker&&t.worker.stop(),t.reject_promise?.("Worker reset")}catch{}e.workerState.pyodide&&e.interrupt(),e.workerState.pyodide=null,e.workerState.micropip=null,e.workerState.worker={},e.workerState.pyodideReady=!1;try{e.workerState.interruptBuffer=new Uint8Array(new SharedArrayBuffer(1)),e.workerState.interruptBuffer[0]=0}catch{}},e.initializePyodide=async()=>{if(!e.workerState.pyodide){console.log("initializePyodide with: Debug:",e.workerState.debug,"Pyodide URL:",e.workerState.pyodide_url,"Packages:",e.workerState.packages),console.debug("Loading Pyodide..."),e.workerState.state.msg="Loading Pyodide...",e.workerState.state.progress=0,await e.reset(),console.debug("Loading Pyodide module..."),e.workerState.state.msg="Loading Pyodide module...",e.workerState.state.progress=.1;const r=await import(e.workerState.pyodide_url);console.debug("Loading Pyodide instance..."),e.workerState.state.msg="Loading Pyodide instance...",e.workerState.state.progress=.2;const t=r.loadPyodide,o=new URL(e.workerState.pyodide_url),n=new URL(".",o).toString();e.workerState.debug&&console.debug("Pyodide indexURL:",n),e.workerState.pyodide=await t({packages:["micropip"],indexURL:n}),e.workerState.interruptBuffer&&e.workerState.pyodide.setInterruptBuffer(e.workerState.interruptBuffer)}e.workerState.micropip||(console.debug("Importing micropip..."),e.workerState.state.msg="Importing micropip...",e.workerState.state.progress=.3,e.workerState.micropip=e.workerState.pyodide.pyimport("micropip")),console.debug("Pyodide ready. Installing funcnodes...");for(const r of e.workerState.packages)console.log("Installing package:",r),e.workerState.state.msg=`Installing package: ${r}`,await e.workerState.micropip.install(r);return e.workerState.state.msg="Installing funcnodes",e.workerState.state.progress=.8,await e.workerState.micropip.install("funcnodes"),e.workerState.state.msg="Installing funcnodes-worker",await e.workerState.micropip.install("funcnodes-worker"),e.workerState.packages.some(r=>r.toLowerCase().endsWith(".whl")&&r.includes("funcnodes_pyodide"))?e.workerState.debug&&console.debug("Skipping PyPI funcnodes-pyodide install (wheel provided in packages)"):(e.workerState.state.msg="Installing funcnodes-pyodide",await e.workerState.micropip.install("funcnodes-pyodide")),e.workerState.state.msg="Installing funcnodes-react-flow",await e.workerState.micropip.install("funcnodes-react-flow"),e.workerState.state.msg="Importing funcnodes",console.debug("Importing funcnodes..."),await e.workerState.pyodide.runPythonAsync("import funcnodes_pyodide"),console.debug("Running post_pyodide_ready..."),await e.workerState.post_pyodide_ready?.(e.workerState),console.debug("Pyodide ready"),e.workerState.state.msg="ready",e.workerState.state.progress=.1,e.workerState.pyodideReady=!0,{pyodide:e.workerState.pyodide,micropip:e.workerState.micropip}},e.interrupt=()=>{e.workerState.interruptBuffer&&(e.workerState.interruptBuffer[0]=1)},e.list_workers=()=>Object.keys(e.workerState.worker),e.get_worker=async r=>{if(!r)throw new Error("Worker id is required");if(!e.workerState.worker[r])throw new Error(`Worker with id ${r} not found`);return await e.workerState.worker[r].make_promise,e.workerState.worker[r]},e.has_worker=r=>{if(!r)throw new Error("Worker id is required");return!!e.workerState.worker[r]},e.get_or_create_worker=async r=>{if(!r)throw new Error("Worker id is required");return e.workerState.worker[r]||(console.log("Creating worker with id",r),await e.initializeFuncNodesWorker(r)),e.get_worker(r)},e.initializeFuncNodesWorker=async r=>{try{if(!e.workerState.pyodideReadyPromise)throw new Error("Pyodide newer initialized");const{pyodide:t}=await e.workerState.pyodideReadyPromise;if(!e.has_worker(r)){e.workerState.worker[r]={worker:null,make_promise:void 0};const o=new Promise(async(n,s)=>{e.workerState.worker[r].reject_promise=s,console.debug(`Creating worker (${r})...`);const i=await t.runPythonAsync(`funcnodes_pyodide.new_worker(debug=${e.workerState.debug?1:0}, uuid="${r}")`);if(console.debug("Worker created:",i),typeof i.set_receiver=="function")i.set_receiver(self);else throw new Error("Worker does not expose a \'set_receiver\' method.");e.workerState.worker[r].worker=i,console.debug("Worker ready"),n(i)});e.workerState.worker[r].make_promise=o}return e.get_worker(r)}catch(t){throw console.error("Error during worker initialization:",t),t}},e.receivepy=(r,t)=>{try{let o={};if(typeof r=="string"?o.msg=r:o=r,o.msg===void 0)return;typeof o.msg!="string"&&(o.msg=JSON.stringify(o.msg)),t!==void 0&&(typeof t=="string"?o.worker_id||(o.worker_id=t):o={...t,...o});const n=o.worker_id;if(!n)throw new Error(`Worker id not provided in receivepy(${JSON.stringify(o)})`);if(!e.workerState.worker[n])throw new Error(`Worker with id ${n} not found in receivepy(${JSON.stringify(o)})`);e.workerState.receivepy(r,n)}catch(o){console.error("Error during receivepy:",o);return}},e.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!e.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);e.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s);return}},e.startInitialization=({debug:r=!1,receivepy:t,receivepy_bytes:o,pyodide_url:n,post_pyodide_ready:s,packages:i})=>(e.workerState.debug=r,e.workerState.pyodide_url=n||p,e.workerState.packages=i,e.workerState.receivepy=t,e.workerState.receivepy_bytes=o,e.workerState.pyodideReadyPromise=null,e.workerState.post_pyodide_ready=s,e.workerState),e.register_cmd_message=(r,t)=>{if(e.workerState.handel_register[r])throw new Error(`Command ${r} already registered`);e.workerState.handel_register[r]=t},e.register_cmd_message("ping",async r=>"pong"),e.register_cmd_message("init",async r=>{if(e.workerState.pyodideReadyPromise)throw new Error("Pyodide is already initialized");r.data&&(r.data.pyodide_url&&(e.workerState.pyodide_url=r.data.pyodide_url),r.data.packages&&(e.workerState.packages=r.data.packages),r.data.debug&&(e.workerState.debug=r.data.debug)),e.workerState.pyodideReadyPromise=e.initializePyodide()}),e.register_cmd_message("_eval",async r=>{try{const t=await e.workerState.pyodide?.runPythonAsync(r.msg||"print(\'No code provided\')");return console.log("Eval result:",t),t}catch(t){console.error("Error during _eval:",t)}}),e.register_cmd_message("state",async r=>({state:{...e.workerState.state,loaded:e.workerState.pyodideReady}})),e.register_cmd_message("worker:state",async r=>({state:{loaded:!!(await e.get_or_create_worker(r.worker_id)).worker}})),e.register_cmd_message("worker:stop",async r=>{if(!e.has_worker(r.worker_id))return;const t=await e.get_or_create_worker(r.worker_id);return t.worker&&(t.worker.stop(),t.worker=null,t.reject_promise?.("Worker stopped")),delete e.workerState.worker[r.worker_id],{state:{loaded:!1}}}),e.register_cmd_message("worker:send",async r=>{const t=await e.get_or_create_worker(r.worker_id);if(!t.worker)throw new Error("Worker is not initialized");if(typeof t.worker.receivejs!="function")throw new Error(`Worker does not support receivejs: ${typeof t.worker.receivejs}`);t.worker.receivejs(r.msg)}),e.handleMessage=async r=>{const t={original:r};r.id&&(t.id=r.id),r.toJs===void 0&&(r.toJs=!0);try{if(r.cmd){const o=r;if(e.workerState.handel_register[o.cmd])t.result=await e.workerState.handel_register[o.cmd](o);else throw new Error("Unknown command: "+o.cmd)}else throw new Error("Unknown message format: "+JSON.stringify(r))}catch(o){t.error=o.message}return t},e.read_url_params=()=>{const r=new URLSearchParams(self.location.search),t=r.get("debug")?.toLowerCase()==="true",o=r.get("pyodide_url")||void 0,n=r.get("packages")?.split(",")||[];return{debug:t,pyodide_url:o,packages:n}};const k=r=>{const t=new Set;return{add:o=>{t.add(o)},disconnect:o=>{t.delete(o)&&t.size===0&&r()},forEach:o=>{t.forEach(o)},size:()=>t.size}},w=e;w.general_initalization=r=>{const t=w.read_url_params();w.startInitialization({...r,...t})};const l=w,g=w;g.init_dedicated_worker=r=>{const t=e;t.onmessage=async n=>{const s=n.data,i=await t.handleMessage(s);t.postMessage(i)};const o={...r,receivepy:(n,s)=>{t.postMessage({cmd:"receive",msg:n,worker_id:s})},receivepy_bytes(n,s){t.postMessage({cmd:"receive_bytes",msg:n,worker_id:s})}};t.general_initalization(o)},l.init_shared_worker=r=>{const t=e,o=k(()=>{try{t.close()}catch{}});t.connectedPorts=[],t.onconnect=s=>{const i=s.ports[0];t.connectedPorts.push(i),o.add(i),i.start(),console.debug("Port connected in shared worker"),i.onmessage=async a=>{const d=a.data;if(d?.cmd==="disconnect"){o.disconnect(i),t.connectedPorts=t.connectedPorts.filter(m=>m!==i);try{i.onmessage=null}catch{}try{i.close()}catch{}return}const y=await t.handleMessage(d);i.postMessage(y)}};const n={...r,receivepy:(s,i)=>{o.forEach(a=>{a.postMessage({cmd:"receive",msg:s,worker_id:i})})},receivepy_bytes(s,i){o.forEach(a=>{a.postMessage({cmd:"receive_bytes",msg:s,worker_id:i})})}};t.general_initalization(n)};const u=r=>{w.init_dedicated_worker(r)};var _=`from __future__ import annotations\\r\nimport funcnodes_core as fn\\r\n\\r\nfn.node.ALLOW_REGISTERED_NODES_OVERRIDE = True\\r\n\\r\n\\r\ndef eval_node_code(code: str):\\r\n    ns = {}  # dedicated namespace acting as globals\\r\n    exec(code, ns)\\r\n    _node = [\\r\n        cls\\r\n        for name, cls in ns.items()\\r\n        if isinstance(cls, type) and issubclass(cls, fn.Node)\\r\n    ][-1]\\r\n    return _node\\r\n`;function f(r){if(typeof r!="string"||!r.length)return[];const t=[],o=new Set,n=r.split(/\\r?\\n/);for(const s of n){const i=s.match(/^\\s*#\\s*requires\\b\\s*:?\\s*(.*)$/i);if(!i)continue;const a=(i[1]??"").trim();if(a)for(const d of a.split(/[,\\s]+/)){const y=d.trim();y&&(o.has(y)||(o.add(y),t.push(y)))}}return t}const c=w;c.nodebuilder_post_pyodide_ready=async r=>{await r.pyodide.runPythonAsync(_)},c.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!c.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);c.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s)}},c.register_cmd_message("worker:evalnode",async r=>{const t=r.msg;console.log("evalnode",t);const o=f(t);console.log("requires",o);for(const i of o)await c.workerState.micropip.install(i);const n=await c.workerState.pyodide?.runPythonAsync(`eval_node_code(${JSON.stringify(t)})`);if(!n)return;const s=await c.get_or_create_worker(r.worker_id);s.worker.clear(),s.worker.nodespace.lib.add_node(n,"demo"),s.worker.add_node(n.node_id)}),u({post_pyodide_ready:c.nodebuilder_post_pyodide_ready})})();\n', FF = typeof self < "u" && self.Blob && new Blob(["(self.URL || self.webkitURL).revokeObjectURL(self.location.href);", UJ], { type: "text/javascript;charset=utf-8" });
+}, UJ = '(function(){"use strict";const p="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.mjs",e=self;e.workerState={pyodide:null,pyodide_url:p,packages:[],state:{msg:"loading",loaded:!1,progress:0},micropip:null,worker:{},pyodideReady:!1,pyodideReadyPromise:null,debug:!1,interruptBuffer:null,receivepy:(r,t)=>{},receivepy_bytes:(r,t)=>{},handel_register:{},post_pyodide_ready:void 0},e.reset=async()=>{for(const r in e.list_workers())try{const t=await e.get_worker(r);t.worker&&t.worker.stop(),t.reject_promise?.("Worker reset")}catch{}e.workerState.pyodide&&e.interrupt(),e.workerState.pyodide=null,e.workerState.micropip=null,e.workerState.worker={},e.workerState.pyodideReady=!1;try{e.workerState.interruptBuffer=new Uint8Array(new SharedArrayBuffer(1)),e.workerState.interruptBuffer[0]=0}catch{}},e.initializePyodide=async()=>{if(!e.workerState.pyodide){console.log("initializePyodide with: Debug:",e.workerState.debug,"Pyodide URL:",e.workerState.pyodide_url,"Packages:",e.workerState.packages),console.debug("Loading Pyodide..."),e.workerState.state.msg="Loading Pyodide...",e.workerState.state.progress=0,await e.reset(),console.debug("Loading Pyodide module..."),e.workerState.state.msg="Loading Pyodide module...",e.workerState.state.progress=.1;const r=await import(e.workerState.pyodide_url);console.debug("Loading Pyodide instance..."),e.workerState.state.msg="Loading Pyodide instance...",e.workerState.state.progress=.2;const t=r.loadPyodide,o=new URL(e.workerState.pyodide_url),n=new URL(".",o).toString();e.workerState.debug&&console.debug("Pyodide indexURL:",n),e.workerState.pyodide=await t({packages:["micropip"],indexURL:n}),e.workerState.interruptBuffer&&e.workerState.pyodide.setInterruptBuffer(e.workerState.interruptBuffer)}e.workerState.micropip||(console.debug("Importing micropip..."),e.workerState.state.msg="Importing micropip...",e.workerState.state.progress=.3,e.workerState.micropip=e.workerState.pyodide.pyimport("micropip")),console.debug("Pyodide ready. Installing funcnodes...");for(const r of e.workerState.packages)console.log("Installing package:",r),e.workerState.state.msg=`Installing package: ${r}`,await e.workerState.micropip.install(r);return e.workerState.state.msg="Installing funcnodes",e.workerState.state.progress=.8,await e.workerState.micropip.install("funcnodes"),e.workerState.state.msg="Installing funcnodes-worker",await e.workerState.micropip.install("funcnodes-worker"),e.workerState.packages.some(r=>r.toLowerCase().endsWith(".whl")&&r.includes("funcnodes_pyodide"))?e.workerState.debug&&console.debug("Skipping PyPI funcnodes-pyodide install (wheel provided in packages)"):(e.workerState.state.msg="Installing funcnodes-pyodide",await e.workerState.micropip.install("funcnodes-pyodide")),e.workerState.state.msg="Installing funcnodes-react-flow",await e.workerState.micropip.install("funcnodes-react-flow"),e.workerState.state.msg="Importing funcnodes",console.debug("Importing funcnodes..."),await e.workerState.pyodide.runPythonAsync("import funcnodes_pyodide"),console.debug("Running post_pyodide_ready..."),await e.workerState.post_pyodide_ready?.(e.workerState),console.debug("Pyodide ready"),e.workerState.state.msg="ready",e.workerState.state.progress=.1,e.workerState.pyodideReady=!0,{pyodide:e.workerState.pyodide,micropip:e.workerState.micropip}},e.interrupt=()=>{e.workerState.interruptBuffer&&(e.workerState.interruptBuffer[0]=1)},e.list_workers=()=>Object.keys(e.workerState.worker),e.get_worker=async r=>{if(!r)throw new Error("Worker id is required");if(!e.workerState.worker[r])throw new Error(`Worker with id ${r} not found`);return await e.workerState.worker[r].make_promise,e.workerState.worker[r]},e.has_worker=r=>{if(!r)throw new Error("Worker id is required");return!!e.workerState.worker[r]},e.get_or_create_worker=async r=>{if(!r)throw new Error("Worker id is required");return e.workerState.worker[r]||(console.log("Creating worker with id",r),await e.initializeFuncNodesWorker(r)),e.get_worker(r)},e.initializeFuncNodesWorker=async r=>{try{if(!e.workerState.pyodideReadyPromise)throw new Error("Pyodide newer initialized");const{pyodide:t}=await e.workerState.pyodideReadyPromise;if(!e.has_worker(r)){e.workerState.worker[r]={worker:null,make_promise:void 0};const o=new Promise(async(n,s)=>{e.workerState.worker[r].reject_promise=s,console.debug(`Creating worker (${r})...`);const i=await t.runPythonAsync(`funcnodes_pyodide.new_worker(debug=${e.workerState.debug?1:0}, uuid="${r}")`);if(console.debug("Worker created:",i),typeof i.set_receiver=="function")i.set_receiver(self);else throw new Error("Worker does not expose a \'set_receiver\' method.");e.workerState.worker[r].worker=i,console.debug("Worker ready"),n(i)});e.workerState.worker[r].make_promise=o}return e.get_worker(r)}catch(t){throw console.error("Error during worker initialization:",t),t}},e.receivepy=(r,t)=>{try{let o={};if(typeof r=="string"?o.msg=r:o=r,o.msg===void 0)return;typeof o.msg!="string"&&(o.msg=JSON.stringify(o.msg)),t!==void 0&&(typeof t=="string"?o.worker_id||(o.worker_id=t):o={...t,...o});const n=o.worker_id;if(!n)throw new Error(`Worker id not provided in receivepy(${JSON.stringify(o)})`);if(!e.workerState.worker[n])throw new Error(`Worker with id ${n} not found in receivepy(${JSON.stringify(o)})`);e.workerState.receivepy(r,n)}catch(o){console.error("Error during receivepy:",o);return}},e.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!e.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);e.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s);return}},e.startInitialization=({debug:r=!1,receivepy:t,receivepy_bytes:o,pyodide_url:n,post_pyodide_ready:s,packages:i})=>(e.workerState.debug=r,e.workerState.pyodide_url=n||p,e.workerState.packages=i,e.workerState.receivepy=t,e.workerState.receivepy_bytes=o,e.workerState.pyodideReadyPromise=null,e.workerState.post_pyodide_ready=s,e.workerState),e.register_cmd_message=(r,t)=>{if(e.workerState.handel_register[r])throw new Error(`Command ${r} already registered`);e.workerState.handel_register[r]=t},e.register_cmd_message("ping",async r=>"pong"),e.register_cmd_message("init",async r=>{if(e.workerState.pyodideReadyPromise)throw new Error("Pyodide is already initialized");r.data&&(r.data.pyodide_url&&(e.workerState.pyodide_url=r.data.pyodide_url),r.data.packages&&(e.workerState.packages=r.data.packages),r.data.debug&&(e.workerState.debug=r.data.debug)),e.workerState.pyodideReadyPromise=e.initializePyodide()}),e.register_cmd_message("_eval",async r=>{try{const t=await e.workerState.pyodide?.runPythonAsync(r.msg||"print(\'No code provided\')");return console.log("Eval result:",t),t}catch(t){console.error("Error during _eval:",t)}}),e.register_cmd_message("state",async r=>({state:{...e.workerState.state,loaded:e.workerState.pyodideReady}})),e.register_cmd_message("worker:state",async r=>({state:{loaded:!!(await e.get_or_create_worker(r.worker_id)).worker}})),e.register_cmd_message("worker:stop",async r=>{if(!e.has_worker(r.worker_id))return;const t=await e.get_or_create_worker(r.worker_id);return t.worker&&(t.worker.stop(),t.worker=null,t.reject_promise?.("Worker stopped")),delete e.workerState.worker[r.worker_id],{state:{loaded:!1}}}),e.register_cmd_message("worker:send",async r=>{const t=await e.get_or_create_worker(r.worker_id);if(!t.worker)throw new Error("Worker is not initialized");if(typeof t.worker.receivejs!="function")throw new Error(`Worker does not support receivejs: ${typeof t.worker.receivejs}`);t.worker.receivejs(r.msg)}),e.handleMessage=async r=>{const t={original:r};r.id&&(t.id=r.id),r.toJs===void 0&&(r.toJs=!0);try{if(r.cmd){const o=r;if(e.workerState.handel_register[o.cmd])t.result=await e.workerState.handel_register[o.cmd](o);else throw new Error("Unknown command: "+o.cmd)}else throw new Error("Unknown message format: "+JSON.stringify(r))}catch(o){t.error=o.message}return t},e.read_url_params=()=>{const r=new URLSearchParams(self.location.search),t=r.get("debug")?.toLowerCase()==="true",o=r.get("pyodide_url")||void 0,n=r.get("packages")?.split(",")||[];return{debug:t,pyodide_url:o,packages:n}};const k=r=>{const t=new Set;return{add:o=>{t.add(o)},disconnect:o=>{t.delete(o)&&t.size===0&&r()},forEach:o=>{t.forEach(o)},size:()=>t.size}},w=e;w.general_initalization=r=>{const t=w.read_url_params();w.startInitialization({...r,...t})};const l=w,g=w;g.init_dedicated_worker=r=>{const t=e;t.onmessage=async n=>{const s=n.data,i=await t.handleMessage(s);t.postMessage(i)};const o={...r,receivepy:(n,s)=>{t.postMessage({cmd:"receive",msg:n,worker_id:s})},receivepy_bytes(n,s){t.postMessage({cmd:"receive_bytes",msg:n,worker_id:s})}};t.general_initalization(o)},l.init_shared_worker=r=>{const t=e,o=k(()=>{try{t.close()}catch{}});t.connectedPorts=[],t.onconnect=s=>{const i=s.ports[0];t.connectedPorts.push(i),o.add(i),i.start(),console.debug("Port connected in shared worker"),i.onmessage=async a=>{const d=a.data;if(d?.cmd==="disconnect"){o.disconnect(i),t.connectedPorts=t.connectedPorts.filter(m=>m!==i);try{i.onmessage=null}catch{}try{i.close()}catch{}return}const y=await t.handleMessage(d);i.postMessage(y)}};const n={...r,receivepy:(s,i)=>{o.forEach(a=>{a.postMessage({cmd:"receive",msg:s,worker_id:i})})},receivepy_bytes(s,i){o.forEach(a=>{a.postMessage({cmd:"receive_bytes",msg:s,worker_id:i})})}};t.general_initalization(n)};const u=r=>{w.init_dedicated_worker(r)};var _=`from __future__ import annotations\nimport funcnodes_core as fn\n\nfn.node.ALLOW_REGISTERED_NODES_OVERRIDE = True\n\n\ndef eval_node_code(code: str):\n    ns = {}  # dedicated namespace acting as globals\n    exec(code, ns)\n    _node = [\n        cls\n        for name, cls in ns.items()\n        if isinstance(cls, type) and issubclass(cls, fn.Node)\n    ][-1]\n    return _node\n`;function f(r){if(typeof r!="string"||!r.length)return[];const t=[],o=new Set,n=r.split(/\\r?\\n/);for(const s of n){const i=s.match(/^\\s*#\\s*requires\\b\\s*:?\\s*(.*)$/i);if(!i)continue;const a=(i[1]??"").trim();if(a)for(const d of a.split(/[,\\s]+/)){const y=d.trim();y&&(o.has(y)||(o.add(y),t.push(y)))}}return t}const c=w;c.nodebuilder_post_pyodide_ready=async r=>{await r.pyodide.runPythonAsync(_)},c.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!c.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);c.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s)}},c.register_cmd_message("worker:evalnode",async r=>{const t=r.msg;console.log("evalnode",t);const o=f(t);console.log("requires",o);for(const i of o)await c.workerState.micropip.install(i);const n=await c.workerState.pyodide?.runPythonAsync(`eval_node_code(${JSON.stringify(t)})`);if(!n)return;const s=await c.get_or_create_worker(r.worker_id);s.worker.clear(),s.worker.nodespace.lib.add_node(n,"demo"),s.worker.add_node(n.node_id)}),u({post_pyodide_ready:c.nodebuilder_post_pyodide_ready})})();\n', FF = typeof self < "u" && self.Blob && new Blob(["(self.URL || self.webkitURL).revokeObjectURL(self.location.href);", UJ], { type: "text/javascript;charset=utf-8" });
 function BF(e) {
   let t;
   try {
@@ -85451,7 +85451,7 @@ function BF(e) {
     );
   }
 }
-const SUe = '(function(){"use strict";const p="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.mjs",e=self;e.workerState={pyodide:null,pyodide_url:p,packages:[],state:{msg:"loading",loaded:!1,progress:0},micropip:null,worker:{},pyodideReady:!1,pyodideReadyPromise:null,debug:!1,interruptBuffer:null,receivepy:(r,t)=>{},receivepy_bytes:(r,t)=>{},handel_register:{},post_pyodide_ready:void 0},e.reset=async()=>{for(const r in e.list_workers())try{const t=await e.get_worker(r);t.worker&&t.worker.stop(),t.reject_promise?.("Worker reset")}catch{}e.workerState.pyodide&&e.interrupt(),e.workerState.pyodide=null,e.workerState.micropip=null,e.workerState.worker={},e.workerState.pyodideReady=!1;try{e.workerState.interruptBuffer=new Uint8Array(new SharedArrayBuffer(1)),e.workerState.interruptBuffer[0]=0}catch{}},e.initializePyodide=async()=>{if(!e.workerState.pyodide){console.log("initializePyodide with: Debug:",e.workerState.debug,"Pyodide URL:",e.workerState.pyodide_url,"Packages:",e.workerState.packages),console.debug("Loading Pyodide..."),e.workerState.state.msg="Loading Pyodide...",e.workerState.state.progress=0,await e.reset(),console.debug("Loading Pyodide module..."),e.workerState.state.msg="Loading Pyodide module...",e.workerState.state.progress=.1;const r=await import(e.workerState.pyodide_url);console.debug("Loading Pyodide instance..."),e.workerState.state.msg="Loading Pyodide instance...",e.workerState.state.progress=.2;const t=r.loadPyodide,o=new URL(e.workerState.pyodide_url),n=new URL(".",o).toString();e.workerState.debug&&console.debug("Pyodide indexURL:",n),e.workerState.pyodide=await t({packages:["micropip"],indexURL:n}),e.workerState.interruptBuffer&&e.workerState.pyodide.setInterruptBuffer(e.workerState.interruptBuffer)}e.workerState.micropip||(console.debug("Importing micropip..."),e.workerState.state.msg="Importing micropip...",e.workerState.state.progress=.3,e.workerState.micropip=e.workerState.pyodide.pyimport("micropip")),console.debug("Pyodide ready. Installing funcnodes...");for(const r of e.workerState.packages)console.log("Installing package:",r),e.workerState.state.msg=`Installing package: ${r}`,await e.workerState.micropip.install(r);return e.workerState.state.msg="Installing funcnodes",e.workerState.state.progress=.8,await e.workerState.micropip.install("funcnodes"),e.workerState.state.msg="Installing funcnodes-worker",await e.workerState.micropip.install("funcnodes-worker"),e.workerState.packages.some(r=>r.toLowerCase().endsWith(".whl")&&r.includes("funcnodes_pyodide"))?e.workerState.debug&&console.debug("Skipping PyPI funcnodes-pyodide install (wheel provided in packages)"):(e.workerState.state.msg="Installing funcnodes-pyodide",await e.workerState.micropip.install("funcnodes-pyodide")),e.workerState.state.msg="Installing funcnodes-react-flow",await e.workerState.micropip.install("funcnodes-react-flow"),e.workerState.state.msg="Importing funcnodes",console.debug("Importing funcnodes..."),await e.workerState.pyodide.runPythonAsync("import funcnodes_pyodide"),console.debug("Running post_pyodide_ready..."),await e.workerState.post_pyodide_ready?.(e.workerState),console.debug("Pyodide ready"),e.workerState.state.msg="ready",e.workerState.state.progress=.1,e.workerState.pyodideReady=!0,{pyodide:e.workerState.pyodide,micropip:e.workerState.micropip}},e.interrupt=()=>{e.workerState.interruptBuffer&&(e.workerState.interruptBuffer[0]=1)},e.list_workers=()=>Object.keys(e.workerState.worker),e.get_worker=async r=>{if(!r)throw new Error("Worker id is required");if(!e.workerState.worker[r])throw new Error(`Worker with id ${r} not found`);return await e.workerState.worker[r].make_promise,e.workerState.worker[r]},e.has_worker=r=>{if(!r)throw new Error("Worker id is required");return!!e.workerState.worker[r]},e.get_or_create_worker=async r=>{if(!r)throw new Error("Worker id is required");return e.workerState.worker[r]||(console.log("Creating worker with id",r),await e.initializeFuncNodesWorker(r)),e.get_worker(r)},e.initializeFuncNodesWorker=async r=>{try{if(!e.workerState.pyodideReadyPromise)throw new Error("Pyodide newer initialized");const{pyodide:t}=await e.workerState.pyodideReadyPromise;if(!e.has_worker(r)){e.workerState.worker[r]={worker:null,make_promise:void 0};const o=new Promise(async(n,s)=>{e.workerState.worker[r].reject_promise=s,console.debug(`Creating worker (${r})...`);const i=await t.runPythonAsync(`funcnodes_pyodide.new_worker(debug=${e.workerState.debug?1:0}, uuid="${r}")`);if(console.debug("Worker created:",i),typeof i.set_receiver=="function")i.set_receiver(self);else throw new Error("Worker does not expose a \'set_receiver\' method.");e.workerState.worker[r].worker=i,console.debug("Worker ready"),n(i)});e.workerState.worker[r].make_promise=o}return e.get_worker(r)}catch(t){throw console.error("Error during worker initialization:",t),t}},e.receivepy=(r,t)=>{try{let o={};if(typeof r=="string"?o.msg=r:o=r,o.msg===void 0)return;typeof o.msg!="string"&&(o.msg=JSON.stringify(o.msg)),t!==void 0&&(typeof t=="string"?o.worker_id||(o.worker_id=t):o={...t,...o});const n=o.worker_id;if(!n)throw new Error(`Worker id not provided in receivepy(${JSON.stringify(o)})`);if(!e.workerState.worker[n])throw new Error(`Worker with id ${n} not found in receivepy(${JSON.stringify(o)})`);e.workerState.receivepy(r,n)}catch(o){console.error("Error during receivepy:",o);return}},e.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!e.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);e.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s);return}},e.startInitialization=({debug:r=!1,receivepy:t,receivepy_bytes:o,pyodide_url:n,post_pyodide_ready:s,packages:i})=>(e.workerState.debug=r,e.workerState.pyodide_url=n||p,e.workerState.packages=i,e.workerState.receivepy=t,e.workerState.receivepy_bytes=o,e.workerState.pyodideReadyPromise=null,e.workerState.post_pyodide_ready=s,e.workerState),e.register_cmd_message=(r,t)=>{if(e.workerState.handel_register[r])throw new Error(`Command ${r} already registered`);e.workerState.handel_register[r]=t},e.register_cmd_message("ping",async r=>"pong"),e.register_cmd_message("init",async r=>{if(e.workerState.pyodideReadyPromise)throw new Error("Pyodide is already initialized");r.data&&(r.data.pyodide_url&&(e.workerState.pyodide_url=r.data.pyodide_url),r.data.packages&&(e.workerState.packages=r.data.packages),r.data.debug&&(e.workerState.debug=r.data.debug)),e.workerState.pyodideReadyPromise=e.initializePyodide()}),e.register_cmd_message("_eval",async r=>{try{const t=await e.workerState.pyodide?.runPythonAsync(r.msg||"print(\'No code provided\')");return console.log("Eval result:",t),t}catch(t){console.error("Error during _eval:",t)}}),e.register_cmd_message("state",async r=>({state:{...e.workerState.state,loaded:e.workerState.pyodideReady}})),e.register_cmd_message("worker:state",async r=>({state:{loaded:!!(await e.get_or_create_worker(r.worker_id)).worker}})),e.register_cmd_message("worker:stop",async r=>{if(!e.has_worker(r.worker_id))return;const t=await e.get_or_create_worker(r.worker_id);return t.worker&&(t.worker.stop(),t.worker=null,t.reject_promise?.("Worker stopped")),delete e.workerState.worker[r.worker_id],{state:{loaded:!1}}}),e.register_cmd_message("worker:send",async r=>{const t=await e.get_or_create_worker(r.worker_id);if(!t.worker)throw new Error("Worker is not initialized");if(typeof t.worker.receivejs!="function")throw new Error(`Worker does not support receivejs: ${typeof t.worker.receivejs}`);t.worker.receivejs(r.msg)}),e.handleMessage=async r=>{const t={original:r};r.id&&(t.id=r.id),r.toJs===void 0&&(r.toJs=!0);try{if(r.cmd){const o=r;if(e.workerState.handel_register[o.cmd])t.result=await e.workerState.handel_register[o.cmd](o);else throw new Error("Unknown command: "+o.cmd)}else throw new Error("Unknown message format: "+JSON.stringify(r))}catch(o){t.error=o.message}return t},e.read_url_params=()=>{const r=new URLSearchParams(self.location.search),t=r.get("debug")?.toLowerCase()==="true",o=r.get("pyodide_url")||void 0,n=r.get("packages")?.split(",")||[];return{debug:t,pyodide_url:o,packages:n}};const k=r=>{const t=new Set;return{add:o=>{t.add(o)},disconnect:o=>{t.delete(o)&&t.size===0&&r()},forEach:o=>{t.forEach(o)},size:()=>t.size}},w=e;w.general_initalization=r=>{const t=w.read_url_params();w.startInitialization({...r,...t})};const l=w,g=w;g.init_dedicated_worker=r=>{const t=e;t.onmessage=async n=>{const s=n.data,i=await t.handleMessage(s);t.postMessage(i)};const o={...r,receivepy:(n,s)=>{t.postMessage({cmd:"receive",msg:n,worker_id:s})},receivepy_bytes(n,s){t.postMessage({cmd:"receive_bytes",msg:n,worker_id:s})}};t.general_initalization(o)},l.init_shared_worker=r=>{const t=e,o=k(()=>{try{t.close()}catch{}});t.connectedPorts=[],t.onconnect=s=>{const i=s.ports[0];t.connectedPorts.push(i),o.add(i),i.start(),console.debug("Port connected in shared worker"),i.onmessage=async a=>{const d=a.data;if(d?.cmd==="disconnect"){o.disconnect(i),t.connectedPorts=t.connectedPorts.filter(m=>m!==i);try{i.onmessage=null}catch{}try{i.close()}catch{}return}const y=await t.handleMessage(d);i.postMessage(y)}};const n={...r,receivepy:(s,i)=>{o.forEach(a=>{a.postMessage({cmd:"receive",msg:s,worker_id:i})})},receivepy_bytes(s,i){o.forEach(a=>{a.postMessage({cmd:"receive_bytes",msg:s,worker_id:i})})}};t.general_initalization(n)};const _=r=>{w.init_shared_worker(r)};var u=`from __future__ import annotations\\r\nimport funcnodes_core as fn\\r\n\\r\nfn.node.ALLOW_REGISTERED_NODES_OVERRIDE = True\\r\n\\r\n\\r\ndef eval_node_code(code: str):\\r\n    ns = {}  # dedicated namespace acting as globals\\r\n    exec(code, ns)\\r\n    _node = [\\r\n        cls\\r\n        for name, cls in ns.items()\\r\n        if isinstance(cls, type) and issubclass(cls, fn.Node)\\r\n    ][-1]\\r\n    return _node\\r\n`;function f(r){if(typeof r!="string"||!r.length)return[];const t=[],o=new Set,n=r.split(/\\r?\\n/);for(const s of n){const i=s.match(/^\\s*#\\s*requires\\b\\s*:?\\s*(.*)$/i);if(!i)continue;const a=(i[1]??"").trim();if(a)for(const d of a.split(/[,\\s]+/)){const y=d.trim();y&&(o.has(y)||(o.add(y),t.push(y)))}}return t}const c=w;c.nodebuilder_post_pyodide_ready=async r=>{await r.pyodide.runPythonAsync(u)},c.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!c.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);c.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s)}},c.register_cmd_message("worker:evalnode",async r=>{const t=r.msg;console.log("evalnode",t);const o=f(t);console.log("requires",o);for(const i of o)await c.workerState.micropip.install(i);const n=await c.workerState.pyodide?.runPythonAsync(`eval_node_code(${JSON.stringify(t)})`);if(!n)return;const s=await c.get_or_create_worker(r.worker_id);s.worker.clear(),s.worker.nodespace.lib.add_node(n,"demo"),s.worker.add_node(n.node_id)}),_({post_pyodide_ready:c.nodebuilder_post_pyodide_ready})})();\n';
+const SUe = '(function(){"use strict";const p="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.mjs",e=self;e.workerState={pyodide:null,pyodide_url:p,packages:[],state:{msg:"loading",loaded:!1,progress:0},micropip:null,worker:{},pyodideReady:!1,pyodideReadyPromise:null,debug:!1,interruptBuffer:null,receivepy:(r,t)=>{},receivepy_bytes:(r,t)=>{},handel_register:{},post_pyodide_ready:void 0},e.reset=async()=>{for(const r in e.list_workers())try{const t=await e.get_worker(r);t.worker&&t.worker.stop(),t.reject_promise?.("Worker reset")}catch{}e.workerState.pyodide&&e.interrupt(),e.workerState.pyodide=null,e.workerState.micropip=null,e.workerState.worker={},e.workerState.pyodideReady=!1;try{e.workerState.interruptBuffer=new Uint8Array(new SharedArrayBuffer(1)),e.workerState.interruptBuffer[0]=0}catch{}},e.initializePyodide=async()=>{if(!e.workerState.pyodide){console.log("initializePyodide with: Debug:",e.workerState.debug,"Pyodide URL:",e.workerState.pyodide_url,"Packages:",e.workerState.packages),console.debug("Loading Pyodide..."),e.workerState.state.msg="Loading Pyodide...",e.workerState.state.progress=0,await e.reset(),console.debug("Loading Pyodide module..."),e.workerState.state.msg="Loading Pyodide module...",e.workerState.state.progress=.1;const r=await import(e.workerState.pyodide_url);console.debug("Loading Pyodide instance..."),e.workerState.state.msg="Loading Pyodide instance...",e.workerState.state.progress=.2;const t=r.loadPyodide,o=new URL(e.workerState.pyodide_url),n=new URL(".",o).toString();e.workerState.debug&&console.debug("Pyodide indexURL:",n),e.workerState.pyodide=await t({packages:["micropip"],indexURL:n}),e.workerState.interruptBuffer&&e.workerState.pyodide.setInterruptBuffer(e.workerState.interruptBuffer)}e.workerState.micropip||(console.debug("Importing micropip..."),e.workerState.state.msg="Importing micropip...",e.workerState.state.progress=.3,e.workerState.micropip=e.workerState.pyodide.pyimport("micropip")),console.debug("Pyodide ready. Installing funcnodes...");for(const r of e.workerState.packages)console.log("Installing package:",r),e.workerState.state.msg=`Installing package: ${r}`,await e.workerState.micropip.install(r);return e.workerState.state.msg="Installing funcnodes",e.workerState.state.progress=.8,await e.workerState.micropip.install("funcnodes"),e.workerState.state.msg="Installing funcnodes-worker",await e.workerState.micropip.install("funcnodes-worker"),e.workerState.packages.some(r=>r.toLowerCase().endsWith(".whl")&&r.includes("funcnodes_pyodide"))?e.workerState.debug&&console.debug("Skipping PyPI funcnodes-pyodide install (wheel provided in packages)"):(e.workerState.state.msg="Installing funcnodes-pyodide",await e.workerState.micropip.install("funcnodes-pyodide")),e.workerState.state.msg="Installing funcnodes-react-flow",await e.workerState.micropip.install("funcnodes-react-flow"),e.workerState.state.msg="Importing funcnodes",console.debug("Importing funcnodes..."),await e.workerState.pyodide.runPythonAsync("import funcnodes_pyodide"),console.debug("Running post_pyodide_ready..."),await e.workerState.post_pyodide_ready?.(e.workerState),console.debug("Pyodide ready"),e.workerState.state.msg="ready",e.workerState.state.progress=.1,e.workerState.pyodideReady=!0,{pyodide:e.workerState.pyodide,micropip:e.workerState.micropip}},e.interrupt=()=>{e.workerState.interruptBuffer&&(e.workerState.interruptBuffer[0]=1)},e.list_workers=()=>Object.keys(e.workerState.worker),e.get_worker=async r=>{if(!r)throw new Error("Worker id is required");if(!e.workerState.worker[r])throw new Error(`Worker with id ${r} not found`);return await e.workerState.worker[r].make_promise,e.workerState.worker[r]},e.has_worker=r=>{if(!r)throw new Error("Worker id is required");return!!e.workerState.worker[r]},e.get_or_create_worker=async r=>{if(!r)throw new Error("Worker id is required");return e.workerState.worker[r]||(console.log("Creating worker with id",r),await e.initializeFuncNodesWorker(r)),e.get_worker(r)},e.initializeFuncNodesWorker=async r=>{try{if(!e.workerState.pyodideReadyPromise)throw new Error("Pyodide newer initialized");const{pyodide:t}=await e.workerState.pyodideReadyPromise;if(!e.has_worker(r)){e.workerState.worker[r]={worker:null,make_promise:void 0};const o=new Promise(async(n,s)=>{e.workerState.worker[r].reject_promise=s,console.debug(`Creating worker (${r})...`);const i=await t.runPythonAsync(`funcnodes_pyodide.new_worker(debug=${e.workerState.debug?1:0}, uuid="${r}")`);if(console.debug("Worker created:",i),typeof i.set_receiver=="function")i.set_receiver(self);else throw new Error("Worker does not expose a \'set_receiver\' method.");e.workerState.worker[r].worker=i,console.debug("Worker ready"),n(i)});e.workerState.worker[r].make_promise=o}return e.get_worker(r)}catch(t){throw console.error("Error during worker initialization:",t),t}},e.receivepy=(r,t)=>{try{let o={};if(typeof r=="string"?o.msg=r:o=r,o.msg===void 0)return;typeof o.msg!="string"&&(o.msg=JSON.stringify(o.msg)),t!==void 0&&(typeof t=="string"?o.worker_id||(o.worker_id=t):o={...t,...o});const n=o.worker_id;if(!n)throw new Error(`Worker id not provided in receivepy(${JSON.stringify(o)})`);if(!e.workerState.worker[n])throw new Error(`Worker with id ${n} not found in receivepy(${JSON.stringify(o)})`);e.workerState.receivepy(r,n)}catch(o){console.error("Error during receivepy:",o);return}},e.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!e.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);e.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s);return}},e.startInitialization=({debug:r=!1,receivepy:t,receivepy_bytes:o,pyodide_url:n,post_pyodide_ready:s,packages:i})=>(e.workerState.debug=r,e.workerState.pyodide_url=n||p,e.workerState.packages=i,e.workerState.receivepy=t,e.workerState.receivepy_bytes=o,e.workerState.pyodideReadyPromise=null,e.workerState.post_pyodide_ready=s,e.workerState),e.register_cmd_message=(r,t)=>{if(e.workerState.handel_register[r])throw new Error(`Command ${r} already registered`);e.workerState.handel_register[r]=t},e.register_cmd_message("ping",async r=>"pong"),e.register_cmd_message("init",async r=>{if(e.workerState.pyodideReadyPromise)throw new Error("Pyodide is already initialized");r.data&&(r.data.pyodide_url&&(e.workerState.pyodide_url=r.data.pyodide_url),r.data.packages&&(e.workerState.packages=r.data.packages),r.data.debug&&(e.workerState.debug=r.data.debug)),e.workerState.pyodideReadyPromise=e.initializePyodide()}),e.register_cmd_message("_eval",async r=>{try{const t=await e.workerState.pyodide?.runPythonAsync(r.msg||"print(\'No code provided\')");return console.log("Eval result:",t),t}catch(t){console.error("Error during _eval:",t)}}),e.register_cmd_message("state",async r=>({state:{...e.workerState.state,loaded:e.workerState.pyodideReady}})),e.register_cmd_message("worker:state",async r=>({state:{loaded:!!(await e.get_or_create_worker(r.worker_id)).worker}})),e.register_cmd_message("worker:stop",async r=>{if(!e.has_worker(r.worker_id))return;const t=await e.get_or_create_worker(r.worker_id);return t.worker&&(t.worker.stop(),t.worker=null,t.reject_promise?.("Worker stopped")),delete e.workerState.worker[r.worker_id],{state:{loaded:!1}}}),e.register_cmd_message("worker:send",async r=>{const t=await e.get_or_create_worker(r.worker_id);if(!t.worker)throw new Error("Worker is not initialized");if(typeof t.worker.receivejs!="function")throw new Error(`Worker does not support receivejs: ${typeof t.worker.receivejs}`);t.worker.receivejs(r.msg)}),e.handleMessage=async r=>{const t={original:r};r.id&&(t.id=r.id),r.toJs===void 0&&(r.toJs=!0);try{if(r.cmd){const o=r;if(e.workerState.handel_register[o.cmd])t.result=await e.workerState.handel_register[o.cmd](o);else throw new Error("Unknown command: "+o.cmd)}else throw new Error("Unknown message format: "+JSON.stringify(r))}catch(o){t.error=o.message}return t},e.read_url_params=()=>{const r=new URLSearchParams(self.location.search),t=r.get("debug")?.toLowerCase()==="true",o=r.get("pyodide_url")||void 0,n=r.get("packages")?.split(",")||[];return{debug:t,pyodide_url:o,packages:n}};const k=r=>{const t=new Set;return{add:o=>{t.add(o)},disconnect:o=>{t.delete(o)&&t.size===0&&r()},forEach:o=>{t.forEach(o)},size:()=>t.size}},w=e;w.general_initalization=r=>{const t=w.read_url_params();w.startInitialization({...r,...t})};const l=w,g=w;g.init_dedicated_worker=r=>{const t=e;t.onmessage=async n=>{const s=n.data,i=await t.handleMessage(s);t.postMessage(i)};const o={...r,receivepy:(n,s)=>{t.postMessage({cmd:"receive",msg:n,worker_id:s})},receivepy_bytes(n,s){t.postMessage({cmd:"receive_bytes",msg:n,worker_id:s})}};t.general_initalization(o)},l.init_shared_worker=r=>{const t=e,o=k(()=>{try{t.close()}catch{}});t.connectedPorts=[],t.onconnect=s=>{const i=s.ports[0];t.connectedPorts.push(i),o.add(i),i.start(),console.debug("Port connected in shared worker"),i.onmessage=async a=>{const d=a.data;if(d?.cmd==="disconnect"){o.disconnect(i),t.connectedPorts=t.connectedPorts.filter(m=>m!==i);try{i.onmessage=null}catch{}try{i.close()}catch{}return}const y=await t.handleMessage(d);i.postMessage(y)}};const n={...r,receivepy:(s,i)=>{o.forEach(a=>{a.postMessage({cmd:"receive",msg:s,worker_id:i})})},receivepy_bytes(s,i){o.forEach(a=>{a.postMessage({cmd:"receive_bytes",msg:s,worker_id:i})})}};t.general_initalization(n)};const _=r=>{w.init_shared_worker(r)};var u=`from __future__ import annotations\nimport funcnodes_core as fn\n\nfn.node.ALLOW_REGISTERED_NODES_OVERRIDE = True\n\n\ndef eval_node_code(code: str):\n    ns = {}  # dedicated namespace acting as globals\n    exec(code, ns)\n    _node = [\n        cls\n        for name, cls in ns.items()\n        if isinstance(cls, type) and issubclass(cls, fn.Node)\n    ][-1]\n    return _node\n`;function f(r){if(typeof r!="string"||!r.length)return[];const t=[],o=new Set,n=r.split(/\\r?\\n/);for(const s of n){const i=s.match(/^\\s*#\\s*requires\\b\\s*:?\\s*(.*)$/i);if(!i)continue;const a=(i[1]??"").trim();if(a)for(const d of a.split(/[,\\s]+/)){const y=d.trim();y&&(o.has(y)||(o.add(y),t.push(y)))}}return t}const c=w;c.nodebuilder_post_pyodide_ready=async r=>{await r.pyodide.runPythonAsync(u)},c.receivepy_bytes=(r,t)=>{let o=r;const n=r;if(n&&typeof n.toJs=="function")try{o=n.toJs({dict_converter:Object.fromEntries})}catch{o=n.toJs()}o instanceof Map&&(o=Object.fromEntries(o.entries()));try{let s={};if(o instanceof Uint8Array?s.msg=o:s=o,s.msg===void 0)return;let i=s.msg;const a=i;if(a&&typeof a.toJs=="function")try{i=a.toJs({dict_converter:Object.fromEntries})}catch{i=a.toJs()}if(i instanceof ArrayBuffer&&(i=new Uint8Array(i)),Array.isArray(i)&&(i=Uint8Array.from(i)),!(i instanceof Uint8Array))throw new Error(`receivepy_bytes expected Uint8Array payload, got ${typeof i}`);s.msg=i,t!==void 0&&(typeof t=="string"?s.worker_id||(s.worker_id=t):s={...t,...s});const d=s.worker_id;if(!d)throw new Error("Worker id not provided in receivepy_bytes");if(!c.workerState.worker[d])throw new Error(`Worker with id ${d} not found in receivepy_bytes`);c.workerState.receivepy_bytes(s.msg,d)}catch(s){console.error("Error during receivepy_bytes:",s)}},c.register_cmd_message("worker:evalnode",async r=>{const t=r.msg;console.log("evalnode",t);const o=f(t);console.log("requires",o);for(const i of o)await c.workerState.micropip.install(i);const n=await c.workerState.pyodide?.runPythonAsync(`eval_node_code(${JSON.stringify(t)})`);if(!n)return;const s=await c.get_or_create_worker(r.worker_id);s.worker.clear(),s.worker.nodespace.lib.add_node(n,"demo"),s.worker.add_node(n.node_id)}),_({post_pyodide_ready:c.nodebuilder_post_pyodide_ready})})();\n';
 function UF(e) {
   return new SharedWorker(
     "data:text/javascript;charset=utf-8," + encodeURIComponent(SUe),
@@ -85474,7 +85474,7 @@ const VJ = (e) => {
       return new SharedWorker(
         new URL(
           /* @vite-ignore */
-          "" + new URL("assets/pyodideSharedWorker-CzLojCs6.js", import.meta.url).href,
+          "" + new URL("assets/pyodideSharedWorker-CRuL6dYK.js", import.meta.url).href,
           import.meta.url
         ),
         { name: t, type: "module" }
@@ -85489,7 +85489,7 @@ const VJ = (e) => {
   try {
     return new Worker(new URL(
       /* @vite-ignore */
-      "" + new URL("assets/pyodideDedicatedWorker-5ssvyM0A.js", import.meta.url).href,
+      "" + new URL("assets/pyodideDedicatedWorker-Byca9g4Z.js", import.meta.url).href,
       import.meta.url
     ), {
       name: t,
@@ -85499,15 +85499,45 @@ const VJ = (e) => {
     return new BF({ name: t });
   }
 };
-function kUe(e, t, n) {
-  return t in e ? Object.defineProperty(e, t, {
+function VF(e, t) {
+  (t == null || t > e.length) && (t = e.length);
+  for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
+  return r;
+}
+function kUe(e) {
+  if (Array.isArray(e)) return e;
+}
+function _Ue(e, t, n) {
+  return (t = RUe(t)) in e ? Object.defineProperty(e, t, {
     value: n,
     enumerable: !0,
     configurable: !0,
     writable: !0
   }) : e[t] = n, e;
 }
-function VF(e, t) {
+function EUe(e, t) {
+  var n = e == null ? null : typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
+  if (n != null) {
+    var r, a, s, l, c = [], d = !0, f = !1;
+    try {
+      if (s = (n = n.call(e)).next, t !== 0) for (; !(d = (r = s.call(n)).done) && (c.push(r.value), c.length !== t); d = !0) ;
+    } catch (m) {
+      f = !0, a = m;
+    } finally {
+      try {
+        if (!d && n.return != null && (l = n.return(), Object(l) !== l)) return;
+      } finally {
+        if (f) throw a;
+      }
+    }
+    return c;
+  }
+}
+function CUe() {
+  throw new TypeError(`Invalid attempt to destructure non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
+}
+function HF(e, t) {
   var n = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var r = Object.getOwnPropertySymbols(e);
@@ -85517,76 +85547,60 @@ function VF(e, t) {
   }
   return n;
 }
-function HF(e) {
+function WF(e) {
   for (var t = 1; t < arguments.length; t++) {
     var n = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? VF(Object(n), !0).forEach(function(r) {
-      kUe(e, r, n[r]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : VF(Object(n)).forEach(function(r) {
+    t % 2 ? HF(Object(n), !0).forEach(function(r) {
+      _Ue(e, r, n[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : HF(Object(n)).forEach(function(r) {
       Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(n, r));
     });
   }
   return e;
 }
-function _Ue(e, t) {
+function OUe(e, t) {
   if (e == null) return {};
-  var n = {}, r = Object.keys(e), a, s;
-  for (s = 0; s < r.length; s++)
-    a = r[s], !(t.indexOf(a) >= 0) && (n[a] = e[a]);
-  return n;
-}
-function EUe(e, t) {
-  if (e == null) return {};
-  var n = _Ue(e, t), r, a;
+  var n, r, a = MUe(e, t);
   if (Object.getOwnPropertySymbols) {
     var s = Object.getOwnPropertySymbols(e);
-    for (a = 0; a < s.length; a++)
-      r = s[a], !(t.indexOf(r) >= 0) && Object.prototype.propertyIsEnumerable.call(e, r) && (n[r] = e[r]);
+    for (r = 0; r < s.length; r++) n = s[r], t.indexOf(n) === -1 && {}.propertyIsEnumerable.call(e, n) && (a[n] = e[n]);
+  }
+  return a;
+}
+function MUe(e, t) {
+  if (e == null) return {};
+  var n = {};
+  for (var r in e) if ({}.hasOwnProperty.call(e, r)) {
+    if (t.indexOf(r) !== -1) continue;
+    n[r] = e[r];
   }
   return n;
 }
-function CUe(e, t) {
-  return OUe(e) || MUe(e, t) || NUe(e, t) || AUe();
-}
-function OUe(e) {
-  if (Array.isArray(e)) return e;
-}
-function MUe(e, t) {
-  if (!(typeof Symbol > "u" || !(Symbol.iterator in Object(e)))) {
-    var n = [], r = !0, a = !1, s = void 0;
-    try {
-      for (var l = e[Symbol.iterator](), c; !(r = (c = l.next()).done) && (n.push(c.value), !(t && n.length === t)); r = !0)
-        ;
-    } catch (d) {
-      a = !0, s = d;
-    } finally {
-      try {
-        !r && l.return != null && l.return();
-      } finally {
-        if (a) throw s;
-      }
-    }
-    return n;
-  }
-}
 function NUe(e, t) {
+  return kUe(e) || EUe(e, t) || jUe(e, t) || CUe();
+}
+function AUe(e, t) {
+  if (typeof e != "object" || !e) return e;
+  var n = e[Symbol.toPrimitive];
+  if (n !== void 0) {
+    var r = n.call(e, t);
+    if (typeof r != "object") return r;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (t === "string" ? String : Number)(e);
+}
+function RUe(e) {
+  var t = AUe(e, "string");
+  return typeof t == "symbol" ? t : t + "";
+}
+function jUe(e, t) {
   if (e) {
-    if (typeof e == "string") return WF(e, t);
-    var n = Object.prototype.toString.call(e).slice(8, -1);
-    if (n === "Object" && e.constructor && (n = e.constructor.name), n === "Map" || n === "Set") return Array.from(e);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return WF(e, t);
+    if (typeof e == "string") return VF(e, t);
+    var n = {}.toString.call(e).slice(8, -1);
+    return n === "Object" && e.constructor && (n = e.constructor.name), n === "Map" || n === "Set" ? Array.from(e) : n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? VF(e, t) : void 0;
   }
 }
-function WF(e, t) {
-  (t == null || t > e.length) && (t = e.length);
-  for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
-  return r;
-}
-function AUe() {
-  throw new TypeError(`Invalid attempt to destructure non-iterable instance.
-In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
-}
-function RUe(e, t, n) {
+function PUe(e, t, n) {
   return t in e ? Object.defineProperty(e, t, {
     value: n,
     enumerable: !0,
@@ -85608,14 +85622,14 @@ function GF(e) {
   for (var t = 1; t < arguments.length; t++) {
     var n = arguments[t] != null ? arguments[t] : {};
     t % 2 ? qF(Object(n), !0).forEach(function(r) {
-      RUe(e, r, n[r]);
+      PUe(e, r, n[r]);
     }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : qF(Object(n)).forEach(function(r) {
       Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(n, r));
     });
   }
   return e;
 }
-function jUe() {
+function DUe() {
   for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
     t[n] = arguments[n];
   return function(r) {
@@ -85638,35 +85652,35 @@ function Ox(e) {
 function tE(e) {
   return {}.toString.call(e).includes("Object");
 }
-function PUe(e) {
+function IUe(e) {
   return !Object.keys(e).length;
 }
 function zS(e) {
   return typeof e == "function";
 }
-function DUe(e, t) {
+function $Ue(e, t) {
   return Object.prototype.hasOwnProperty.call(e, t);
 }
-function IUe(e, t) {
+function zUe(e, t) {
   return tE(t) || _d("changeType"), Object.keys(t).some(function(n) {
-    return !DUe(e, n);
+    return !$Ue(e, n);
   }) && _d("changeField"), t;
 }
-function $Ue(e) {
+function TUe(e) {
   zS(e) || _d("selectorType");
 }
-function zUe(e) {
+function LUe(e) {
   zS(e) || tE(e) || _d("handlerType"), tE(e) && Object.values(e).some(function(t) {
     return !zS(t);
   }) && _d("handlersType");
 }
-function TUe(e) {
-  e || _d("initialIsRequired"), tE(e) || _d("initialType"), PUe(e) && _d("initialContent");
+function FUe(e) {
+  e || _d("initialIsRequired"), tE(e) || _d("initialType"), IUe(e) && _d("initialContent");
 }
-function LUe(e, t) {
+function BUe(e, t) {
   throw new Error(e[t] || e.default);
 }
-var FUe = {
+var UUe = {
   initialIsRequired: "initial state is required",
   initialType: "initial state should be an object",
   initialContent: "initial state shouldn't be an empty object",
@@ -85676,18 +85690,18 @@ var FUe = {
   changeType: "provided value of changes should be an object",
   changeField: 'it seams you want to change a field in the state which is not specified in the "initial" state',
   default: "an unknown error accured in `state-local` package"
-}, _d = Ox(LUe)(FUe), g_ = {
-  changes: IUe,
-  selector: $Ue,
-  handler: zUe,
-  initial: TUe
+}, _d = Ox(BUe)(UUe), g_ = {
+  changes: zUe,
+  selector: TUe,
+  handler: LUe,
+  initial: FUe
 };
-function BUe(e) {
+function VUe(e) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   g_.initial(e), g_.handler(t);
   var n = {
     current: e
-  }, r = Ox(HUe)(n, t), a = Ox(VUe)(n), s = Ox(g_.changes)(e), l = Ox(UUe)(n);
+  }, r = Ox(qUe)(n, t), a = Ox(WUe)(n), s = Ox(g_.changes)(e), l = Ox(HUe)(n);
   function c() {
     var f = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : function(m) {
       return m;
@@ -85695,30 +85709,30 @@ function BUe(e) {
     return g_.selector(f), f(n.current);
   }
   function d(f) {
-    jUe(r, a, s, l)(f);
+    DUe(r, a, s, l)(f);
   }
   return [c, d];
 }
-function UUe(e, t) {
+function HUe(e, t) {
   return zS(t) ? t(e.current) : t;
 }
-function VUe(e, t) {
+function WUe(e, t) {
   return e.current = GF(GF({}, e.current), t), t;
 }
-function HUe(e, t, n) {
+function qUe(e, t, n) {
   return zS(t) ? t(e.current) : Object.keys(n).forEach(function(r) {
     var a;
     return (a = t[r]) === null || a === void 0 ? void 0 : a.call(t, e.current[r]);
   }), n;
 }
-var WUe = {
-  create: BUe
-}, qUe = {
+var GUe = {
+  create: VUe
+}, KUe = {
   paths: {
-    vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs"
+    vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.55.1/min/vs"
   }
 };
-function GUe(e) {
+function YUe(e) {
   return function t() {
     for (var n = this, r = arguments.length, a = new Array(r), s = 0; s < r; s++)
       a[s] = arguments[s];
@@ -85729,20 +85743,20 @@ function GUe(e) {
     };
   };
 }
-function KUe(e) {
+function XUe(e) {
   return {}.toString.call(e).includes("Object");
 }
-function YUe(e) {
-  return e || KF("configIsRequired"), KUe(e) || KF("configType"), e.urls ? (XUe(), {
+function JUe(e) {
+  return e || KF("configIsRequired"), XUe(e) || KF("configType"), e.urls ? (QUe(), {
     paths: {
       vs: e.urls.monacoBase
     }
   }) : e;
 }
-function XUe() {
+function QUe() {
   console.warn(HJ.deprecation);
 }
-function JUe(e, t) {
+function ZUe(e, t) {
   throw new Error(e[t] || e.default);
 }
 var HJ = {
@@ -85759,9 +85773,9 @@ var HJ = {
 
     For more please check the link https://github.com/suren-atoyan/monaco-loader#config
   `
-}, KF = GUe(JUe)(HJ), QUe = {
-  config: YUe
-}, ZUe = function() {
+}, KF = YUe(ZUe)(HJ), eVe = {
+  config: JUe
+}, tVe = function() {
   for (var t = arguments.length, n = new Array(t), r = 0; r < t; r++)
     n[r] = arguments[r];
   return function(a) {
@@ -85773,31 +85787,31 @@ var HJ = {
 function WJ(e, t) {
   return Object.keys(t).forEach(function(n) {
     t[n] instanceof Object && e[n] && Object.assign(t[n], WJ(e[n], t[n]));
-  }), HF(HF({}, e), t);
+  }), WF(WF({}, e), t);
 }
-var eVe = {
+var nVe = {
   type: "cancelation",
   msg: "operation is manually canceled"
 };
 function hA(e) {
   var t = !1, n = new Promise(function(r, a) {
     e.then(function(s) {
-      return t ? a(eVe) : r(s);
+      return t ? a(nVe) : r(s);
     }), e.catch(a);
   });
   return n.cancel = function() {
     return t = !0;
   }, n;
 }
-var tVe = WUe.create({
-  config: qUe,
+var rVe = ["monaco"], oVe = GUe.create({
+  config: KUe,
   isInitialized: !1,
   resolve: null,
   reject: null,
   monaco: null
-}), qJ = CUe(tVe, 2), $k = qJ[0], JC = qJ[1];
-function nVe(e) {
-  var t = QUe.config(e), n = t.monaco, r = EUe(t, ["monaco"]);
+}), qJ = NUe(oVe, 2), $k = qJ[0], JC = qJ[1];
+function aVe(e) {
+  var t = eVe.config(e), n = t.monaco, r = OUe(t, rVe);
   JC(function(a) {
     return {
       config: WJ(a.config, r),
@@ -85805,7 +85819,7 @@ function nVe(e) {
     };
   });
 }
-function rVe() {
+function iVe() {
   var e = $k(function(t) {
     var n = t.monaco, r = t.isInitialized, a = t.resolve;
     return {
@@ -85821,30 +85835,30 @@ function rVe() {
       return e.resolve(e.monaco), hA(gA);
     if (window.monaco && window.monaco.editor)
       return GJ(window.monaco), e.resolve(window.monaco), hA(gA);
-    ZUe(oVe, iVe)(sVe);
+    tVe(sVe, uVe)(cVe);
   }
   return hA(gA);
 }
-function oVe(e) {
+function sVe(e) {
   return document.body.appendChild(e);
 }
-function aVe(e) {
+function lVe(e) {
   var t = document.createElement("script");
   return e && (t.src = e), t;
 }
-function iVe(e) {
+function uVe(e) {
   var t = $k(function(r) {
     var a = r.config, s = r.reject;
     return {
       config: a,
       reject: s
     };
-  }), n = aVe("".concat(t.config.paths.vs, "/loader.js"));
+  }), n = lVe("".concat(t.config.paths.vs, "/loader.js"));
   return n.onload = function() {
     return e();
   }, n.onerror = t.reject, n;
 }
-function sVe() {
+function cVe() {
   var e = $k(function(n) {
     var r = n.config, a = n.resolve, s = n.reject;
     return {
@@ -85854,7 +85868,8 @@ function sVe() {
     };
   }), t = window.require;
   t.config(e.config), t(["vs/editor/editor.main"], function(n) {
-    GJ(n), e.resolve(n);
+    var r = n.m || n;
+    GJ(r), e.resolve(r);
   }, function(n) {
     e.reject(n);
   });
@@ -85864,7 +85879,7 @@ function GJ(e) {
     monaco: e
   });
 }
-function lVe() {
+function dVe() {
   return $k(function(e) {
     var t = e.monaco;
     return t;
@@ -85876,44 +85891,44 @@ var gA = new Promise(function(e, t) {
     reject: t
   });
 }), KJ = {
-  config: nVe,
-  init: rVe,
-  __getMonacoInstance: lVe
-}, uVe = { wrapper: { display: "flex", position: "relative", textAlign: "initial" }, fullWidth: { width: "100%" }, hide: { display: "none" } }, vA = uVe, cVe = { container: { display: "flex", height: "100%", width: "100%", justifyContent: "center", alignItems: "center" } }, dVe = cVe;
-function fVe({ children: e }) {
-  return jt.createElement("div", { style: dVe.container }, e);
+  config: aVe,
+  init: iVe,
+  __getMonacoInstance: dVe
+}, fVe = { wrapper: { display: "flex", position: "relative", textAlign: "initial" }, fullWidth: { width: "100%" }, hide: { display: "none" } }, vA = fVe, pVe = { container: { display: "flex", height: "100%", width: "100%", justifyContent: "center", alignItems: "center" } }, mVe = pVe;
+function hVe({ children: e }) {
+  return jt.createElement("div", { style: mVe.container }, e);
 }
-var pVe = fVe, mVe = pVe;
-function hVe({ width: e, height: t, isEditorReady: n, loading: r, _ref: a, className: s, wrapperProps: l }) {
-  return jt.createElement("section", { style: { ...vA.wrapper, width: e, height: t }, ...l }, !n && jt.createElement(mVe, null, r), jt.createElement("div", { ref: a, style: { ...vA.fullWidth, ...!n && vA.hide }, className: s }));
+var gVe = hVe, vVe = gVe;
+function yVe({ width: e, height: t, isEditorReady: n, loading: r, _ref: a, className: s, wrapperProps: l }) {
+  return jt.createElement("section", { style: { ...vA.wrapper, width: e, height: t }, ...l }, !n && jt.createElement(vVe, null, r), jt.createElement("div", { ref: a, style: { ...vA.fullWidth, ...!n && vA.hide }, className: s }));
 }
-var gVe = hVe, YJ = M.memo(gVe);
-function vVe(e) {
+var bVe = yVe, YJ = M.memo(bVe);
+function wVe(e) {
   M.useEffect(e, []);
 }
-var XJ = vVe;
-function yVe(e, t, n = !0) {
+var XJ = wVe;
+function xVe(e, t, n = !0) {
   let r = M.useRef(!0);
   M.useEffect(r.current || !n ? () => {
     r.current = !1;
   } : e, t);
 }
-var wi = yVe;
+var wi = xVe;
 function Yx() {
 }
 function Kh(e, t, n, r) {
-  return bVe(e, r) || wVe(e, t, n, r);
+  return SVe(e, r) || kVe(e, t, n, r);
 }
-function bVe(e, t) {
+function SVe(e, t) {
   return e.editor.getModel(JJ(e, t));
 }
-function wVe(e, t, n, r) {
+function kVe(e, t, n, r) {
   return e.editor.createModel(t, n, r ? JJ(e, r) : void 0);
 }
 function JJ(e, t) {
   return e.Uri.parse(t);
 }
-function xVe({ original: e, modified: t, language: n, originalLanguage: r, modifiedLanguage: a, originalModelPath: s, modifiedModelPath: l, keepCurrentOriginalModel: c = !1, keepCurrentModifiedModel: d = !1, theme: f = "light", loading: m = "Loading...", options: h = {}, height: v = "100%", width: g = "100%", className: b, wrapperProps: x = {}, beforeMount: w = Yx, onMount: k = Yx }) {
+function _Ve({ original: e, modified: t, language: n, originalLanguage: r, modifiedLanguage: a, originalModelPath: s, modifiedModelPath: l, keepCurrentOriginalModel: c = !1, keepCurrentModifiedModel: d = !1, theme: f = "light", loading: m = "Loading...", options: h = {}, height: v = "100%", width: g = "100%", className: b, wrapperProps: x = {}, beforeMount: w = Yx, onMount: k = Yx }) {
   let [E, _] = M.useState(!1), [O, N] = M.useState(!0), A = M.useRef(null), R = M.useRef(null), D = M.useRef(null), I = M.useRef(k), z = M.useRef(w), B = M.useRef(!1);
   XJ(() => {
     let G = KJ.init();
@@ -85960,17 +85975,17 @@ function xVe({ original: e, modified: t, language: n, originalLanguage: r, modif
   }
   return jt.createElement(YJ, { width: g, height: v, isEditorReady: E, loading: m, _ref: D, className: b, wrapperProps: x });
 }
-var SVe = xVe;
-M.memo(SVe);
-function kVe(e) {
+var EVe = _Ve;
+M.memo(EVe);
+function CVe(e) {
   let t = M.useRef();
   return M.useEffect(() => {
     t.current = e;
   }, [e]), t.current;
 }
-var _Ve = kVe, v_ = /* @__PURE__ */ new Map();
-function EVe({ defaultValue: e, defaultLanguage: t, defaultPath: n, value: r, language: a, path: s, theme: l = "light", line: c, loading: d = "Loading...", options: f = {}, overrideServices: m = {}, saveViewState: h = !0, keepCurrentModel: v = !1, width: g = "100%", height: b = "100%", className: x, wrapperProps: w = {}, beforeMount: k = Yx, onMount: E = Yx, onChange: _, onValidate: O = Yx }) {
-  let [N, A] = M.useState(!1), [R, D] = M.useState(!0), I = M.useRef(null), z = M.useRef(null), B = M.useRef(null), P = M.useRef(E), H = M.useRef(k), L = M.useRef(), G = M.useRef(r), $ = _Ve(s), K = M.useRef(!1), q = M.useRef(!1);
+var OVe = CVe, v_ = /* @__PURE__ */ new Map();
+function MVe({ defaultValue: e, defaultLanguage: t, defaultPath: n, value: r, language: a, path: s, theme: l = "light", line: c, loading: d = "Loading...", options: f = {}, overrideServices: m = {}, saveViewState: h = !0, keepCurrentModel: v = !1, width: g = "100%", height: b = "100%", className: x, wrapperProps: w = {}, beforeMount: k = Yx, onMount: E = Yx, onChange: _, onValidate: O = Yx }) {
+  let [N, A] = M.useState(!1), [R, D] = M.useState(!0), I = M.useRef(null), z = M.useRef(null), B = M.useRef(null), P = M.useRef(E), H = M.useRef(k), L = M.useRef(), G = M.useRef(r), $ = OVe(s), K = M.useRef(!1), q = M.useRef(!1);
   XJ(() => {
     let F = KJ.init();
     return F.then((Y) => (I.current = Y) && D(!1)).catch((Y) => Y?.type !== "cancelation" && console.error("Monaco initialization: error:", Y)), () => z.current ? V() : F.cancel();
@@ -86025,7 +86040,7 @@ function EVe({ defaultValue: e, defaultLanguage: t, defaultPath: n, value: r, la
   }
   return jt.createElement(YJ, { width: g, height: b, isEditorReady: N, loading: d, _ref: B, className: x, wrapperProps: w });
 }
-var CVe = EVe, OVe = M.memo(CVe);
+var NVe = MVe, AVe = M.memo(NVe);
 function cg() {
   return cg = Object.assign ? Object.assign.bind() : function(e) {
     for (var t = 1; t < arguments.length; t++) {
@@ -86042,7 +86057,7 @@ function zk(e) {
 var YF, XF = {
   exports: {}
 };
-var yA, JF, QF, MVe = (YF || (YF = 1, yA = XF, (function() {
+var yA, JF, QF, RVe = (YF || (YF = 1, yA = XF, (function() {
   var e = {}.hasOwnProperty;
   function t() {
     for (var a = "", s = 0; s < arguments.length; s++) {
@@ -86064,7 +86079,7 @@ var yA, JF, QF, MVe = (YF || (YF = 1, yA = XF, (function() {
     return s ? a ? a + " " + s : a + s : a;
   }
   yA.exports ? (t.default = t, yA.exports = t) : window.classNames = t;
-})()), XF.exports), bR = zk(MVe), ZF, e8, NVe = (QF || (QF = 1, JF = function e(t, n) {
+})()), XF.exports), bR = zk(RVe), ZF, e8, jVe = (QF || (QF = 1, JF = function e(t, n) {
   if (t === n) return !0;
   if (t && n && typeof t == "object" && typeof n == "object") {
     if (t.constructor !== n.constructor) return !1;
@@ -86102,7 +86117,7 @@ var yA, JF, QF, MVe = (YF || (YF = 1, yA = XF, (function() {
     return !0;
   }
   return t != t && n != n;
-}), JF), AVe = zk(NVe), t8, n8, Vs = zk((function() {
+}), JF), PVe = zk(jVe), t8, n8, Vs = zk((function() {
   if (e8) return ZF;
   e8 = 1;
   var e = /^\s+|\s+$/g, t = /^[-+]0x[0-9a-f]+$/i, n = /^0b[01]+$/i, r = /^0o[0-7]+$/i, a = parseInt, s = Object.prototype.toString;
@@ -86131,7 +86146,7 @@ var yA, JF, QF, MVe = (YF || (YF = 1, yA = XF, (function() {
       return h == h && (g !== void 0 && (h = h <= g ? h : g), v !== void 0 && (h = h >= v ? h : v)), h;
     })(c(d), f, m);
   };
-})()), RVe = zk((function() {
+})()), DVe = zk((function() {
   if (n8) return t8;
   n8 = 1;
   var e = /^\s+|\s+$/g, t = /^[-+]0x[0-9a-f]+$/i, n = /^0b[01]+$/i, r = /^0o[0-7]+$/i, a = parseInt, s = typeof y_ == "object" && y_ && y_.Object === Object && y_, l = typeof self == "object" && self && self.Object === Object && self, c = s || l || Function("return this")(), d = Object.prototype.toString, f = Math.max, m = Math.min, h = function() {
@@ -86199,7 +86214,7 @@ var yA, JF, QF, MVe = (YF || (YF = 1, yA = XF, (function() {
   width: void 0,
   height: void 0
 };
-function jVe(e) {
+function IVe(e) {
   const {
     ref: t,
     box: n = "content-box"
@@ -86237,11 +86252,11 @@ function jVe(e) {
 function o8(e, t, n) {
   return e[t] ? Array.isArray(e[t]) ? e[t][0][n] : e[t][n] : t === "contentBoxSize" ? e.contentRect[n === "inlineSize" ? "width" : "height"] : void 0;
 }
-var PVe = "allotment-module_splitView__L-yRc", DVe = "allotment-module_sashContainer__fzwJF", IVe = "allotment-module_splitViewContainer__rQnVa", QJ = "allotment-module_splitViewView__MGZ6O", $Ve = "allotment-module_vertical__WSwwa", zVe = "allotment-module_horizontal__7doS8", TVe = "allotment-module_separatorBorder__x-rDS";
+var $Ve = "allotment-module_splitView__L-yRc", zVe = "allotment-module_sashContainer__fzwJF", TVe = "allotment-module_splitViewContainer__rQnVa", QJ = "allotment-module_splitViewView__MGZ6O", LVe = "allotment-module_vertical__WSwwa", FVe = "allotment-module_horizontal__7doS8", BVe = "allotment-module_separatorBorder__x-rDS";
 let px, ZJ = !1, eQ = !1;
 typeof navigator == "object" && (px = navigator.userAgent, eQ = px.indexOf("Macintosh") >= 0, ZJ = (px.indexOf("Macintosh") >= 0 || px.indexOf("iPad") >= 0 || px.indexOf("iPhone") >= 0) && !!navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-const tQ = ZJ, LVe = eQ, a8 = typeof window < "u" && window.document !== void 0 && window.document.createElement !== void 0 ? M.useLayoutEffect : M.useEffect;
-class FVe {
+const tQ = ZJ, UVe = eQ, a8 = typeof window < "u" && window.document !== void 0 && window.document.createElement !== void 0 ? M.useLayoutEffect : M.useEffect;
+class VVe {
   constructor() {
     this._size = void 0;
   }
@@ -86258,7 +86273,7 @@ function b_(e, t) {
 }
 var i8, s8 = {
   exports: {}
-}, BVe = (i8 || (i8 = 1, (function(e) {
+}, HVe = (i8 || (i8 = 1, (function(e) {
   var t = Object.prototype.hasOwnProperty, n = "~";
   function r() {
   }
@@ -86351,7 +86366,7 @@ var i8, s8 = {
     var f;
     return d ? (f = n ? n + d : d, this._events[f] && l(this, f)) : (this._events = new r(), this._eventsCount = 0), this;
   }, c.prototype.off = c.prototype.removeListener, c.prototype.addListener = c.prototype.on, c.prefixed = n, c.EventEmitter = c, e.exports = c;
-})(s8)), s8.exports), g1 = zk(BVe);
+})(s8)), s8.exports), g1 = zk(HVe);
 function l8(e, t) {
   const n = e.indexOf(t);
   n > -1 && (e.splice(n, 1), e.unshift(t));
@@ -86366,7 +86381,7 @@ function Ii(e, t, n = 1) {
   for (; ++s < r; ) a[s] = e + s * n;
   return a;
 }
-var UVe = "sash-module_sash__K-9lB", VVe = "sash-module_disabled__Hm-wx", HVe = "sash-module_mac__Jf6OJ", u8 = "sash-module_vertical__pB-rs", WVe = "sash-module_minimum__-UKxp", qVe = "sash-module_maximum__TCWxD", c8 = "sash-module_horizontal__kFbiw", wA = "sash-module_hover__80W6I", xA = "sash-module_active__bJspD";
+var WVe = "sash-module_sash__K-9lB", qVe = "sash-module_disabled__Hm-wx", GVe = "sash-module_mac__Jf6OJ", u8 = "sash-module_vertical__pB-rs", KVe = "sash-module_minimum__-UKxp", YVe = "sash-module_maximum__TCWxD", c8 = "sash-module_horizontal__kFbiw", wA = "sash-module_hover__80W6I", xA = "sash-module_active__bJspD";
 let Ui = (function(e) {
   return e.Vertical = "VERTICAL", e.Horizontal = "HORIZONTAL", e;
 })({}), xi = (function(e) {
@@ -86378,11 +86393,11 @@ class d8 extends g1 {
     return this._state;
   }
   set state(t) {
-    this._state !== t && (this.el.classList.toggle(VVe, t === xi.Disabled), this.el.classList.toggle("sash-disabled", t === xi.Disabled), this.el.classList.toggle(WVe, t === xi.Minimum), this.el.classList.toggle("sash-minimum", t === xi.Minimum), this.el.classList.toggle(qVe, t === xi.Maximum), this.el.classList.toggle("sash-maximum", t === xi.Maximum), this._state = t, this.emit("enablementChange", t));
+    this._state !== t && (this.el.classList.toggle(qVe, t === xi.Disabled), this.el.classList.toggle("sash-disabled", t === xi.Disabled), this.el.classList.toggle(KVe, t === xi.Minimum), this.el.classList.toggle("sash-minimum", t === xi.Minimum), this.el.classList.toggle(YVe, t === xi.Maximum), this.el.classList.toggle("sash-maximum", t === xi.Maximum), this._state = t, this.emit("enablementChange", t));
   }
   constructor(t, n, r) {
     var a;
-    super(), this.el = void 0, this.layoutProvider = void 0, this.orientation = void 0, this.size = void 0, this.hoverDelay = 300, this.hoverDelayer = RVe((s) => s.classList.add("sash-hover", wA), this.hoverDelay), this._state = xi.Enabled, this.onPointerStart = (s) => {
+    super(), this.el = void 0, this.layoutProvider = void 0, this.orientation = void 0, this.size = void 0, this.hoverDelay = 300, this.hoverDelayer = DVe((s) => s.classList.add("sash-hover", wA), this.hoverDelay), this._state = xi.Enabled, this.onPointerStart = (s) => {
       const l = s.pageX, c = s.pageY, d = {
         startX: l,
         currentX: l,
@@ -86409,7 +86424,7 @@ class d8 extends g1 {
       this.el.classList.contains(xA) ? (this.hoverDelayer.cancel(), this.el.classList.add("sash-hover", wA)) : this.hoverDelayer(this.el);
     }, this.onMouseLeave = () => {
       this.hoverDelayer.cancel(), this.el.classList.remove("sash-hover", wA);
-    }, this.el = document.createElement("div"), this.el.classList.add("sash", UVe), this.el.dataset.testid = "sash", t.append(this.el), LVe && this.el.classList.add("sash-mac", HVe), this.el.addEventListener("pointerdown", this.onPointerStart), this.el.addEventListener("dblclick", this.onPointerDoublePress), this.el.addEventListener("mouseenter", this.onMouseEnter), this.el.addEventListener("mouseleave", this.onMouseLeave), typeof r.size == "number" ? (this.size = r.size, r.orientation === Ui.Vertical ? this.el.style.width = `${this.size}px` : this.el.style.height = `${this.size}px`) : (this.size = nQ, rQ.on("onDidChangeGlobalSize", (s) => {
+    }, this.el = document.createElement("div"), this.el.classList.add("sash", WVe), this.el.dataset.testid = "sash", t.append(this.el), UVe && this.el.classList.add("sash-mac", GVe), this.el.addEventListener("pointerdown", this.onPointerStart), this.el.addEventListener("dblclick", this.onPointerDoublePress), this.el.addEventListener("mouseenter", this.onMouseEnter), this.el.addEventListener("mouseleave", this.onMouseLeave), typeof r.size == "number" ? (this.size = r.size, r.orientation === Ui.Vertical ? this.el.style.width = `${this.size}px` : this.el.style.height = `${this.size}px`) : (this.size = nQ, rQ.on("onDidChangeGlobalSize", (s) => {
       this.size = s, this.layout();
     })), this.layoutProvider = n, this.orientation = (a = r.orientation) != null ? a : Ui.Vertical, this.orientation === Ui.Horizontal ? (this.el.classList.add("sash-horizontal", c8), this.el.classList.remove("sash-vertical", u8)) : (this.el.classList.remove("sash-horizontal", c8), this.el.classList.add("sash-vertical", u8)), this.layout();
   }
@@ -86488,17 +86503,17 @@ class oQ {
     this.layoutContainer(t), this.view.layout(this.size, t);
   }
 }
-class GVe extends oQ {
+class XVe extends oQ {
   layoutContainer(t) {
     this.container.style.left = `${t}px`, this.container.style.width = `${this.size}px`;
   }
 }
-class KVe extends oQ {
+class JVe extends oQ {
   layoutContainer(t) {
     this.container.style.top = `${t}px`, this.container.style.height = `${this.size}px`;
   }
 }
-class YVe extends g1 {
+class QVe extends g1 {
   get startSnappingEnabled() {
     return this._startSnappingEnabled;
   }
@@ -86516,7 +86531,7 @@ class YVe extends g1 {
     if (super(), this.onDidChange = void 0, this.onDidDragStart = void 0, this.onDidDragEnd = void 0, this.orientation = void 0, this.sashContainer = void 0, this.size = 0, this.contentSize = 0, this.proportions = void 0, this.viewItems = [], this.sashItems = [], this.sashDragState = void 0, this.proportionalLayout = void 0, this.getSashOrthogonalSize = void 0, this._startSnappingEnabled = !0, this._endSnappingEnabled = !0, this.onSashEnd = (d) => {
       this.emit("sashchange", d), this.saveProportions();
       for (const f of this.viewItems) f.enabled = !0;
-    }, this.orientation = (l = n.orientation) != null ? l : Ui.Vertical, this.proportionalLayout = (c = n.proportionalLayout) != null ? c : !0, this.getSashOrthogonalSize = n.getSashOrthogonalSize, r && (this.onDidChange = r), a && (this.onDidDragStart = a), s && (this.onDidDragEnd = s), this.sashContainer = document.createElement("div"), this.sashContainer.classList.add("sash-container", DVe), t.prepend(this.sashContainer), n.descriptor) {
+    }, this.orientation = (l = n.orientation) != null ? l : Ui.Vertical, this.proportionalLayout = (c = n.proportionalLayout) != null ? c : !0, this.getSashOrthogonalSize = n.getSashOrthogonalSize, r && (this.onDidChange = r), a && (this.onDidDragStart = a), s && (this.onDidDragEnd = s), this.sashContainer = document.createElement("div"), this.sashContainer.classList.add("sash-container", zVe), t.prepend(this.sashContainer), n.descriptor) {
       this.size = n.descriptor.size;
       for (const [d, f] of n.descriptor.views.entries()) {
         const m = f.size, h = f.container, v = f.view;
@@ -86530,7 +86545,7 @@ class YVe extends g1 {
     l = typeof r == "number" ? r : r.type === "split" ? this.getViewSize(r.index) / 2 : r.type === "invisible" ? {
       cachedVisibleSize: r.cachedVisibleSize
     } : n.minimumSize;
-    const c = this.orientation === Ui.Vertical ? new KVe(t, n, l) : new GVe(t, n, l);
+    const c = this.orientation === Ui.Vertical ? new JVe(t, n, l) : new XVe(t, n, l);
     if (this.viewItems.splice(a, 0, c), this.viewItems.length > 1) {
       const d = this.orientation === Ui.Vertical ? new d8(this.sashContainer, {
         getHorizontalSashTop: (h) => this.getSashPosition(h),
@@ -86871,7 +86886,7 @@ const aQ = M.forwardRef(({
   onDragStart: b,
   onDragEnd: x
 }, w) => {
-  const k = M.useRef(null), E = M.useRef([]), _ = M.useRef(/* @__PURE__ */ new Map()), O = M.useRef(null), N = M.useRef(/* @__PURE__ */ new Map()), A = M.useRef(new FVe()), R = M.useRef([]), [D, I] = M.useState(!1), z = M.useMemo(() => jt.Children.toArray(e).filter(jt.isValidElement), [e]), B = M.useCallback((P) => {
+  const k = M.useRef(null), E = M.useRef([]), _ = M.useRef(/* @__PURE__ */ new Map()), O = M.useRef(null), N = M.useRef(/* @__PURE__ */ new Map()), A = M.useRef(new VVe()), R = M.useRef([]), [D, I] = M.useState(!1), z = M.useMemo(() => jt.Children.toArray(e).filter(jt.isValidElement), [e]), B = M.useCallback((P) => {
     var H, L;
     const G = (H = R.current) == null ? void 0 : H[P];
     return typeof G?.preferredSize == "number" && ((L = O.current) != null && L.resizeView(P, Math.round(G.preferredSize)), !0);
@@ -86918,7 +86933,7 @@ const aQ = M.forwardRef(({
         })
       }
     });
-    O.current = new YVe(k.current, H, h, b, x), O.current.on("sashDragStart", () => {
+    O.current = new QVe(k.current, H, h, b, x), O.current.on("sashDragStart", () => {
       var G;
       (G = k.current) == null || G.classList.add("split-view-sash-dragging");
     }), O.current.on("sashDragEnd", () => {
@@ -86965,7 +86980,7 @@ const aQ = M.forwardRef(({
         }));
         (K = O.current) != null && K.addView(N.current.get(ie), ge, nE.Distribute, U.findIndex((re) => re === ie)), W.splice(U.findIndex((re) => re === ie), 0, ie), R.current.splice(U.findIndex((re) => re === ie), 0, ge);
       }
-      for (; !AVe(U, W); ) for (const [ie, ce] of U.entries()) {
+      for (; !PVe(U, W); ) for (const [ie, ce] of U.entries()) {
         const ge = W.findIndex((re) => re === ce);
         if (ge !== ie) {
           var q;
@@ -87002,7 +87017,7 @@ const aQ = M.forwardRef(({
     O.current && (O.current.onDidDragStart = b);
   }, [b]), M.useEffect(() => {
     O.current && (O.current.onDidDragEnd = x);
-  }, [x]), jVe({
+  }, [x]), IVe({
     ref: k,
     onResize: ({
       width: P,
@@ -87012,17 +87027,17 @@ const aQ = M.forwardRef(({
       P && H && ((L = O.current) != null && L.layout(m ? H : P), A.current.setSize(m ? H : P), I(!0));
     }
   }), M.useEffect(() => {
-    tQ && XVe(20);
+    tQ && ZVe(20);
   }, []), jt.createElement("div", {
     ref: k,
     className: bR("split-view", m ? "split-view-vertical" : "split-view-horizontal", {
       "split-view-separator-border": l
-    }, PVe, m ? $Ve : zVe, {
-      [TVe]: l
+    }, $Ve, m ? LVe : FVe, {
+      [BVe]: l
     }, t),
     id: n
   }, jt.createElement("div", {
-    className: bR("split-view-container", IVe)
+    className: bR("split-view-container", TVe)
   }, jt.Children.toArray(e).map((P) => {
     if (!jt.isValidElement(P)) return null;
     const H = P.key;
@@ -87040,25 +87055,25 @@ const aQ = M.forwardRef(({
     }, P);
   })));
 });
-function XVe(e) {
+function ZVe(e) {
   const t = Vs(e, 4, 20), n = Vs(e, 1, 8);
   document.documentElement.style.setProperty("--sash-size", t + "px"), document.documentElement.style.setProperty("--sash-hover-size", n + "px"), (function(r) {
     nQ = r, rQ.emit("onDidChangeGlobalSize", r);
   })(t);
 }
 aQ.displayName = "Allotment";
-var JVe = Object.assign(aQ, {
+var eHe = Object.assign(aQ, {
   Pane: v1
 });
-var QVe = {
+var tHe = {
   prefix: "fas",
   iconName: "gears",
   icon: [640, 512, ["cogs"], "f085", "M415.9 210.5c12.2-3.3 25 2.5 30.5 13.8L465 261.9c10.3 1.4 20.4 4.2 29.9 8.1l35-23.3c10.5-7 24.4-5.6 33.3 3.3l19.2 19.2c8.9 8.9 10.3 22.9 3.3 33.3l-23.3 34.9c1.9 4.7 3.6 9.6 5 14.7 1.4 5.1 2.3 10.1 3 15.2l37.7 18.6c11.3 5.6 17.1 18.4 13.8 30.5l-7 26.2c-3.3 12.1-14.6 20.3-27.2 19.5l-42-2.7c-6.3 8.1-13.6 15.6-21.9 22l2.7 41.9c.8 12.6-7.4 24-19.5 27.2l-26.2 7c-12.2 3.3-24.9-2.5-30.5-13.8l-18.6-37.6c-10.3-1.4-20.4-4.2-29.9-8.1l-35 23.3c-10.5 7-24.4 5.6-33.3-3.3l-19.2-19.2c-8.9-8.9-10.3-22.8-3.3-33.3l23.3-35c-1.9-4.7-3.6-9.6-5-14.7s-2.3-10.2-3-15.2l-37.7-18.6c-11.3-5.6-17-18.4-13.8-30.5l7-26.2c3.3-12.1 14.6-20.3 27.2-19.5l41.9 2.7c6.3-8.1 13.6-15.6 21.9-22l-2.7-41.8c-.8-12.6 7.4-24 19.5-27.2l26.2-7zM448.4 340a44 44 0 1 0 .1 88 44 44 0 1 0 -.1-88zM224.9-45.5l26.2 7c12.1 3.3 20.3 14.7 19.5 27.2l-2.7 41.8c8.3 6.4 15.6 13.8 21.9 22l42-2.7c12.5-.8 23.9 7.4 27.2 19.5l7 26.2c3.2 12.1-2.5 24.9-13.8 30.5l-37.7 18.6c-.7 5.1-1.7 10.2-3 15.2s-3.1 10-5 14.7l23.3 35c7 10.5 5.6 24.4-3.3 33.3L307.3 262c-8.9 8.9-22.8 10.3-33.3 3.3L239 242c-9.5 3.9-19.6 6.7-29.9 8.1l-18.6 37.6c-5.6 11.3-18.4 17-30.5 13.8l-26.2-7c-12.2-3.3-20.3-14.7-19.5-27.2l2.7-41.9c-8.3-6.4-15.6-13.8-21.9-22l-42 2.7c-12.5 .8-23.9-7.4-27.2-19.5l-7-26.2c-3.2-12.1 2.5-24.9 13.8-30.5l37.7-18.6c.7-5.1 1.7-10.1 3-15.2 1.4-5.1 3-10 5-14.7L55.1 46.5c-7-10.5-5.6-24.4 3.3-33.3L77.6-6c8.9-8.9 22.8-10.3 33.3-3.3l35 23.3c9.5-3.9 19.6-6.7 29.9-8.1l18.6-37.6c5.6-11.3 18.3-17 30.5-13.8zM192.4 84a44 44 0 1 0 0 88 44 44 0 1 0 0-88z"]
-}, ZVe = {
+}, nHe = {
   prefix: "fas",
   iconName: "circle-pause",
   icon: [512, 512, [62092, "pause-circle"], "f28b", "M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"]
-}, eHe = {
+}, rHe = {
   prefix: "fas",
   iconName: "circle-play",
   icon: [512, 512, [61469, "play-circle"], "f144", "M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"]
@@ -87068,23 +87083,23 @@ function wR(e, t) {
   for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
   return r;
 }
-function tHe(e) {
+function oHe(e) {
   if (Array.isArray(e)) return e;
 }
-function nHe(e) {
+function aHe(e) {
   if (Array.isArray(e)) return wR(e);
 }
-function rHe(e, t) {
+function iHe(e, t) {
   if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
 }
-function oHe(e, t) {
+function sHe(e, t) {
   for (var n = 0; n < t.length; n++) {
     var r = t[n];
     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, iQ(r.key), r);
   }
 }
-function aHe(e, t, n) {
-  return t && oHe(e.prototype, t), Object.defineProperty(e, "prototype", {
+function lHe(e, t, n) {
+  return t && sHe(e.prototype, t), Object.defineProperty(e, "prototype", {
     writable: !1
   }), e;
 }
@@ -87143,10 +87158,10 @@ function Bt(e, t, n) {
     writable: !0
   }) : e[t] = n, e;
 }
-function iHe(e) {
+function uHe(e) {
   if (typeof Symbol < "u" && e[Symbol.iterator] != null || e["@@iterator"] != null) return Array.from(e);
 }
-function sHe(e, t) {
+function cHe(e, t) {
   var n = e == null ? null : typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (n != null) {
     var r, a, s, l, c = [], d = !0, f = !1;
@@ -87167,11 +87182,11 @@ function sHe(e, t) {
     return c;
   }
 }
-function lHe() {
+function dHe() {
   throw new TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function uHe() {
+function fHe() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
@@ -87197,12 +87212,12 @@ function Ie(e) {
   return e;
 }
 function QC(e, t) {
-  return tHe(e) || sHe(e, t) || y1(e, t) || lHe();
+  return oHe(e) || cHe(e, t) || y1(e, t) || dHe();
 }
 function ol(e) {
-  return nHe(e) || iHe(e) || y1(e) || uHe();
+  return aHe(e) || uHe(e) || y1(e) || fHe();
 }
-function cHe(e, t) {
+function pHe(e, t) {
   if (typeof e != "object" || !e) return e;
   var n = e[Symbol.toPrimitive];
   if (n !== void 0) {
@@ -87213,7 +87228,7 @@ function cHe(e, t) {
   return (t === "string" ? String : Number)(e);
 }
 function iQ(e) {
-  var t = cHe(e, "string");
+  var t = pHe(e, "string");
   return typeof t == "symbol" ? t : t + "";
 }
 function rE(e) {
@@ -87240,9 +87255,9 @@ try {
   typeof window < "u" && (b1 = window), typeof document < "u" && (sQ = document), typeof MutationObserver < "u" && (lQ = MutationObserver), typeof performance < "u" && (uQ = performance);
 } catch {
 }
-var dHe = b1.navigator || {}, v8 = dHe.userAgent, y8 = v8 === void 0 ? "" : v8, Td = b1, dr = sQ, b8 = lQ, x_ = uQ;
+var mHe = b1.navigator || {}, v8 = mHe.userAgent, y8 = v8 === void 0 ? "" : v8, Td = b1, dr = sQ, b8 = lQ, x_ = uQ;
 Td.document;
-var rd = !!dr.documentElement && !!dr.head && typeof dr.addEventListener == "function" && typeof dr.createElement == "function", cQ = ~y8.indexOf("MSIE") || ~y8.indexOf("Trident/"), kA, fHe = /fa(k|kd|s|r|l|t|d|dr|dl|dt|b|slr|slpr|wsb|tl|ns|nds|es|jr|jfr|jdr|usb|ufsb|udsb|cr|ss|sr|sl|st|sds|sdr|sdl|sdt)?[\-\ ]/, pHe = /Font ?Awesome ?([567 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp Duotone|Sharp|Kit|Notdog Duo|Notdog|Chisel|Etch|Thumbprint|Jelly Fill|Jelly Duo|Jelly|Utility|Utility Fill|Utility Duo|Slab Press|Slab|Whiteboard)?.*/i, dQ = {
+var rd = !!dr.documentElement && !!dr.head && typeof dr.addEventListener == "function" && typeof dr.createElement == "function", cQ = ~y8.indexOf("MSIE") || ~y8.indexOf("Trident/"), kA, hHe = /fa(k|kd|s|r|l|t|d|dr|dl|dt|b|slr|slpr|wsb|tl|ns|nds|es|jr|jfr|jdr|usb|ufsb|udsb|cr|ss|sr|sl|st|sds|sdr|sdl|sdt)?[\-\ ]/, gHe = /Font ?Awesome ?([567 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp Duotone|Sharp|Kit|Notdog Duo|Notdog|Chisel|Etch|Thumbprint|Jelly Fill|Jelly Duo|Jelly|Utility|Utility Fill|Utility Duo|Slab Press|Slab|Whiteboard)?.*/i, dQ = {
   classic: {
     fa: "solid",
     fas: "solid",
@@ -87346,13 +87361,13 @@ var rd = !!dr.documentElement && !!dr.head && typeof dr.addEventListener == "fun
     "fa-semibold": "semibold",
     faufsb: "semibold"
   }
-}, mHe = {
+}, vHe = {
   GROUP: "duotone-group",
   PRIMARY: "primary",
   SECONDARY: "secondary"
-}, fQ = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press", "fa-utility", "fa-utility-duo", "fa-utility-fill"], Fo = "classic", Tk = "duotone", pQ = "sharp", mQ = "sharp-duotone", hQ = "chisel", gQ = "etch", vQ = "jelly", yQ = "jelly-duo", bQ = "jelly-fill", wQ = "notdog", xQ = "notdog-duo", SQ = "slab", kQ = "slab-press", _Q = "thumbprint", EQ = "utility", CQ = "utility-duo", OQ = "utility-fill", MQ = "whiteboard", hHe = "Classic", gHe = "Duotone", vHe = "Sharp", yHe = "Sharp Duotone", bHe = "Chisel", wHe = "Etch", xHe = "Jelly", SHe = "Jelly Duo", kHe = "Jelly Fill", _He = "Notdog", EHe = "Notdog Duo", CHe = "Slab", OHe = "Slab Press", MHe = "Thumbprint", NHe = "Utility", AHe = "Utility Duo", RHe = "Utility Fill", jHe = "Whiteboard", NQ = [Fo, Tk, pQ, mQ, hQ, gQ, vQ, yQ, bQ, wQ, xQ, SQ, kQ, _Q, EQ, CQ, OQ, MQ];
-kA = {}, Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(kA, Fo, hHe), Tk, gHe), pQ, vHe), mQ, yHe), hQ, bHe), gQ, wHe), vQ, xHe), yQ, SHe), bQ, kHe), wQ, _He), Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(kA, xQ, EHe), SQ, CHe), kQ, OHe), _Q, MHe), EQ, NHe), CQ, AHe), OQ, RHe), MQ, jHe);
-var PHe = {
+}, fQ = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press", "fa-utility", "fa-utility-duo", "fa-utility-fill"], Fo = "classic", Tk = "duotone", pQ = "sharp", mQ = "sharp-duotone", hQ = "chisel", gQ = "etch", vQ = "jelly", yQ = "jelly-duo", bQ = "jelly-fill", wQ = "notdog", xQ = "notdog-duo", SQ = "slab", kQ = "slab-press", _Q = "thumbprint", EQ = "utility", CQ = "utility-duo", OQ = "utility-fill", MQ = "whiteboard", yHe = "Classic", bHe = "Duotone", wHe = "Sharp", xHe = "Sharp Duotone", SHe = "Chisel", kHe = "Etch", _He = "Jelly", EHe = "Jelly Duo", CHe = "Jelly Fill", OHe = "Notdog", MHe = "Notdog Duo", NHe = "Slab", AHe = "Slab Press", RHe = "Thumbprint", jHe = "Utility", PHe = "Utility Duo", DHe = "Utility Fill", IHe = "Whiteboard", NQ = [Fo, Tk, pQ, mQ, hQ, gQ, vQ, yQ, bQ, wQ, xQ, SQ, kQ, _Q, EQ, CQ, OQ, MQ];
+kA = {}, Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(kA, Fo, yHe), Tk, bHe), pQ, wHe), mQ, xHe), hQ, SHe), gQ, kHe), vQ, _He), yQ, EHe), bQ, CHe), wQ, OHe), Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(kA, xQ, MHe), SQ, NHe), kQ, AHe), _Q, RHe), EQ, jHe), CQ, PHe), OQ, DHe), MQ, IHe);
+var $He = {
   classic: {
     900: "fas",
     400: "far",
@@ -87420,7 +87435,7 @@ var PHe = {
   "utility-fill": {
     600: "faufsb"
   }
-}, DHe = {
+}, zHe = {
   "Font Awesome 7 Free": {
     900: "fas",
     400: "far"
@@ -87513,7 +87528,7 @@ var PHe = {
     600: "faufsb",
     normal: "faufsb"
   }
-}, IHe = /* @__PURE__ */ new Map([["classic", {
+}, THe = /* @__PURE__ */ new Map([["classic", {
   defaultShortPrefixId: "fas",
   defaultStyleId: "solid",
   styleIds: ["solid", "regular", "light", "thin", "brands"],
@@ -87621,7 +87636,7 @@ var PHe = {
   styleIds: ["semibold"],
   futureStyleIds: [],
   defaultFontWeight: 600
-}]]), $He = {
+}]]), LHe = {
   chisel: {
     regular: "facr"
   },
@@ -87698,13 +87713,13 @@ var PHe = {
     fakd: "kit-duotone",
     "fa-kit-duotone": "kit-duotone"
   }
-}, zHe = ["kit"], THe = "kit", LHe = "kit-duotone", FHe = "Kit", BHe = "Kit Duotone";
-Bt(Bt({}, THe, FHe), LHe, BHe);
-var UHe = {
+}, FHe = ["kit"], BHe = "kit", UHe = "kit-duotone", VHe = "Kit", HHe = "Kit Duotone";
+Bt(Bt({}, BHe, VHe), UHe, HHe);
+var WHe = {
   kit: {
     "fa-kit": "fak"
   }
-}, VHe = {
+}, qHe = {
   "Font Awesome Kit": {
     400: "fak",
     normal: "fak"
@@ -87713,7 +87728,7 @@ var UHe = {
     400: "fakd",
     normal: "fakd"
   }
-}, HHe = {
+}, GHe = {
   kit: {
     fak: "fa-kit"
   }
@@ -87729,11 +87744,11 @@ var UHe = {
   SWAP_OPACITY: "swap-opacity",
   PRIMARY: "primary",
   SECONDARY: "secondary"
-}, WHe = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press", "fa-utility", "fa-utility-duo", "fa-utility-fill"], qHe = "classic", GHe = "duotone", KHe = "sharp", YHe = "sharp-duotone", XHe = "chisel", JHe = "etch", QHe = "jelly", ZHe = "jelly-duo", eWe = "jelly-fill", tWe = "notdog", nWe = "notdog-duo", rWe = "slab", oWe = "slab-press", aWe = "thumbprint", iWe = "utility", sWe = "utility-duo", lWe = "utility-fill", uWe = "whiteboard", cWe = "Classic", dWe = "Duotone", fWe = "Sharp", pWe = "Sharp Duotone", mWe = "Chisel", hWe = "Etch", gWe = "Jelly", vWe = "Jelly Duo", yWe = "Jelly Fill", bWe = "Notdog", wWe = "Notdog Duo", xWe = "Slab", SWe = "Slab Press", kWe = "Thumbprint", _We = "Utility", EWe = "Utility Duo", CWe = "Utility Fill", OWe = "Whiteboard";
-_A = {}, Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(_A, qHe, cWe), GHe, dWe), KHe, fWe), YHe, pWe), XHe, mWe), JHe, hWe), QHe, gWe), ZHe, vWe), eWe, yWe), tWe, bWe), Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(_A, nWe, wWe), rWe, xWe), oWe, SWe), aWe, kWe), iWe, _We), sWe, EWe), lWe, CWe), uWe, OWe);
-var MWe = "kit", NWe = "kit-duotone", AWe = "Kit", RWe = "Kit Duotone";
-Bt(Bt({}, MWe, AWe), NWe, RWe);
-var jWe = {
+}, KHe = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press", "fa-utility", "fa-utility-duo", "fa-utility-fill"], YHe = "classic", XHe = "duotone", JHe = "sharp", QHe = "sharp-duotone", ZHe = "chisel", eWe = "etch", tWe = "jelly", nWe = "jelly-duo", rWe = "jelly-fill", oWe = "notdog", aWe = "notdog-duo", iWe = "slab", sWe = "slab-press", lWe = "thumbprint", uWe = "utility", cWe = "utility-duo", dWe = "utility-fill", fWe = "whiteboard", pWe = "Classic", mWe = "Duotone", hWe = "Sharp", gWe = "Sharp Duotone", vWe = "Chisel", yWe = "Etch", bWe = "Jelly", wWe = "Jelly Duo", xWe = "Jelly Fill", SWe = "Notdog", kWe = "Notdog Duo", _We = "Slab", EWe = "Slab Press", CWe = "Thumbprint", OWe = "Utility", MWe = "Utility Duo", NWe = "Utility Fill", AWe = "Whiteboard";
+_A = {}, Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(_A, YHe, pWe), XHe, mWe), JHe, hWe), QHe, gWe), ZHe, vWe), eWe, yWe), tWe, bWe), nWe, wWe), rWe, xWe), oWe, SWe), Bt(Bt(Bt(Bt(Bt(Bt(Bt(Bt(_A, aWe, kWe), iWe, _We), sWe, EWe), lWe, CWe), uWe, OWe), cWe, MWe), dWe, NWe), fWe, AWe);
+var RWe = "kit", jWe = "kit-duotone", PWe = "Kit", DWe = "Kit Duotone";
+Bt(Bt({}, RWe, PWe), jWe, DWe);
+var IWe = {
   classic: {
     "fa-brands": "fab",
     "fa-duotone": "fad",
@@ -87801,7 +87816,7 @@ var jWe = {
   "utility-fill": {
     "fa-semibold": "faufsb"
   }
-}, PWe = {
+}, $We = {
   classic: ["fas", "far", "fal", "fat", "fad"],
   duotone: ["fadr", "fadl", "fadt"],
   sharp: ["fass", "fasr", "fasl", "fast"],
@@ -87888,11 +87903,11 @@ var jWe = {
   "utility-fill": {
     faufsb: "fa-semibold"
   }
-}, DWe = ["fa-solid", "fa-regular", "fa-light", "fa-thin", "fa-duotone", "fa-brands", "fa-semibold"], RQ = ["fa", "fas", "far", "fal", "fat", "fad", "fadr", "fadl", "fadt", "fab", "fass", "fasr", "fasl", "fast", "fasds", "fasdr", "fasdl", "fasdt", "faslr", "faslpr", "fawsb", "fatl", "fans", "fands", "faes", "fajr", "fajfr", "fajdr", "facr", "fausb", "faudsb", "faufsb"].concat(WHe, DWe), IWe = ["solid", "regular", "light", "thin", "duotone", "brands", "semibold"], jQ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], $We = jQ.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]), zWe = ["aw", "fw", "pull-left", "pull-right"], TWe = [].concat(ol(Object.keys(PWe)), IWe, zWe, ["2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "inverse", "layers", "layers-bottom-left", "layers-bottom-right", "layers-counter", "layers-text", "layers-top-left", "layers-top-right", "li", "pull-end", "pull-start", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", "width-auto", "width-fixed", S_.GROUP, S_.SWAP_OPACITY, S_.PRIMARY, S_.SECONDARY]).concat(jQ.map(function(e) {
+}, zWe = ["fa-solid", "fa-regular", "fa-light", "fa-thin", "fa-duotone", "fa-brands", "fa-semibold"], RQ = ["fa", "fas", "far", "fal", "fat", "fad", "fadr", "fadl", "fadt", "fab", "fass", "fasr", "fasl", "fast", "fasds", "fasdr", "fasdl", "fasdt", "faslr", "faslpr", "fawsb", "fatl", "fans", "fands", "faes", "fajr", "fajfr", "fajdr", "facr", "fausb", "faudsb", "faufsb"].concat(KHe, zWe), TWe = ["solid", "regular", "light", "thin", "duotone", "brands", "semibold"], jQ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], LWe = jQ.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]), FWe = ["aw", "fw", "pull-left", "pull-right"], BWe = [].concat(ol(Object.keys($We)), TWe, FWe, ["2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "inverse", "layers", "layers-bottom-left", "layers-bottom-right", "layers-counter", "layers-text", "layers-top-left", "layers-top-right", "li", "pull-end", "pull-start", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", "width-auto", "width-fixed", S_.GROUP, S_.SWAP_OPACITY, S_.PRIMARY, S_.SECONDARY]).concat(jQ.map(function(e) {
   return "".concat(e, "x");
-})).concat($We.map(function(e) {
+})).concat(LWe.map(function(e) {
   return "w-".concat(e);
-})), LWe = {
+})), UWe = {
   "Font Awesome 5 Free": {
     900: "fas",
     400: "far"
@@ -87910,7 +87925,7 @@ var jWe = {
   "Font Awesome 5 Duotone": {
     900: "fad"
   }
-}, Wc = "___FONT_AWESOME___", SR = 16, PQ = "fa", DQ = "svg-inline--fa", Km = "data-fa-i2svg", kR = "data-fa-pseudo-element", FWe = "data-fa-pseudo-element-pending", w1 = "data-prefix", x1 = "data-icon", S8 = "fontawesome-i2svg", BWe = "async", UWe = ["HTML", "HEAD", "STYLE", "SCRIPT"], IQ = ["::before", "::after", ":before", ":after"], $Q = (function() {
+}, Wc = "___FONT_AWESOME___", SR = 16, PQ = "fa", DQ = "svg-inline--fa", Km = "data-fa-i2svg", kR = "data-fa-pseudo-element", VWe = "data-fa-pseudo-element-pending", w1 = "data-prefix", x1 = "data-icon", S8 = "fontawesome-i2svg", HWe = "async", WWe = ["HTML", "HEAD", "STYLE", "SCRIPT"], IQ = ["::before", "::after", ":before", ":after"], $Q = (function() {
   try {
     return !0;
   } catch {
@@ -87928,30 +87943,30 @@ var zQ = Ie({}, dQ);
 zQ[Fo] = Ie(Ie(Ie(Ie({}, {
   "fa-duotone": "duotone"
 }), dQ[Fo]), w8.kit), w8["kit-duotone"]);
-var VWe = Lk(zQ), _R = Ie({}, $He);
+var qWe = Lk(zQ), _R = Ie({}, LHe);
 _R[Fo] = Ie(Ie(Ie(Ie({}, {
   duotone: "fad"
 }), _R[Fo]), x8.kit), x8["kit-duotone"]);
 var k8 = Lk(_R), ER = Ie({}, xR);
-ER[Fo] = Ie(Ie({}, ER[Fo]), HHe.kit);
-var S1 = Lk(ER), CR = Ie({}, jWe);
-CR[Fo] = Ie(Ie({}, CR[Fo]), UHe.kit);
+ER[Fo] = Ie(Ie({}, ER[Fo]), GHe.kit);
+var S1 = Lk(ER), CR = Ie({}, IWe);
+CR[Fo] = Ie(Ie({}, CR[Fo]), WHe.kit);
 Lk(CR);
-var HWe = fHe, TQ = "fa-layers-text", WWe = pHe, qWe = Ie({}, PHe);
-Lk(qWe);
-var GWe = ["class", "data-prefix", "data-icon", "data-fa-transform", "data-fa-mask"], EA = mHe, KWe = [].concat(ol(zHe), ol(TWe)), Xx = Td.FontAwesomeConfig || {};
-function YWe(e) {
+var GWe = hHe, TQ = "fa-layers-text", KWe = gHe, YWe = Ie({}, $He);
+Lk(YWe);
+var XWe = ["class", "data-prefix", "data-icon", "data-fa-transform", "data-fa-mask"], EA = vHe, JWe = [].concat(ol(FHe), ol(BWe)), Xx = Td.FontAwesomeConfig || {};
+function QWe(e) {
   var t = dr.querySelector("script[" + e + "]");
   if (t)
     return t.getAttribute(e);
 }
-function XWe(e) {
+function ZWe(e) {
   return e === "" ? !0 : e === "false" ? !1 : e === "true" ? !0 : e;
 }
 if (dr && typeof dr.querySelector == "function") {
-  var JWe = [["data-family-prefix", "familyPrefix"], ["data-css-prefix", "cssPrefix"], ["data-family-default", "familyDefault"], ["data-style-default", "styleDefault"], ["data-replacement-class", "replacementClass"], ["data-auto-replace-svg", "autoReplaceSvg"], ["data-auto-add-css", "autoAddCss"], ["data-search-pseudo-elements", "searchPseudoElements"], ["data-search-pseudo-elements-warnings", "searchPseudoElementsWarnings"], ["data-search-pseudo-elements-full-scan", "searchPseudoElementsFullScan"], ["data-observe-mutations", "observeMutations"], ["data-mutate-approach", "mutateApproach"], ["data-keep-original-source", "keepOriginalSource"], ["data-measure-performance", "measurePerformance"], ["data-show-missing-icons", "showMissingIcons"]];
-  JWe.forEach(function(e) {
-    var t = QC(e, 2), n = t[0], r = t[1], a = XWe(YWe(n));
+  var eqe = [["data-family-prefix", "familyPrefix"], ["data-css-prefix", "cssPrefix"], ["data-family-default", "familyDefault"], ["data-style-default", "styleDefault"], ["data-replacement-class", "replacementClass"], ["data-auto-replace-svg", "autoReplaceSvg"], ["data-auto-add-css", "autoAddCss"], ["data-search-pseudo-elements", "searchPseudoElements"], ["data-search-pseudo-elements-warnings", "searchPseudoElementsWarnings"], ["data-search-pseudo-elements-full-scan", "searchPseudoElementsFullScan"], ["data-observe-mutations", "observeMutations"], ["data-mutate-approach", "mutateApproach"], ["data-keep-original-source", "keepOriginalSource"], ["data-measure-performance", "measurePerformance"], ["data-show-missing-icons", "showMissingIcons"]];
+  eqe.forEach(function(e) {
+    var t = QC(e, 2), n = t[0], r = t[1], a = ZWe(QWe(n));
     a != null && (Xx[r] = a);
   });
 }
@@ -88001,7 +88016,7 @@ Object.defineProperty(ft, "familyPrefix", {
 });
 Td.FontAwesomeConfig = ft;
 var Jx = [];
-function QWe(e) {
+function tqe(e) {
   return Jx.push(e), function() {
     Jx.splice(Jx.indexOf(e), 1);
   };
@@ -88014,7 +88029,7 @@ var Dh = SR, Il = {
   flipX: !1,
   flipY: !1
 };
-function ZWe(e) {
+function nqe(e) {
   if (!(!e || !rd)) {
     var t = dr.createElement("style");
     t.setAttribute("type", "text/css"), t.innerHTML = e;
@@ -88025,10 +88040,10 @@ function ZWe(e) {
     return dr.head.insertBefore(t, r), e;
   }
 }
-var eqe = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var rqe = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function _8() {
   for (var e = 12, t = ""; e-- > 0; )
-    t += eqe[Math.random() * 62 | 0];
+    t += rqe[Math.random() * 62 | 0];
   return t;
 }
 function Qg(e) {
@@ -88044,7 +88059,7 @@ function k1(e) {
 function FQ(e) {
   return "".concat(e).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
-function tqe(e) {
+function oqe(e) {
   return Object.keys(e || {}).reduce(function(t, n) {
     return t + "".concat(n, '="').concat(FQ(e[n]), '" ');
   }, "").trim();
@@ -88057,7 +88072,7 @@ function ZC(e) {
 function _1(e) {
   return e.size !== Il.size || e.x !== Il.x || e.y !== Il.y || e.rotate !== Il.rotate || e.flipX || e.flipY;
 }
-function nqe(e) {
+function aqe(e) {
   var t = e.transform, n = e.containerWidth, r = e.iconWidth, a = {
     transform: "translate(".concat(n / 2, " 256)")
   }, s = "translate(".concat(t.x * 32, ", ").concat(t.y * 32, ") "), l = "scale(".concat(t.size / 16 * (t.flipX ? -1 : 1), ", ").concat(t.size / 16 * (t.flipY ? -1 : 1), ") "), c = "rotate(".concat(t.rotate, " 0 0)"), d = {
@@ -88071,11 +88086,11 @@ function nqe(e) {
     path: f
   };
 }
-function rqe(e) {
+function iqe(e) {
   var t = e.transform, n = e.width, r = n === void 0 ? SR : n, a = e.height, s = a === void 0 ? SR : a, l = "";
   return cQ ? l += "translate(".concat(t.x / Dh - r / 2, "em, ").concat(t.y / Dh - s / 2, "em) ") : l += "translate(calc(-50% + ".concat(t.x / Dh, "em), calc(-50% + ").concat(t.y / Dh, "em)) "), l += "scale(".concat(t.size / Dh * (t.flipX ? -1 : 1), ", ").concat(t.size / Dh * (t.flipY ? -1 : 1), ") "), l += "rotate(".concat(t.rotate, "deg) "), l;
 }
-var oqe = `:root, :host {
+var sqe = `:root, :host {
   --fa-font-solid: normal 900 1em/1 "Font Awesome 7 Free";
   --fa-font-regular: normal 400 1em/1 "Font Awesome 7 Free";
   --fa-font-light: normal 300 1em/1 "Font Awesome 7 Pro";
@@ -88627,7 +88642,7 @@ var oqe = `:root, :host {
   z-index: var(--fa-stack-z-index, auto);
 }`;
 function BQ() {
-  var e = PQ, t = DQ, n = ft.cssPrefix, r = ft.replacementClass, a = oqe;
+  var e = PQ, t = DQ, n = ft.cssPrefix, r = ft.replacementClass, a = sqe;
   if (n !== e || r !== t) {
     var s = new RegExp("\\.".concat(e, "\\-"), "g"), l = new RegExp("\\--".concat(e, "\\-"), "g"), c = new RegExp("\\.".concat(t), "g");
     a = a.replace(s, ".".concat(n, "-")).replace(l, "--".concat(n, "-")).replace(c, ".".concat(r));
@@ -88636,9 +88651,9 @@ function BQ() {
 }
 var E8 = !1;
 function CA() {
-  ft.autoAddCss && !E8 && (ZWe(BQ()), E8 = !0);
+  ft.autoAddCss && !E8 && (nqe(BQ()), E8 = !0);
 }
-var aqe = {
+var lqe = {
   mixout: function() {
     return {
       dom: {
@@ -88668,12 +88683,12 @@ var Xs = qc[Wc], UQ = [], VQ = function() {
   });
 }, oE = !1;
 rd && (oE = (dr.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(dr.readyState), oE || dr.addEventListener("DOMContentLoaded", VQ));
-function iqe(e) {
+function uqe(e) {
   rd && (oE ? setTimeout(e, 0) : UQ.push(e));
 }
 function Fk(e) {
   var t = e.tag, n = e.attributes, r = n === void 0 ? {} : n, a = e.children, s = a === void 0 ? [] : a;
-  return typeof e == "string" ? FQ(e) : "<".concat(t, " ").concat(tqe(r), ">").concat(s.map(Fk).join(""), "</").concat(t, ">");
+  return typeof e == "string" ? FQ(e) : "<".concat(t, " ").concat(oqe(r), ">").concat(s.map(Fk).join(""), "</").concat(t, ">");
 }
 function C8(e, t, n) {
   if (e && e[t] && e[t][n])
@@ -88702,15 +88717,15 @@ function OR(e, t) {
   var n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {}, r = n.skipHooks, a = r === void 0 ? !1 : r, s = O8(t);
   typeof Xs.hooks.addPack == "function" && !a ? Xs.hooks.addPack(e, O8(t)) : Xs.styles[e] = Ie(Ie({}, Xs.styles[e] || {}), s), e === "fas" && OR("fa", t);
 }
-var TS = Xs.styles, sqe = Xs.shims, WQ = Object.keys(S1), lqe = WQ.reduce(function(e, t) {
+var TS = Xs.styles, cqe = Xs.shims, WQ = Object.keys(S1), dqe = WQ.reduce(function(e, t) {
   return e[t] = Object.keys(S1[t]), e;
 }, {}), E1 = null, qQ = {}, GQ = {}, KQ = {}, YQ = {}, XQ = {};
-function uqe(e) {
-  return ~KWe.indexOf(e);
+function fqe(e) {
+  return ~JWe.indexOf(e);
 }
-function cqe(e, t) {
+function pqe(e, t) {
   var n = t.split("-"), r = n[0], a = n.slice(1).join("-");
-  return r === e && a !== "" && !uqe(a) ? a : null;
+  return r === e && a !== "" && !fqe(a) ? a : null;
 }
 var JQ = function() {
   var t = function(s) {
@@ -88744,7 +88759,7 @@ var JQ = function() {
       a[d] = l;
     }), a;
   });
-  var n = "far" in TS || ft.autoFetchSvg, r = OA(sqe, function(a, s) {
+  var n = "far" in TS || ft.autoFetchSvg, r = OA(cqe, function(a, s) {
     var l = s[0], c = s[1], d = s[2];
     return c === "far" && !n && (c = "fas"), typeof l == "string" && (a.names[l] = {
       prefix: c,
@@ -88761,7 +88776,7 @@ var JQ = function() {
     family: ft.familyDefault
   });
 };
-QWe(function(e) {
+tqe(function(e) {
   E1 = eO(e.styleDefault, {
     family: ft.familyDefault
   });
@@ -88770,7 +88785,7 @@ JQ();
 function C1(e, t) {
   return (qQ[e] || {})[t];
 }
-function dqe(e, t) {
+function mqe(e, t) {
   return (GQ[e] || {})[t];
 }
 function Nm(e, t) {
@@ -88782,7 +88797,7 @@ function QQ(e) {
     iconName: null
   };
 }
-function fqe(e) {
+function hqe(e) {
   var t = YQ[e], n = C1("fas", e);
   return t || (n ? {
     prefix: "fas",
@@ -88802,27 +88817,27 @@ var ZQ = function() {
     rest: []
   };
 };
-function pqe(e) {
+function gqe(e) {
   var t = Fo, n = WQ.reduce(function(r, a) {
     return r[a] = "".concat(ft.cssPrefix, "-").concat(a), r;
   }, {});
   return NQ.forEach(function(r) {
     (e.includes(n[r]) || e.some(function(a) {
-      return lqe[r].includes(a);
+      return dqe[r].includes(a);
     })) && (t = r);
   }), t;
 }
 function eO(e) {
-  var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = t.family, r = n === void 0 ? Fo : n, a = VWe[r][e];
+  var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = t.family, r = n === void 0 ? Fo : n, a = qWe[r][e];
   if (r === Tk && !e)
     return "fad";
   var s = k8[r][e] || k8[r][a], l = e in Xs.styles ? e : null, c = s || l || null;
   return c;
 }
-function mqe(e) {
+function vqe(e) {
   var t = [], n = null;
   return e.forEach(function(r) {
-    var a = cqe(ft.cssPrefix, r);
+    var a = pqe(ft.cssPrefix, r);
     a ? n = a : r && t.push(r);
   }), {
     iconName: n,
@@ -88842,21 +88857,21 @@ function tO(e) {
     return !N8.includes(g);
   })), c = s.filter(function(g) {
     return a = g, !fQ.includes(g);
-  }), d = QC(c, 1), f = d[0], m = f === void 0 ? null : f, h = pqe(s), v = Ie(Ie({}, mqe(l)), {}, {
+  }), d = QC(c, 1), f = d[0], m = f === void 0 ? null : f, h = gqe(s), v = Ie(Ie({}, vqe(l)), {}, {
     prefix: eO(m, {
       family: h
     })
   });
-  return Ie(Ie(Ie({}, v), yqe({
+  return Ie(Ie(Ie({}, v), xqe({
     values: e,
     family: h,
     styles: TS,
     config: ft,
     canonical: v,
     givenPrefix: a
-  })), hqe(r, a, v));
+  })), yqe(r, a, v));
 }
-function hqe(e, t, n) {
+function yqe(e, t, n) {
   var r = n.prefix, a = n.iconName;
   if (e || !r || !a)
     return {
@@ -88869,31 +88884,31 @@ function hqe(e, t, n) {
     iconName: a
   };
 }
-var gqe = NQ.filter(function(e) {
+var bqe = NQ.filter(function(e) {
   return e !== Fo || e !== Tk;
-}), vqe = Object.keys(xR).filter(function(e) {
+}), wqe = Object.keys(xR).filter(function(e) {
   return e !== Fo;
 }).map(function(e) {
   return Object.keys(xR[e]);
 }).flat();
-function yqe(e) {
+function xqe(e) {
   var t = e.values, n = e.family, r = e.canonical, a = e.givenPrefix, s = a === void 0 ? "" : a, l = e.styles, c = l === void 0 ? {} : l, d = e.config, f = d === void 0 ? {} : d, m = n === Tk, h = t.includes("fa-duotone") || t.includes("fad"), v = f.familyDefault === "duotone", g = r.prefix === "fad" || r.prefix === "fa-duotone";
-  if (!m && (h || v || g) && (r.prefix = "fad"), (t.includes("fa-brands") || t.includes("fab")) && (r.prefix = "fab"), !r.prefix && gqe.includes(n)) {
+  if (!m && (h || v || g) && (r.prefix = "fad"), (t.includes("fa-brands") || t.includes("fab")) && (r.prefix = "fab"), !r.prefix && bqe.includes(n)) {
     var b = Object.keys(c).find(function(w) {
-      return vqe.includes(w);
+      return wqe.includes(w);
     });
     if (b || f.autoFetchSvg) {
-      var x = IHe.get(n).defaultShortPrefixId;
+      var x = THe.get(n).defaultShortPrefixId;
       r.prefix = x, r.iconName = Nm(r.prefix, r.iconName) || r.iconName;
     }
   }
   return (r.prefix === "fa" || s === "fa") && (r.prefix = Ld() || "fas"), r;
 }
-var bqe = /* @__PURE__ */ (function() {
+var Sqe = /* @__PURE__ */ (function() {
   function e() {
-    rHe(this, e), this.definitions = {};
+    iHe(this, e), this.definitions = {};
   }
-  return aHe(e, [{
+  return lHe(e, [{
     key: "add",
     value: function() {
       for (var n = this, r = arguments.length, a = new Array(r), s = 0; s < r; s++)
@@ -88924,11 +88939,11 @@ var bqe = /* @__PURE__ */ (function() {
       }), n;
     }
   }]);
-})(), A8 = [], Yh = {}, dg = {}, wqe = Object.keys(dg);
-function xqe(e, t) {
+})(), A8 = [], Yh = {}, dg = {}, kqe = Object.keys(dg);
+function _qe(e, t) {
   var n = t.mixoutsTo;
   return A8 = e, Yh = {}, Object.keys(dg).forEach(function(r) {
-    wqe.indexOf(r) === -1 && delete dg[r];
+    kqe.indexOf(r) === -1 && delete dg[r];
   }), A8.forEach(function(r) {
     var a = r.mixout ? r.mixout() : {};
     if (Object.keys(a).forEach(function(l) {
@@ -88970,22 +88985,22 @@ function NR(e) {
   if (t)
     return t = Nm(n, t) || t, C8(eZ.definitions, n, t) || C8(Xs.styles, n, t);
 }
-var eZ = new bqe(), Sqe = function() {
+var eZ = new Sqe(), Eqe = function() {
   ft.autoReplaceSvg = !1, ft.observeMutations = !1, Ym("noAuto");
-}, kqe = {
+}, Cqe = {
   i2svg: function() {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     return rd ? (Ym("beforeI2svg", t), Fd("pseudoElements2svg", t), Fd("i2svg", t)) : Promise.reject(new Error("Operation requires a DOM of some kind."));
   },
   watch: function() {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, n = t.autoReplaceSvgRoot;
-    ft.autoReplaceSvg === !1 && (ft.autoReplaceSvg = !0), ft.observeMutations = !0, iqe(function() {
-      Eqe({
+    ft.autoReplaceSvg === !1 && (ft.autoReplaceSvg = !0), ft.observeMutations = !0, uqe(function() {
+      Mqe({
         autoReplaceSvgRoot: n
       }), Ym("watch", t);
     });
   }
-}, _qe = {
+}, Oqe = {
   icon: function(t) {
     if (t === null)
       return null;
@@ -89001,7 +89016,7 @@ var eZ = new bqe(), Sqe = function() {
         iconName: Nm(r, n) || n
       };
     }
-    if (typeof t == "string" && (t.indexOf("".concat(ft.cssPrefix, "-")) > -1 || t.match(HWe))) {
+    if (typeof t == "string" && (t.indexOf("".concat(ft.cssPrefix, "-")) > -1 || t.match(GWe))) {
       var a = tO(t.split(" "), {
         skipLookups: !0
       });
@@ -89019,14 +89034,14 @@ var eZ = new bqe(), Sqe = function() {
     }
   }
 }, Pi = {
-  noAuto: Sqe,
+  noAuto: Eqe,
   config: ft,
-  dom: kqe,
-  parse: _qe,
+  dom: Cqe,
+  parse: Oqe,
   library: eZ,
   findIconDefinition: NR,
   toHtml: Fk
-}, Eqe = function() {
+}, Mqe = function() {
   var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, n = t.autoReplaceSvgRoot, r = n === void 0 ? dr : n;
   (Object.keys(Xs.styles).length > 0 || ft.autoFetchSvg) && rd && ft.autoReplaceSvg && Pi.dom.i2svg({
     node: r
@@ -89050,7 +89065,7 @@ function nO(e, t) {
     }
   }), e;
 }
-function Cqe(e) {
+function Nqe(e) {
   var t = e.children, n = e.main, r = e.mask, a = e.attributes, s = e.styles, l = e.transform;
   if (_1(l) && n.found && !r.found) {
     var c = n.width, d = n.height, f = {
@@ -89067,7 +89082,7 @@ function Cqe(e) {
     children: t
   }];
 }
-function Oqe(e) {
+function Aqe(e) {
   var t = e.prefix, n = e.iconName, r = e.children, a = e.attributes, s = e.symbol, l = s === !0 ? "".concat(t, "-").concat(ft.cssPrefix, "-").concat(n) : s;
   return [{
     tag: "svg",
@@ -89083,7 +89098,7 @@ function Oqe(e) {
     }]
   }];
 }
-function Mqe(e) {
+function Rqe(e) {
   var t = ["aria-label", "aria-labelledby", "title", "role"];
   return t.some(function(n) {
     return n in e;
@@ -89104,7 +89119,7 @@ function O1(e) {
       viewBox: "0 0 ".concat(g, " ").concat(b)
     })
   };
-  !Mqe(f.attributes) && !f.attributes["aria-hidden"] && (w.attributes["aria-hidden"] = "true"), h && (w.attributes[Km] = "");
+  !Rqe(f.attributes) && !f.attributes["aria-hidden"] && (w.attributes["aria-hidden"] = "true"), h && (w.attributes[Km] = "");
   var k = Ie(Ie({}, w), {}, {
     prefix: a,
     iconName: s,
@@ -89121,7 +89136,7 @@ function O1(e) {
     children: [],
     attributes: {}
   }, _ = E.children, O = E.attributes;
-  return k.children = _, k.attributes = O, c ? Oqe(k) : Cqe(k);
+  return k.children = _, k.attributes = O, c ? Aqe(k) : Nqe(k);
 }
 function R8(e) {
   var t = e.content, n = e.width, r = e.height, a = e.transform, s = e.extra, l = e.watchable, c = l === void 0 ? !1 : l, d = Ie(Ie({}, s.attributes), {}, {
@@ -89129,7 +89144,7 @@ function R8(e) {
   });
   c && (d[Km] = "");
   var f = Ie({}, s.styles);
-  _1(a) && (f.transform = rqe({
+  _1(a) && (f.transform = iqe({
     transform: a,
     width: n,
     height: r
@@ -89143,7 +89158,7 @@ function R8(e) {
     children: [t]
   }), h;
 }
-function Nqe(e) {
+function jqe(e) {
   var t = e.content, n = e.extra, r = Ie(Ie({}, n.attributes), {}, {
     class: n.classes.join(" ")
   }), a = ZC(n.styles);
@@ -89191,12 +89206,12 @@ function AR(e) {
     icon: l
   };
 }
-var Aqe = {
+var Pqe = {
   found: !1,
   width: 512,
   height: 512
 };
-function Rqe(e, t) {
+function Dqe(e, t) {
   !$Q && !ft.showMissingIcons && e && console.error('Icon with name "'.concat(e, '" and prefix "').concat(t, '" is missing.'));
 }
 function RR(e, t) {
@@ -89210,7 +89225,7 @@ function RR(e, t) {
       var l = MA[t][e];
       return r(AR(l));
     }
-    Rqe(e, t), r(Ie(Ie({}, Aqe), {}, {
+    Dqe(e, t), r(Ie(Ie({}, Pqe), {}, {
       icon: ft.showMissingIcons && e ? Fd("missingIconAbstract") || {} : {}
     }));
   });
@@ -89219,14 +89234,14 @@ var j8 = function() {
 }, jR = ft.measurePerformance && x_ && x_.mark && x_.measure ? x_ : {
   mark: j8,
   measure: j8
-}, Mx = 'FA "7.1.0"', jqe = function(t) {
+}, Mx = 'FA "7.1.0"', Iqe = function(t) {
   return jR.mark("".concat(Mx, " ").concat(t, " begins")), function() {
     return tZ(t);
   };
 }, tZ = function(t) {
   jR.mark("".concat(Mx, " ").concat(t, " ends")), jR.measure("".concat(Mx, " ").concat(t), "".concat(Mx, " ").concat(t, " begins"), "".concat(Mx, " ").concat(t, " ends"));
 }, M1 = {
-  begin: jqe,
+  begin: Iqe,
   end: tZ
 }, Q_ = function() {
 };
@@ -89234,27 +89249,27 @@ function P8(e) {
   var t = e.getAttribute ? e.getAttribute(Km) : null;
   return typeof t == "string";
 }
-function Pqe(e) {
+function $qe(e) {
   var t = e.getAttribute ? e.getAttribute(w1) : null, n = e.getAttribute ? e.getAttribute(x1) : null;
   return t && n;
 }
-function Dqe(e) {
+function zqe(e) {
   return e && e.classList && e.classList.contains && e.classList.contains(ft.replacementClass);
 }
-function Iqe() {
+function Tqe() {
   if (ft.autoReplaceSvg === !0)
     return Z_.replace;
   var e = Z_[ft.autoReplaceSvg];
   return e || Z_.replace;
 }
-function $qe(e) {
+function Lqe(e) {
   return dr.createElementNS("http://www.w3.org/2000/svg", e);
 }
-function zqe(e) {
+function Fqe(e) {
   return dr.createElement(e);
 }
 function nZ(e) {
-  var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = t.ceFn, r = n === void 0 ? e.tag === "svg" ? $qe : zqe : n;
+  var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = t.ceFn, r = n === void 0 ? e.tag === "svg" ? Lqe : Fqe : n;
   if (typeof e == "string")
     return dr.createTextNode(e);
   var a = r(e.tag);
@@ -89268,7 +89283,7 @@ function nZ(e) {
     }));
   }), a;
 }
-function Tqe(e) {
+function Bqe(e) {
   var t = " ".concat(e.outerHTML, " ");
   return t = "".concat(t, "Font Awesome fontawesome.com "), t;
 }
@@ -89279,7 +89294,7 @@ var Z_ = {
       if (t[1].forEach(function(a) {
         n.parentNode.insertBefore(nZ(a), n);
       }), n.getAttribute(Km) === null && ft.keepOriginalSource) {
-        var r = dr.createComment(Tqe(n));
+        var r = dr.createComment(Bqe(n));
         n.parentNode.replaceChild(r, n);
       } else
         n.remove();
@@ -89314,8 +89329,8 @@ function rZ(e, t) {
     n();
   else {
     var r = D8;
-    ft.mutateApproach === BWe && (r = Td.requestAnimationFrame || D8), r(function() {
-      var a = Iqe(), s = M1.begin("mutate");
+    ft.mutateApproach === HWe && (r = Td.requestAnimationFrame || D8), r(function() {
+      var a = Tqe(), s = M1.begin("mutate");
       e.map(a), s(), n();
     });
   }
@@ -89335,11 +89350,11 @@ function I8(e) {
       if (!N1) {
         var m = Ld();
         Qg(f).forEach(function(h) {
-          if (h.type === "childList" && h.addedNodes.length > 0 && !P8(h.addedNodes[0]) && (ft.searchPseudoElements && l(h.target), n(h.target)), h.type === "attributes" && h.target.parentNode && ft.searchPseudoElements && l([h.target], !0), h.type === "attributes" && P8(h.target) && ~GWe.indexOf(h.attributeName))
-            if (h.attributeName === "class" && Pqe(h.target)) {
+          if (h.type === "childList" && h.addedNodes.length > 0 && !P8(h.addedNodes[0]) && (ft.searchPseudoElements && l(h.target), n(h.target)), h.type === "attributes" && h.target.parentNode && ft.searchPseudoElements && l([h.target], !0), h.type === "attributes" && P8(h.target) && ~XWe.indexOf(h.attributeName))
+            if (h.attributeName === "class" && $qe(h.target)) {
               var v = tO(k1(h.target)), g = v.prefix, b = v.iconName;
               h.target.setAttribute(w1, g || m), b && h.target.setAttribute(x1, b);
-            } else Dqe(h.target) && a(h.target);
+            } else zqe(h.target) && a(h.target);
         });
       }
     }), rd && aE.observe(d, {
@@ -89350,27 +89365,27 @@ function I8(e) {
     });
   }
 }
-function Lqe() {
+function Uqe() {
   aE && aE.disconnect();
 }
-function Fqe(e) {
+function Vqe(e) {
   var t = e.getAttribute("style"), n = [];
   return t && (n = t.split(";").reduce(function(r, a) {
     var s = a.split(":"), l = s[0], c = s.slice(1);
     return l && c.length > 0 && (r[l] = c.join(":").trim()), r;
   }, {})), n;
 }
-function Bqe(e) {
+function Hqe(e) {
   var t = e.getAttribute("data-prefix"), n = e.getAttribute("data-icon"), r = e.innerText !== void 0 ? e.innerText.trim() : "", a = tO(k1(e));
-  return a.prefix || (a.prefix = Ld()), t && n && (a.prefix = t, a.iconName = n), a.iconName && a.prefix || (a.prefix && r.length > 0 && (a.iconName = dqe(a.prefix, e.innerText) || C1(a.prefix, HQ(e.innerText))), !a.iconName && ft.autoFetchSvg && e.firstChild && e.firstChild.nodeType === Node.TEXT_NODE && (a.iconName = e.firstChild.data)), a;
+  return a.prefix || (a.prefix = Ld()), t && n && (a.prefix = t, a.iconName = n), a.iconName && a.prefix || (a.prefix && r.length > 0 && (a.iconName = mqe(a.prefix, e.innerText) || C1(a.prefix, HQ(e.innerText))), !a.iconName && ft.autoFetchSvg && e.firstChild && e.firstChild.nodeType === Node.TEXT_NODE && (a.iconName = e.firstChild.data)), a;
 }
-function Uqe(e) {
+function Wqe(e) {
   var t = Qg(e.attributes).reduce(function(n, r) {
     return n.name !== "class" && n.name !== "style" && (n[r.name] = r.value), n;
   }, {});
   return t;
 }
-function Vqe() {
+function qqe() {
   return {
     iconName: null,
     prefix: null,
@@ -89392,7 +89407,7 @@ function Vqe() {
 function $8(e) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
     styleParser: !0
-  }, n = Bqe(e), r = n.iconName, a = n.prefix, s = n.rest, l = Uqe(e), c = MR("parseNodeAttributes", {}, e), d = t.styleParser ? Fqe(e) : [];
+  }, n = Hqe(e), r = n.iconName, a = n.prefix, s = n.rest, l = Wqe(e), c = MR("parseNodeAttributes", {}, e), d = t.styleParser ? Vqe(e) : [];
   return Ie({
     iconName: r,
     prefix: a,
@@ -89411,14 +89426,14 @@ function $8(e) {
     }
   }, c);
 }
-var Hqe = Xs.styles;
+var Gqe = Xs.styles;
 function aZ(e) {
   var t = ft.autoReplaceSvg === "nest" ? $8(e, {
     styleParser: !1
   }) : $8(e);
   return ~t.extra.classes.indexOf(TQ) ? Fd("generateLayersText", e, t) : Fd("generateSvgReplacementMutation", e, t);
 }
-function Wqe() {
+function Kqe() {
   return [].concat(ol(AQ), ol(RQ));
 }
 function z8(e) {
@@ -89428,7 +89443,7 @@ function z8(e) {
     return n.add("".concat(S8, "-").concat(h));
   }, a = function(h) {
     return n.remove("".concat(S8, "-").concat(h));
-  }, s = ft.autoFetchSvg ? Wqe() : fQ.concat(Object.keys(Hqe));
+  }, s = ft.autoFetchSvg ? Kqe() : fQ.concat(Object.keys(Gqe));
   s.includes("fa") || s.push("fa");
   var l = [".".concat(TQ, ":not([").concat(Km, "])")].concat(s.map(function(m) {
     return ".".concat(m, ":not([").concat(Km, "])");
@@ -89463,13 +89478,13 @@ function z8(e) {
     });
   });
 }
-function qqe(e) {
+function Yqe(e) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
   aZ(e).then(function(n) {
     n && rZ([n], t);
   });
 }
-function Gqe(e) {
+function Xqe(e) {
   return function(t) {
     var n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, r = (t || {}).icon ? t : NR(t || {}), a = n.mask;
     return a && (a = (a || {}).icon ? a : NR(a || {})), e(r, Ie(Ie({}, n), {}, {
@@ -89477,7 +89492,7 @@ function Gqe(e) {
     }));
   };
 }
-var Kqe = function(t) {
+var Jqe = function(t) {
   var n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, r = n.transform, a = r === void 0 ? Il : r, s = n.symbol, l = s === void 0 ? !1 : s, c = n.mask, d = c === void 0 ? null : c, f = n.maskId, m = f === void 0 ? null : f, h = n.classes, v = h === void 0 ? [] : h, g = n.attributes, b = g === void 0 ? {} : g, x = n.styles, w = x === void 0 ? {} : x;
   if (t) {
     var k = t.prefix, E = t.iconName, _ = t.icon;
@@ -89510,16 +89525,16 @@ var Kqe = function(t) {
       });
     });
   }
-}, Yqe = {
+}, Qqe = {
   mixout: function() {
     return {
-      icon: Gqe(Kqe)
+      icon: Xqe(Jqe)
     };
   },
   hooks: function() {
     return {
       mutationObserverCallbacks: function(n) {
-        return n.treeCallback = z8, n.nodeCallback = qqe, n;
+        return n.treeCallback = z8, n.nodeCallback = Yqe, n;
       }
     };
   },
@@ -89568,7 +89583,7 @@ var Kqe = function(t) {
       };
     };
   }
-}, Xqe = {
+}, Zqe = {
   mixout: function() {
     return {
       layer: function(n) {
@@ -89596,7 +89611,7 @@ var Kqe = function(t) {
       }
     };
   }
-}, Jqe = {
+}, eGe = {
   mixout: function() {
     return {
       counter: function(n) {
@@ -89610,7 +89625,7 @@ var Kqe = function(t) {
           return Ym("beforeDOMElementCreation", {
             content: n,
             params: r
-          }), Nqe({
+          }), jqe({
             content: n.toString(),
             extra: {
               attributes: c,
@@ -89622,7 +89637,7 @@ var Kqe = function(t) {
       }
     };
   }
-}, Qqe = {
+}, tGe = {
   mixout: function() {
     return {
       text: function(n) {
@@ -89669,43 +89684,43 @@ var Kqe = function(t) {
     normal: "fas",
     400: "fas"
   }
-}), DHe), LWe), VHe), DR = Object.keys(L8).reduce(function(e, t) {
+}), zHe), UWe), qHe), DR = Object.keys(L8).reduce(function(e, t) {
   return e[t.toLowerCase()] = L8[t], e;
-}, {}), Zqe = Object.keys(DR).reduce(function(e, t) {
+}, {}), nGe = Object.keys(DR).reduce(function(e, t) {
   var n = DR[t];
   return e[t] = n[900] || ol(Object.entries(n))[0][1], e;
 }, {});
-function eGe(e) {
+function rGe(e) {
   var t = e.replace(iZ, "");
   return HQ(ol(t)[0] || "");
 }
-function tGe(e) {
+function oGe(e) {
   var t = e.getPropertyValue("font-feature-settings").includes("ss01"), n = e.getPropertyValue("content"), r = n.replace(iZ, ""), a = r.codePointAt(0), s = a >= T8[0] && a <= T8[1], l = r.length === 2 ? r[0] === r[1] : !1;
   return s || l || t;
 }
-function nGe(e, t) {
+function aGe(e, t) {
   var n = e.replace(/^['"]|['"]$/g, "").toLowerCase(), r = parseInt(t), a = isNaN(r) ? "normal" : r;
-  return (DR[n] || {})[a] || Zqe[n];
+  return (DR[n] || {})[a] || nGe[n];
 }
 function F8(e, t) {
-  var n = "".concat(FWe).concat(t.replace(":", "-"));
+  var n = "".concat(VWe).concat(t.replace(":", "-"));
   return new Promise(function(r, a) {
     if (e.getAttribute(n) !== null)
       return r();
     var s = Qg(e.children), l = s.filter(function(A) {
       return A.getAttribute(kR) === t;
-    })[0], c = Td.getComputedStyle(e, t), d = c.getPropertyValue("font-family"), f = d.match(WWe), m = c.getPropertyValue("font-weight"), h = c.getPropertyValue("content");
+    })[0], c = Td.getComputedStyle(e, t), d = c.getPropertyValue("font-family"), f = d.match(KWe), m = c.getPropertyValue("font-weight"), h = c.getPropertyValue("content");
     if (l && !f)
       return e.removeChild(l), r();
     if (f && h !== "none" && h !== "") {
-      var v = c.getPropertyValue("content"), g = nGe(d, m), b = eGe(v), x = f[0].startsWith("FontAwesome"), w = tGe(c), k = C1(g, b), E = k;
+      var v = c.getPropertyValue("content"), g = aGe(d, m), b = rGe(v), x = f[0].startsWith("FontAwesome"), w = oGe(c), k = C1(g, b), E = k;
       if (x) {
-        var _ = fqe(b);
+        var _ = hqe(b);
         _.iconName && _.prefix && (k = _.iconName, g = _.prefix);
       }
       if (k && !w && (!l || l.getAttribute(w1) !== g || l.getAttribute(x1) !== E)) {
         e.setAttribute(n, E), l && e.removeChild(l);
-        var O = Vqe(), N = O.extra;
+        var O = qqe(), N = O.extra;
         N.attributes[kR] = t, RR(k, g).then(function(A) {
           var R = O1(Ie(Ie({}, O), {}, {
             icons: {
@@ -89728,17 +89743,17 @@ function F8(e, t) {
       r();
   });
 }
-function rGe(e) {
+function iGe(e) {
   return Promise.all([F8(e, "::before"), F8(e, "::after")]);
 }
-function oGe(e) {
-  return e.parentNode !== document.head && !~UWe.indexOf(e.tagName.toUpperCase()) && !e.getAttribute(kR) && (!e.parentNode || e.parentNode.tagName !== "svg");
+function sGe(e) {
+  return e.parentNode !== document.head && !~WWe.indexOf(e.tagName.toUpperCase()) && !e.getAttribute(kR) && (!e.parentNode || e.parentNode.tagName !== "svg");
 }
-var aGe = function(t) {
+var lGe = function(t) {
   return !!t && IQ.some(function(n) {
     return t.includes(n);
   });
-}, iGe = function(t) {
+}, uGe = function(t) {
   if (!t) return [];
   var n = /* @__PURE__ */ new Set(), r = t.split(/,(?![^()]*\))/).map(function(d) {
     return d.trim();
@@ -89752,7 +89767,7 @@ var aGe = function(t) {
   try {
     for (a.s(); !(s = a.n()).done; ) {
       var l = s.value;
-      if (aGe(l)) {
+      if (lGe(l)) {
         var c = IQ.reduce(function(d, f) {
           return d.replace(f, "");
         }, l);
@@ -89783,7 +89798,7 @@ function B8(e) {
             var c = J_(l.cssRules), d;
             try {
               for (c.s(); !(d = c.n()).done; ) {
-                var f = d.value, m = iGe(f.selectorText), h = J_(m), v;
+                var f = d.value, m = uGe(f.selectorText), h = J_(m), v;
                 try {
                   for (h.s(); !(v = h.n()).done; ) {
                     var g = v.value;
@@ -89818,7 +89833,7 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
       }
     }
     return new Promise(function(x, w) {
-      var k = Qg(n).filter(oGe).map(rGe), E = M1.begin("searchPseudoElements");
+      var k = Qg(n).filter(sGe).map(iGe), E = M1.begin("searchPseudoElements");
       oZ(), Promise.all(k).then(function() {
         E(), PR(), x();
       }).catch(function() {
@@ -89827,7 +89842,7 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
     });
   }
 }
-var sGe = {
+var cGe = {
   hooks: function() {
     return {
       mutationObserverCallbacks: function(n) {
@@ -89841,7 +89856,7 @@ var sGe = {
       ft.searchPseudoElements && B8(a);
     };
   }
-}, U8 = !1, lGe = {
+}, U8 = !1, dGe = {
   mixout: function() {
     return {
       dom: {
@@ -89857,7 +89872,7 @@ var sGe = {
         I8(MR("mutationObserverCallbacks", {}));
       },
       noAuto: function() {
-        Lqe();
+        Uqe();
       },
       watch: function(n) {
         var r = n.observeMutationsRoot;
@@ -89909,7 +89924,7 @@ var sGe = {
     }
     return r;
   }, n);
-}, uGe = {
+}, fGe = {
   mixout: function() {
     return {
       parse: {
@@ -89965,10 +89980,10 @@ function H8(e) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0;
   return e.attributes && (e.attributes.fill || t) && (e.attributes.fill = "black"), e;
 }
-function cGe(e) {
+function pGe(e) {
   return e.tag === "g" ? e.children : [e];
 }
-var dGe = {
+var mGe = {
   hooks: function() {
     return {
       parseNodeAttributes: function(n, r) {
@@ -89981,7 +89996,7 @@ var dGe = {
   },
   provides: function(t) {
     t.generateAbstractMask = function(n) {
-      var r = n.children, a = n.attributes, s = n.main, l = n.mask, c = n.maskId, d = n.transform, f = s.width, m = s.icon, h = l.width, v = l.icon, g = nqe({
+      var r = n.children, a = n.attributes, s = n.main, l = n.mask, c = n.maskId, d = n.transform, f = s.width, m = s.icon, h = l.width, v = l.icon, g = aqe({
         transform: d,
         containerWidth: h,
         iconWidth: f
@@ -90018,7 +90033,7 @@ var dGe = {
           attributes: {
             id: _
           },
-          children: cGe(v)
+          children: pGe(v)
         }, O]
       };
       return r.push(N, {
@@ -90034,7 +90049,7 @@ var dGe = {
       };
     };
   }
-}, fGe = {
+}, hGe = {
   provides: function(t) {
     var n = !1;
     Td.matchMedia && (n = Td.matchMedia("(prefers-reduced-motion: reduce)").matches), t.missingIconAbstract = function() {
@@ -90106,7 +90121,7 @@ var dGe = {
       };
     };
   }
-}, pGe = {
+}, gGe = {
   hooks: function() {
     return {
       parseNodeAttributes: function(n, r) {
@@ -90115,8 +90130,8 @@ var dGe = {
       }
     };
   }
-}, mGe = [aqe, Yqe, Xqe, Jqe, Qqe, sGe, lGe, uGe, dGe, fGe, pGe];
-xqe(mGe, {
+}, vGe = [lqe, Qqe, Zqe, eGe, tGe, cGe, dGe, fGe, mGe, hGe, gGe];
+_qe(vGe, {
   mixoutsTo: Pi
 });
 Pi.noAuto;
@@ -90126,21 +90141,21 @@ Pi.dom;
 var sZ = Pi.parse;
 Pi.findIconDefinition;
 Pi.toHtml;
-var hGe = Pi.icon;
+var yGe = Pi.icon;
 Pi.layer;
 Pi.text;
 Pi.counter;
-function gGe(e) {
+function bGe(e) {
   return e = e - 0, e === e;
 }
 function lZ(e) {
-  return gGe(e) ? e : (e = e.replace(/[_-]+(.)?/g, (t, n) => n ? n.toUpperCase() : ""), e.charAt(0).toLowerCase() + e.slice(1));
+  return bGe(e) ? e : (e = e.replace(/[_-]+(.)?/g, (t, n) => n ? n.toUpperCase() : ""), e.charAt(0).toLowerCase() + e.slice(1));
 }
-function vGe(e) {
+function wGe(e) {
   return e.charAt(0).toUpperCase() + e.slice(1);
 }
-var Ih = /* @__PURE__ */ new Map(), yGe = 1e3;
-function bGe(e) {
+var Ih = /* @__PURE__ */ new Map(), xGe = 1e3;
+function SGe(e) {
   if (Ih.has(e))
     return Ih.get(e);
   const t = {};
@@ -90154,13 +90169,13 @@ function bGe(e) {
         const d = l.slice(0, c).trim(), f = l.slice(c + 1).trim();
         if (d && f) {
           const m = lZ(d);
-          t[m.startsWith("webkit") ? vGe(m) : m] = f;
+          t[m.startsWith("webkit") ? wGe(m) : m] = f;
         }
       }
     }
     n = s + 1;
   }
-  if (Ih.size === yGe) {
+  if (Ih.size === xGe) {
     const a = Ih.keys().next().value;
     a && Ih.delete(a);
   }
@@ -90177,7 +90192,7 @@ function uZ(e, t, n = {}) {
         break;
       }
       case m === "style": {
-        s.style = bGe(String(h));
+        s.style = SGe(String(h));
         break;
       }
       case m.startsWith("aria-"):
@@ -90196,10 +90211,10 @@ function uZ(e, t, n = {}) {
   } = n;
   return l && (s.style = s.style ? { ...s.style, ...l } : l), c && (s.role = c), d && (s["aria-label"] = d, s["aria-hidden"] = "false"), e(t.tag, { ...f, ...s }, ...r);
 }
-var wGe = uZ.bind(null, jt.createElement), W8 = (e, t) => {
+var kGe = uZ.bind(null, jt.createElement), W8 = (e, t) => {
   const n = M.useId();
   return e || (t ? n : void 0);
-}, xGe = class {
+}, _Ge = class {
   constructor(e = "react-fontawesome") {
     this.enabled = !1;
     let t = !1;
@@ -90232,12 +90247,12 @@ var wGe = uZ.bind(null, jt.createElement), W8 = (e, t) => {
   }
 };
 typeof process < "u" && process.env.FA_VERSION;
-var SGe = (
+var EGe = (
   // @ts-expect-error TS2872 - Expression is always truthy - This is true when v7 of SVGCore is used, but not when v6 is used.
   // This is the point of this check - if the property exists on config, we have v7, otherwise we have v6.
   // TS is checking this against the dev dependencies which uses v7, so it reports a false error here.
   "searchPseudoElementsFullScan" in LS ? "7.0.0" : "6.0.0"
-), kGe = Number.parseInt(SGe) >= 7, Qx = "fa", _c = {
+), CGe = Number.parseInt(EGe) >= 7, Qx = "fa", _c = {
   beat: "fa-beat",
   fade: "fa-fade",
   beatFade: "fa-beat-fade",
@@ -90247,14 +90262,14 @@ var SGe = (
   spinPulse: "fa-spin-pulse",
   spinReverse: "fa-spin-reverse",
   pulse: "fa-pulse"
-}, _Ge = {
+}, OGe = {
   left: "fa-pull-left",
   right: "fa-pull-right"
-}, EGe = {
+}, MGe = {
   90: "fa-rotate-90",
   180: "fa-rotate-180",
   270: "fa-rotate-270"
-}, CGe = {
+}, NGe = {
   "2xs": "fa-2xs",
   xs: "fa-xs",
   sm: "fa-sm",
@@ -90283,14 +90298,14 @@ var SGe = (
   swapOpacity: "fa-swap-opacity",
   widthAuto: "fa-width-auto"
 };
-function OGe(e) {
+function AGe(e) {
   const t = LS.cssPrefix || LS.familyPrefix || Qx;
   return t === Qx ? e : e.replace(
     new RegExp(String.raw`(?<=^|\s)${Qx}-`, "g"),
     `${t}-`
   );
 }
-function MGe(e) {
+function RGe(e) {
   const {
     beat: t,
     fade: n,
@@ -90313,21 +90328,21 @@ function MGe(e) {
     widthAuto: _,
     className: O
   } = e, N = [];
-  return O && N.push(...O.split(" ")), t && N.push(_c.beat), n && N.push(_c.fade), r && N.push(_c.beatFade), a && N.push(_c.bounce), s && N.push(_c.shake), l && N.push(_c.spin), d && N.push(_c.spinReverse), c && N.push(_c.spinPulse), f && N.push(_c.pulse), m && N.push(Ec.fixedWidth), h && N.push(Ec.inverse), v && N.push(Ec.border), g === !0 && N.push(Ec.flip), (g === "horizontal" || g === "both") && N.push(Ec.flipHorizontal), (g === "vertical" || g === "both") && N.push(Ec.flipVertical), b != null && N.push(CGe[b]), x != null && x !== 0 && N.push(EGe[x]), w != null && N.push(_Ge[w]), k && N.push(Ec.swapOpacity), kGe ? (E && N.push(Ec.rotateBy), _ && N.push(Ec.widthAuto), (LS.cssPrefix || LS.familyPrefix || Qx) === Qx ? N : (
+  return O && N.push(...O.split(" ")), t && N.push(_c.beat), n && N.push(_c.fade), r && N.push(_c.beatFade), a && N.push(_c.bounce), s && N.push(_c.shake), l && N.push(_c.spin), d && N.push(_c.spinReverse), c && N.push(_c.spinPulse), f && N.push(_c.pulse), m && N.push(Ec.fixedWidth), h && N.push(Ec.inverse), v && N.push(Ec.border), g === !0 && N.push(Ec.flip), (g === "horizontal" || g === "both") && N.push(Ec.flipHorizontal), (g === "vertical" || g === "both") && N.push(Ec.flipVertical), b != null && N.push(NGe[b]), x != null && x !== 0 && N.push(MGe[x]), w != null && N.push(OGe[w]), k && N.push(Ec.swapOpacity), CGe ? (E && N.push(Ec.rotateBy), _ && N.push(Ec.widthAuto), (LS.cssPrefix || LS.familyPrefix || Qx) === Qx ? N : (
     // TODO: see if we can achieve custom prefix support without iterating
     // eslint-disable-next-line unicorn/no-array-callback-reference
-    N.map(OGe)
+    N.map(AGe)
   )) : N;
 }
-var NGe = (e) => typeof e == "object" && "icon" in e && !!e.icon;
+var jGe = (e) => typeof e == "object" && "icon" in e && !!e.icon;
 function q8(e) {
   if (e)
-    return NGe(e) ? e : sZ.icon(e);
+    return jGe(e) ? e : sZ.icon(e);
 }
-function AGe(e) {
+function PGe(e) {
   return Object.keys(e);
 }
-var G8 = new xGe("FontAwesomeIcon"), cZ = {
+var G8 = new _Ge("FontAwesomeIcon"), cZ = {
   border: !1,
   className: "",
   mask: void 0,
@@ -90356,7 +90371,7 @@ var G8 = new xGe("FontAwesomeIcon"), cZ = {
   transform: void 0,
   swapOpacity: !1,
   widthAuto: !1
-}, RGe = new Set(Object.keys(cZ)), e2 = jt.forwardRef((e, t) => {
+}, DGe = new Set(Object.keys(cZ)), e2 = jt.forwardRef((e, t) => {
   const n = { ...cZ, ...e }, {
     icon: r,
     mask: a,
@@ -90368,7 +90383,7 @@ var G8 = new xGe("FontAwesomeIcon"), cZ = {
   } = n, m = W8(d, !!a), h = W8(c, !!l), v = q8(r);
   if (!v)
     return G8.error("Icon lookup is undefined", r), null;
-  const g = MGe(n), b = typeof f == "string" ? sZ.transform(f) : f, x = q8(a), w = hGe(v, {
+  const g = RGe(n), b = typeof f == "string" ? sZ.transform(f) : f, x = q8(a), w = yGe(v, {
     ...g.length > 0 && { classes: g },
     ...b && { transform: b },
     ...x && { mask: x },
@@ -90380,12 +90395,12 @@ var G8 = new xGe("FontAwesomeIcon"), cZ = {
   if (!w)
     return G8.error("Could not find icon", v), null;
   const { abstract: k } = w, E = { ref: t };
-  for (const _ of AGe(n))
-    RGe.has(_) || (E[_] = n[_]);
-  return wGe(k[0], E);
+  for (const _ of PGe(n))
+    DGe.has(_) || (E[_] = n[_]);
+  return kGe(k[0], E);
 });
 e2.displayName = "FontAwesomeIcon";
-const jGe = ({
+const IGe = ({
   state: e
 }) => {
   const [t, n] = M.useState(
@@ -90406,7 +90421,7 @@ const jGe = ({
       children: [
         /* @__PURE__ */ ka.jsxs("div", { style: { flex: 1, minHeight: 0 }, children: [
           /* @__PURE__ */ ka.jsx(
-            OVe,
+            AVe,
             {
               language: "python",
               theme: "vs-dark",
@@ -90418,7 +90433,7 @@ const jGe = ({
             e2,
             {
               className: "controll_icon",
-              icon: ZVe,
+              icon: nHe,
               style: { color: "orange" },
               onClick: async () => {
                 a(!1);
@@ -90430,7 +90445,7 @@ const jGe = ({
               e2,
               {
                 className: "controll_icon",
-                icon: QVe,
+                icon: tHe,
                 onClick: async () => {
                   e.setState({ python_code: t });
                 },
@@ -90441,7 +90456,7 @@ const jGe = ({
               e2,
               {
                 className: "controll_icon",
-                icon: eHe,
+                icon: rHe,
                 onClick: async () => {
                   a(!0), e.setState({ python_code: t });
                 },
@@ -90454,12 +90469,12 @@ const jGe = ({
       ]
     }
   );
-}, PGe = {
+}, $Ge = {
   show_python_editor: !0,
   index_url: "",
   store_code: !0
-}, DGe = US(PGe), IGe = (e) => {
-  const t = DGe(e), n = e.storage_object;
+}, zGe = US($Ge), TGe = (e) => {
+  const t = zGe(e), n = e.storage_object;
   n !== void 0 && (n.fullprops = t);
   const r = t.ser_node || t.python_code, a = t.show_python_editor;
   if (!r && !a)
@@ -90557,7 +90572,7 @@ const jGe = ({
         width: "100%"
       },
       children: t.show_python_editor ? /* @__PURE__ */ ka.jsxs(
-        JVe,
+        eHe,
         {
           vertical: !1,
           defaultSizes: [50, 50],
@@ -90566,13 +90581,13 @@ const jGe = ({
           },
           children: [
             v,
-            /* @__PURE__ */ ka.jsx(jGe, { state: h })
+            /* @__PURE__ */ ka.jsx(IGe, { state: h })
           ]
         }
       ) : v
     }
   );
-}, $Ge = (e, t, { intervalMs: n = 250 } = {}) => {
+}, LGe = (e, t, { intervalMs: n = 250 } = {}) => {
   let r = !0, a = !1;
   const s = setInterval(() => {
     !r || a || e.isConnected || (a = !0, r = !1, clearInterval(s), t());
@@ -90580,7 +90595,7 @@ const jGe = ({
   return () => {
     r && (r = !1, clearInterval(s));
   };
-}, zGe = () => {
+}, FGe = () => {
   const e = /* @__PURE__ */ new Map();
   return {
     register: (t, n) => {
@@ -90595,14 +90610,14 @@ const jGe = ({
       n && (n.dispose(), e.delete(t));
     }
   };
-}, TGe = () => {
+}, BGe = () => {
   const e = globalThis;
-  return e.__funcnodes_nodebuilder_mount_registry || (e.__funcnodes_nodebuilder_mount_registry = zGe()), e.__funcnodes_nodebuilder_mount_registry;
-}, LGe = ({
+  return e.__funcnodes_nodebuilder_mount_registry || (e.__funcnodes_nodebuilder_mount_registry = FGe()), e.__funcnodes_nodebuilder_mount_registry;
+}, UGe = ({
   element: e,
   worker: t,
   createRootAndRender: n,
-  registry: r = TGe(),
+  registry: r = BGe(),
   intervalMs: a = 250,
   disposeWorker: s = !0
 }) => {
@@ -90636,10 +90651,10 @@ const jGe = ({
       }
     }
   };
-  return d = r.register(e, m), c = n(), f = $Ge(e, m.dispose, {
+  return d = r.register(e, m), c = n(), f = LGe(e, m.dispose, {
     intervalMs: a
   }), m;
-}, FGe = (e, t) => {
+}, VGe = (e, t) => {
   t === void 0 && (t = {}), t.storage_object = t.storage_object || {};
   const { element: n, eleid: r } = typeof e == "string" ? {
     element: document.getElementById(e),
@@ -90657,10 +90672,10 @@ const jGe = ({
       uuid: r + "_worker",
       worker: f
     });
-  })(), l = /* @__PURE__ */ ka.jsx(IGe, { id: r, ...t, worker: s });
+  })(), l = /* @__PURE__ */ ka.jsx(TGe, { id: r, ...t, worker: s });
   let c;
   return {
-    ...LGe({
+    ...UGe({
       element: n,
       worker: s,
       disposeWorker: a,
@@ -90672,5 +90687,5 @@ const jGe = ({
     storage_object: t.storage_object
   };
 };
-window.NodeBuilder = FGe;
+window.NodeBuilder = VGe;
 window.FuncnodesPyodideWorker = h1;
