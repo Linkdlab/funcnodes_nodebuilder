@@ -142,11 +142,13 @@ const default_nodebuilder_options_factory: (
 ) => NodeBuilderDefaultOptions = object_factory_maker(DEFAULTPROPS);
 
 const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
-  const fullprops: NodeBuilderDefaultOptions = default_nodebuilder_options_factory(props);
+  const fullprops: NodeBuilderDefaultOptions =
+    default_nodebuilder_options_factory(props);
   const storage_object = props.storage_object;
   if (storage_object !== undefined) {
     storage_object["fullprops"] = fullprops;
   }
+  console.log("initalize NodeBuilder with props", fullprops);
 
   const has_node = fullprops.ser_node || fullprops.python_code;
 
@@ -194,9 +196,9 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
     initialPythonCodeRef.current = pythonCode;
   }
 
-  const stateRef = React.useRef<UseBoundStore<StoreApi<NodeBuilderOptions>> | null>(
-    null
-  );
+  const stateRef = React.useRef<UseBoundStore<
+    StoreApi<NodeBuilderOptions>
+  > | null>(null);
   if (!stateRef.current) {
     stateRef.current = create<NodeBuilderOptions>(() => ({
       ...(fullprops as NodeBuilderOptions),
@@ -238,18 +240,20 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       }
     }, 500);
 
-    const remover2 = worker.getHookManager().add_hook(
-      "node_mounted",
-      async ({ worker: w, data }: { worker: any; data: any }) => {
-        w._zustand?.center_node(data);
-        await new Promise((resolve) => setTimeout(resolve, 0));
-        w._zustand?.center_node(data);
-        await new Promise((resolve) => setTimeout(resolve, 10));
-        w._zustand?.center_node(data);
-        await new Promise((resolve) => setTimeout(resolve, 100));
-        w._zustand?.center_node(data);
-      }
-    );
+    const remover2 = worker
+      .getHookManager()
+      .add_hook(
+        "node_mounted",
+        async ({ worker: w, data }: { worker: any; data: any }) => {
+          w._zustand?.center_node(data);
+          await new Promise((resolve) => setTimeout(resolve, 0));
+          w._zustand?.center_node(data);
+          await new Promise((resolve) => setTimeout(resolve, 10));
+          w._zustand?.center_node(data);
+          await new Promise((resolve) => setTimeout(resolve, 100));
+          w._zustand?.center_node(data);
+        }
+      );
 
     const remover3 = worker
       .getEventManager()
@@ -290,6 +294,15 @@ const NodeBuilder = (props: Partial<NodeBuilderOptions>) => {
       if (ownsWorkerRef.current) {
         (worker as any).dispose?.();
       }
+      state.setState({ worker: undefined });
+      state.setState({ python_code: "" });
+      state.setState({ python_code_error: "" });
+      state.setState({ onload: undefined });
+      state.setState({ storage_object: undefined });
+      state.setState({ show_python_editor: false });
+      state.setState({ store_code: false });
+      state.setState({ index_url: "" });
+      state.setState({ ser_node: undefined });
     };
   }, [id, state, worker]);
 
