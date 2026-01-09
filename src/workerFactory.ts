@@ -1,7 +1,7 @@
 export type WorkerFactoryProps = {
   uuid?: string;
   shared_worker?: boolean;
-  worker?: any;
+  worker?: Worker | SharedWorker;
 };
 
 export const shouldPreferInlineWorkers = ({

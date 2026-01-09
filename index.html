@@ -22,8 +22,8 @@
 
     <script >
       // wait till window is loaded
-      window.onload = async function() {
 
+      async function main() {
         window.builder = NodeBuilder("root",{
           python_code: `
 # requires numpy
@@ -39,8 +39,17 @@ def testnode(x:float,y:float=1)->float:
 
         },);
       }
+      window.onload = async function() {
 
+        await main();
+      }
 
+      async function dispose() {
+        if (window.builder) {
+          await window.builder.dispose();
+          window.builder = undefined;
+        }
+      }
     </script>
   </body>
 

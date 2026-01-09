@@ -4,7 +4,9 @@ import { shouldPreferInlineWorkers } from "./workerFactory.ts";
 import InlineDedicatedWorker from "./pyodideDedicatedWorker.mts?worker&inline";
 import InlineSharedWorker from "./pyodideSharedWorker.mts?sharedworker&inline";
 
-export const createWorkerFromData = (data: WorkerFactoryProps): any => {
+export const createWorkerFromData = (
+  data: WorkerFactoryProps
+): Worker | SharedWorker => {
   if (data.worker) return data.worker;
 
   const name = data.uuid;
@@ -38,10 +40,13 @@ export const createWorkerFromData = (data: WorkerFactoryProps): any => {
   }
   if (preferInline) return new InlineDedicatedWorker({ name });
   try {
-    return new Worker(new URL("./pyodideDedicatedWorker.mts", import.meta.url), {
-      name,
-      type: "module",
-    });
+    return new Worker(
+      new URL("./pyodideDedicatedWorker.mts", import.meta.url),
+      {
+        name,
+        type: "module",
+      }
+    );
   } catch {
     return new InlineDedicatedWorker({ name });
   }
